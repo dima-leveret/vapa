@@ -1,0 +1,9 @@
+.navBar {
+    display: flex;
+    justify-content: space-around;
+    background-color: rgba(31,31,31,0.30);
+}
+
+.navBrand {
+    width: 5%;
+}

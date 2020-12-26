@@ -1,4 +1,5 @@
 import React from 'react';
+import '../navigation/NavBar.css'
 
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
@@ -7,11 +8,9 @@ import VapaLogo from '../../img/vapa_logo.png'
 
 function NavBar() {
     return(
-        <Navbar style={{ display: 'flex', justifyContent: 'space-around' }}>
+        <Navbar className='navBar'>
             <Navbar.Brand href="#home">
-                <img style={{ width: '30px' }}
-                src={VapaLogo} 
-                alt={'vapa_logo'} />
+                <img className='navBrand' src={VapaLogo} alt={'vapa_logo'} />
             </Navbar.Brand>
                 <Nav >
                     <Nav.Link
