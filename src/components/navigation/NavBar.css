@@ -2,8 +2,24 @@
     display: flex;
     justify-content: space-around;
     background-color: rgba(31,31,31,0.30);
+    padding-top: 2%;
+    padding-bottom: 2%;
 }
 
 .navBrand {
     width: 5%;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+}
+
+.navLink{
+    
+}    
+
+.instaIcon {
+    
 }

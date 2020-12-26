@@ -1,5 +1,6 @@
 import React from 'react';
-import '../navigation/NavBar.css'
+import '../navigation/NavBar.css';
+import { FiInstagram } from 'react-icons/fi';
 
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
@@ -12,28 +13,29 @@ function NavBar() {
             <Navbar.Brand href="#home">
                 <img className='navBrand' src={VapaLogo} alt={'vapa_logo'} />
             </Navbar.Brand>
-                <Nav >
+                <Nav  className='nav' >
                     <Nav.Link
-                    style={{ margin: '10px' }} 
+                    className='navLink' 
                     href="#link"
                     >Про Vapa</Nav.Link>
 
                     <Nav.Link
-                    style={{ margin: '10px' }} 
+                    className='navLink' 
                     href="#link"
                     >Контакты</Nav.Link>
 
                     <Nav.Link
-                    style={{ margin: '10px' }} 
+                    className='navLink' 
                     href="#link"
                     >Link</Nav.Link>
 
                     <Nav.Link
-                    style={{ margin: '10px' }} 
+                    className='navLink' 
                     href="#link"
                     >Link</Nav.Link>
                     
                 </Nav>
+                <FiInstagram className='instaIcon' />
         </Navbar>
 )
 }
