@@ -1,0 +1,19 @@
+.navContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #1f1f1f;
+    margin-top: 100px;
+}
+
+.navBody {
+    display: flex;
+    width: 60%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.navBodyLink {
+    color: #708a5e;
+    text-decoration: none;
+}

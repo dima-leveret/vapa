@@ -1,25 +1,37 @@
 .navBar {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     background-color: rgba(31,31,31,0.30);
     padding-top: 2%;
     padding-bottom: 2%;
 }
 
 .navBrand {
-    width: 5%;
+    display: flex;
+    justify-content: center;
+    width: 20px;
+}
+
+.navBrandImage {
+    width: 20px;
 }
 
 .nav {
+    width: 40%;
     display: flex;
-    justify-content: space-around;
-    width: 50%;
+    justify-content: space-between;
+    
 }
 
-.navLink{
-    
+.navLink {
+    font-family: 'FuturaPT',Arial,sans-serif;
+    text-decoration: none;
+    color: #ffffff;
 }    
 
 .instaIcon {
-    
+    font-size: x-large;
+    color: #ffffff;
 }
+

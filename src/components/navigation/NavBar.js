@@ -10,30 +10,25 @@ import VapaLogo from '../../img/vapa_logo.png'
 function NavBar() {
     return(
         <Navbar className='navBar'>
-            <Navbar.Brand href="#home">
-                <img className='navBrand' src={VapaLogo} alt={'vapa_logo'} />
+            <Navbar.Brand className='navBrand' >
+                <img className="navBrandImage" src={VapaLogo} alt={'vapa_logo'} />
             </Navbar.Brand>
                 <Nav  className='nav' >
                     <Nav.Link
                     className='navLink' 
-                    href="#link"
                     >Про Vapa</Nav.Link>
 
                     <Nav.Link
                     className='navLink' 
-                    href="#link"
                     >Контакты</Nav.Link>
 
                     <Nav.Link
                     className='navLink' 
-                    href="#link"
-                    >Link</Nav.Link>
+                    >Партнери</Nav.Link>
 
                     <Nav.Link
                     className='navLink' 
-                    href="#link"
-                    >Link</Nav.Link>
-                    
+                    >Оплата та доставка</Nav.Link>
                 </Nav>
                 <FiInstagram className='instaIcon' />
         </Navbar>
