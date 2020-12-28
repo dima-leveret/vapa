@@ -30,7 +30,9 @@ function NavBar() {
                     className='navLink' 
                     >Оплата та доставка</Nav.Link>
                 </Nav>
+                <a href='https://www.instagram.com/vapa.eco/' target='blank' >
                 <FiInstagram className='instaIcon' />
+                </a>
         </Navbar>
 )
 }
