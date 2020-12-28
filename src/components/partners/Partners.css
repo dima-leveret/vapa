@@ -8,6 +8,7 @@
 }
 
 .partners {
+    width: 100%;
     display: grid;
     grid-template-columns:  repeat(4, 1fr) ;
     grid-template-rows: repeat(2, 1fr);
@@ -17,6 +18,19 @@
 .partners > div {
     display: flex;
     align-items: center;
+    justify-content: center;
     width: 100%;
     height: auto;
+    margin: a;
+}
+
+.partners > div > a {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    width: 50%;
+}
+
+.partners > div > a > img {
+    width: auto;
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import '../navigation/NavBody.css';
+import '../navigation/NavProducts.css';
 
 import Nav from 'react-bootstrap/Nav';
 

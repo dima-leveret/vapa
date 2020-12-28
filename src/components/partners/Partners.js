@@ -6,9 +6,9 @@ function Partners() {
     return(
         <div className='partnersContainer' >
             <div>
-                <h3>
+                <h2>
                     Наші партнери та офлайн крамнички
-                </h3>
+                </h2>
                 <p>
                     Тут ви можете знайти еко товари в своєму місті
                 </p>
@@ -29,7 +29,7 @@ function Partners() {
                         <img src='https://thumb.tildacdn.com/tild3131-3766-4735-a364-333933393561/-/resize/360x/-/format/webp/Zero_Waste_Shop_Lviv.png' alt='instagram => zerowastelviv' />
                     </a>
                 </div>
-                <div>
+                <div >
                     <a href='https://www.instagram.com/gorokh_eco/' target='blank' >
                         <img src='https://thumb.tildacdn.com/tild3235-6633-4161-b865-643635373939/-/resize/360x/-/format/webp/Gorokh.png' alt='instagram => gorokh_eco' />
                     </a>
