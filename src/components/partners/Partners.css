@@ -1,6 +1,6 @@
 .partnersContainer {
     width: 100%;
-    background-color: white;
+    /* background-color: white; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,28 +9,29 @@
 
 .partners {
     width: 100%;
-    display: grid;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    /* display: grid;
     grid-template-columns:  repeat(4, 1fr) ;
     grid-template-rows: repeat(2, 1fr);
-    grid-gap: 1em;
+    grid-gap: 1em; */
 }
 
-.partners > div {
+.partners > span {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: auto;
-    margin: a;
-}
-
-.partners > div > a {
-    display: flex;
-    justify-content: center;
-    align-self: center;
     width: 50%;
 }
 
-.partners > div > a > img {
+/* .partners > div > a {
+    display: flex;
+    justify-content: center;
+    align-self: center;
     width: auto;
-}
+} */
+
+/* .partners > div > a > img {
+    width: 30%;
+} */
