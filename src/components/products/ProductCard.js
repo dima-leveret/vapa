@@ -44,7 +44,8 @@ class ProductCard extends React.Component {
 
     render (){
         return (
-            <div className='cardContainer' >
+            <div className="bobyContainer" >
+                <div className='cardContainer' >
                 {
                     this.state.productList.map(product => (
                     <Card className='card' key={product.id} >
@@ -52,13 +53,15 @@ class ProductCard extends React.Component {
                         <Card.Body>
                             <Card.Title> {product.product} "{product.name}" </Card.Title>
                             <Card.Text> {product.description} </Card.Text>
-                            <Button variant="primary"> В кошик </Button>
+                            
                         </Card.Body>
+                        <Button className="cardButton" > В кошик </Button>
                     </Card>
                     ))
                 }
-                
+                </div>
             </div>
+            
         )
     }
 } 
