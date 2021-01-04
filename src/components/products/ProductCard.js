@@ -13,6 +13,7 @@ class ProductCard extends React.Component {
     state = {
         productList: [],
         show: false,
+        productId: null,
     }
 
     fetchProducts = () => {
@@ -44,11 +45,18 @@ class ProductCard extends React.Component {
         this.fetchProducts()
     }
 
-    openModal = () => {
+    openModal = (oneProductId) => {
         this.setState({
+            productId: oneProductId,
             show: true,
         })
-        console.log('modal');
+    }
+
+    closeModal = () => {
+        this.setState({
+            productId: null,
+            show: false,
+        })
     }
 
     render (){
@@ -57,38 +65,83 @@ class ProductCard extends React.Component {
                 <div className='cardContainer' >
                 {
                     this.state.productList.map(product => (
-                    <Card className='card'  key={product.id} >
+                        this.state.productId === product.id
+
+                     ?<Modal
+                        key={product.id}
+                        size="lg"
+                        aria-labelledby="contained-modal-title-vcenter"
+                        centered
+                        show={this.state.show}
+                        onHide={this.closeModal} 
+                        >
+                        <Modal.Header closeButton>
+                        <Modal.Title> {product.product} "{product.name}" </Modal.Title>
+                        </Modal.Header>
+                        
+                        <Modal.Body>
+                            <p> {product.price} грн. </p> 
+                            <Button className="cardButton" > В кошик </Button>
+                            <hr/>
+                            <strong>
+                                {product.fullDescription}
+                            </strong>
+                            <br/>
+                            <br/>
+                            <p>
+                                {product.details}
+                            </p>
+                            <strong>Спосіб застосування:</strong>
+                            <p>
+                                {product.usage}
+                            </p>
+                            
+                            <strong>
+                                Склад:
+                            </strong>
+                            <p>
+                            {product.structure}
+                            </p>
+                            <strong>
+                                Зберігання:
+                            </strong>
+                            <p>
+                                {product.preservation}
+                            </p>
+                            <strong>
+                                Дата віготовлення:
+                            </strong>
+                            <p>
+                                {product.date}
+                            </p>
+                            <strong>
+                                Об'єм:
+                            </strong>
+                            <p>
+                                {product.size}
+                            </p>
+                        </Modal.Body>
+                        
+                    </Modal>
+
+                     : <Card  className='card'  key={product.id} >
                             <Card.Img variant="top" src={img123} alt='some picture' className='cardImg'/>
                         <Card.Body>
                             <Card.Title> {product.product} "{product.name}" </Card.Title>
                             <Card.Text> {product.description} </Card.Text>
                         </Card.Body>
+                        <p> {product.price} </p>
                         <div>
                             <Button 
-                            onClick={this.openModal}
+                            onClick={() => this.openModal(product.id)}
                             className="cardButton" > Детальніше </Button>
                             <Button className="cardButton" > В кошик </Button>
                         </div>
-                        <Modal show={this.state.show} onHide={this.state.show}>
-                            <Modal.Header closeButton>
-                            <Modal.Title>Modal heading</Modal.Title>
-                            </Modal.Header>
-                            <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
-                            <Modal.Footer>
-                            <Button variant="secondary" onClick={this.state.show}>
-                                Close
-                            </Button>
-                            <Button variant="primary" onClick={this.state.show}>
-                                Save Changes
-                            </Button>
-                            </Modal.Footer>
-                        </Modal>
                     </Card>
                 ))
                 }
                 </div>
             </div>
-            
         )
     }
 } 
