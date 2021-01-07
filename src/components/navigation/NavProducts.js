@@ -4,7 +4,7 @@ import '../navigation/NavProducts.css';
 import Nav from 'react-bootstrap/Nav';
 
 
-function NavBody() {
+function NavProducts() {
     return(
         <div className='navContainer' >
             <Nav className='navBody' >
@@ -38,4 +38,4 @@ function NavBody() {
     
 }
 
-export default NavBody;
+export default NavProducts;

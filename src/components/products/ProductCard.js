@@ -1,6 +1,7 @@
 import React from "react";
 import '../products/ProductCard.css';
 
+import NavProducts from '../navigation/NavProducts'
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import img123 from '../../img/img123.jpg';
@@ -63,6 +64,7 @@ class ProductCard extends React.Component {
         return (
             <div className="bobyContainer" >
                 <div className='cardContainer' >
+                    <NavProducts/>
                 {
                     this.state.productList.map(product => (
                         this.state.productId === product.id

@@ -4,36 +4,74 @@ import { FiInstagram } from 'react-icons/fi';
 
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-import VapaLogo from '../../img/vapa_logo.png'
+import VapaLogo from '../../img/vapa_logo.png';
+import { Switch, Route, Link } from 'react-router-dom';
+
+import AboutVapa from '../content/AboutVapa';
+import Contacts from '../content/Contacts';
+import Partners from '../content/Partners'
+import PaymentAndDelivery from '../content/PaymentAndDelivery';
+import ProductCard from '../products/ProductCard'
+
 
 
 function NavBar() {
     return(
+    <>
         <Navbar className='navBar'>
-            <Navbar.Brand className='navBrand' >
+            <Link to='/productCard' >
+            <Navbar.Brand  className='navBrand' >
                 <img className="navBrandImage" src={VapaLogo} alt={'vapa_logo'} />
             </Navbar.Brand>
+            </Link> 
+            
+            
+            
                 <Nav  className='nav' >
-                    <Nav.Link
-                    className='navLink' 
-                    >Про Vapa</Nav.Link>
+                    <Link className='navLink' to='/aboutVapa' >
+                        Про Vapa
+                    </Link>
+                    
+                    <Link to='/contacts' className='navLink' >
+                        Контакты
+                    </Link>
 
-                    <Nav.Link
-                    className='navLink' 
-                    >Контакты</Nav.Link>
+                    <Link to='/partners' className='navLink' >
+                        Партнери
+                    </Link>
 
-                    <Nav.Link
-                    className='navLink' 
-                    >Партнери</Nav.Link>
-
-                    <Nav.Link
-                    className='navLink' 
-                    >Оплата та доставка</Nav.Link>
+                    <Link to='/paymentAndDelivery' className='navLink' >
+                        Оплата та доставка
+                    </Link>
                 </Nav>
                 <a href='https://www.instagram.com/vapa.eco/' target='blank' >
                 <FiInstagram className='instaIcon' />
                 </a>
         </Navbar>
+
+        <Switch>
+            <Route path='/productCard' >
+                <ProductCard  />
+            </Route>
+
+            <Route path='/aboutVapa' >
+                <AboutVapa />
+            </Route>
+
+            <Route path='/contacts' >
+                <Contacts />
+            </Route>
+
+            <Route path='/partners' >
+                <Partners />
+            </Route>
+
+            <Route path='/paymentAndDelivery' >
+                <PaymentAndDelivery />
+            </Route>
+
+        </Switch>
+    </>
 )
 }
 
