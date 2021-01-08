@@ -1,6 +1,7 @@
 import React from "react";
-import '../products/ProductCard.css';
+import '../products/Home.css';
 
+import Partners from "../partners/Partners";
 import NavProducts from '../navigation/NavProducts'
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
@@ -9,7 +10,7 @@ import Modal from 'react-bootstrap/Modal';
 
 const DATABASE_URL = 'https://dima-leveret-vapa-default-rtdb.firebaseio.com'
 
-class ProductCard extends React.Component {
+class Home extends React.Component {
 
     state = {
         productList: [],
@@ -61,7 +62,7 @@ class ProductCard extends React.Component {
     }
 
     render (){
-        return (
+        return ( <>
             <div className="bobyContainer" >
                 <div className='cardContainer' >
                     <NavProducts/>
@@ -144,8 +145,10 @@ class ProductCard extends React.Component {
                 }
                 </div>
             </div>
+            <Partners/>
+            </>
         )
     }
 } 
 
-export default ProductCard;
+export default Home;

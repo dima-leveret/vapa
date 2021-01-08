@@ -1,0 +1,9 @@
+.footer {
+    display: flex;
+    background-color: #1f1f1f;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+}

@@ -9,9 +9,9 @@ import { Switch, Route, Link } from 'react-router-dom';
 
 import AboutVapa from '../content/AboutVapa';
 import Contacts from '../content/Contacts';
-import Partners from '../content/Partners'
+import PartnersFullVersion from '../content/PartnersFullVersion'
 import PaymentAndDelivery from '../content/PaymentAndDelivery';
-import ProductCard from '../products/ProductCard'
+import Home from '../products/Home'
 
 
 
@@ -19,14 +19,11 @@ function NavBar() {
     return(
     <>
         <Navbar className='navBar'>
-            <Link to='/productCard' >
+            <Link to='/home' >
             <Navbar.Brand  className='navBrand' >
                 <img className="navBrandImage" src={VapaLogo} alt={'vapa_logo'} />
             </Navbar.Brand>
             </Link> 
-            
-            
-            
                 <Nav  className='nav' >
                     <Link className='navLink' to='/aboutVapa' >
                         Про Vapa
@@ -50,8 +47,8 @@ function NavBar() {
         </Navbar>
 
         <Switch>
-            <Route path='/productCard' >
-                <ProductCard  />
+            <Route path='/home' >
+                <Home  />
             </Route>
 
             <Route path='/aboutVapa' >
@@ -63,7 +60,7 @@ function NavBar() {
             </Route>
 
             <Route path='/partners' >
-                <Partners />
+                <PartnersFullVersion />
             </Route>
 
             <Route path='/paymentAndDelivery' >

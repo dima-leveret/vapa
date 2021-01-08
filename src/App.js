@@ -1,17 +1,15 @@
 import './App.css';
 import NavBar from "./components/navigation/NavBar";
-import Partners from "./components/partners/Partners";
-import ProductCard from './components/products/ProductCard';
+import Home from './components/products/Home';
+import Footer from './components/footer/Footer';
 
 function App() {
   return (
     <>
       <NavBar>
-        <ProductCard/>
-        
+        <Home/>
       </NavBar>
-      <Partners/>
-      
+      <Footer/>
     </>
   );
 }
