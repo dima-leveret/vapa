@@ -25,7 +25,7 @@ function NavBar() {
             </Navbar.Brand>
             </Link> 
                 <Nav  className='nav' >
-                    <Link className='navLink' to='/aboutVapa' >
+                    <Link  to='/aboutVapa' className='navLink' >
                         Про Vapa
                     </Link>
                     

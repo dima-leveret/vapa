@@ -1,0 +1,11 @@
+.addButton {
+    background-color:  #1f1f1f;
+    width: 16rem;
+    margin: 22px ;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+}

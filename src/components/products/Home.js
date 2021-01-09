@@ -7,6 +7,7 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import img123 from '../../img/img123.jpg';
 import Modal from 'react-bootstrap/Modal';
+import AddProduct from './AddProduct';
 
 const DATABASE_URL = 'https://dima-leveret-vapa-default-rtdb.firebaseio.com'
 
@@ -143,6 +144,7 @@ class Home extends React.Component {
                     </Card>
                 ))
                 }
+                <AddProduct />
                 </div>
             </div>
             <Partners/>
