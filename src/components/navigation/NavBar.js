@@ -16,62 +16,68 @@ import ShoppingCard from "../shoppingCard/ShoppingCadr"
 
 
 
-function NavBar() {
-    return(
-    <>
-        <Navbar className='navBar'>
-            <Link to='/home' >
-            <Navbar.Brand  className='navBrand' >
-                <img className="navBrandImage" src={VapaLogo} alt={'vapa_logo'} />
-            </Navbar.Brand>
-            </Link> 
-                <Nav  className='nav' >
-                    <Link  to='/aboutVapa' className='navLink' >
-                        Про Vapa
-                    </Link>
-                    
-                    <Link to='/contacts' className='navLink' >
-                        Контакты
-                    </Link>
+ class NavBar extends React.Component {
 
-                    <Link to='/partners' className='navLink' >
-                        Партнери
-                    </Link>
 
-                    <Link to='/paymentAndDelivery' className='navLink' >
-                        Оплата та доставка
-                    </Link>
-                </Nav>
-                <ShoppingCard/>
-                <a href='https://www.instagram.com/vapa.eco/' target='blank' >
-                <FiInstagram className='instaIcon' />
-                </a>
-        </Navbar>
+     render() {
+        return(
+            <>
+                <Navbar className='navBar'>
+                    <Link to='/home' >
+                    <Navbar.Brand  className='navBrand' >
+                        <img className="navBrandImage" src={VapaLogo} alt={'vapa_logo'} />
+                    </Navbar.Brand>
+                    </Link> 
+                        <Nav  className='nav' >
+                            <Link  to='/aboutVapa' className='navLink' >
+                                Про Vapa
+                            </Link>
+                            
+                            <Link to='/contacts' className='navLink' >
+                                Контакты
+                            </Link>
+        
+                            <Link to='/partners' className='navLink' >
+                                Партнери
+                            </Link>
+        
+                            <Link to='/paymentAndDelivery' className='navLink' >
+                                Оплата та доставка
+                            </Link>
+                        </Nav>
+                        <ShoppingCard/>
+                        <a href='https://www.instagram.com/vapa.eco/' target='blank' >
+                        <FiInstagram className='instaIcon' />
+                        </a>
+                </Navbar>
+        
+                <Switch>
+                    <Route exact path='/home' >
+                        <Home  />
+                    </Route>
+        
+                    <Route path='/aboutVapa' >
+                        <AboutVapa />
+                    </Route>
+        
+                    <Route path='/contacts' >
+                        <Contacts />
+                    </Route>
+        
+                    <Route path='/partners' >
+                        <PartnersFullVersion />
+                    </Route>
+        
+                    <Route path='/paymentAndDelivery' >
+                        <PaymentAndDelivery />
+                    </Route>
+        
+                </Switch>
+            </>
+        )
 
-        <Switch>
-            <Route path='/home' >
-                <Home  />
-            </Route>
-
-            <Route path='/aboutVapa' >
-                <AboutVapa />
-            </Route>
-
-            <Route path='/contacts' >
-                <Contacts />
-            </Route>
-
-            <Route path='/partners' >
-                <PartnersFullVersion />
-            </Route>
-
-            <Route path='/paymentAndDelivery' >
-                <PaymentAndDelivery />
-            </Route>
-
-        </Switch>
-    </>
-)
+    }
+    
 }
 
 export default NavBar;
