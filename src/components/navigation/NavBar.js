@@ -11,7 +11,8 @@ import AboutVapa from '../content/AboutVapa';
 import Contacts from '../content/Contacts';
 import PartnersFullVersion from '../content/PartnersFullVersion'
 import PaymentAndDelivery from '../content/PaymentAndDelivery';
-import Home from '../products/Home'
+import Home from '../products/Home';
+import ShoppingCard from "../shoppingCard/ShoppingCadr"
 
 
 
@@ -41,6 +42,7 @@ function NavBar() {
                         Оплата та доставка
                     </Link>
                 </Nav>
+                <ShoppingCard/>
                 <a href='https://www.instagram.com/vapa.eco/' target='blank' >
                 <FiInstagram className='instaIcon' />
                 </a>
