@@ -6,7 +6,23 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
+import firebase from 'firebase';
+
 import { store } from './store';
+
+
+
+const firebaseConfig = {
+    apiKey: "",
+    authDomain: "dima-leveret-vapa.firebaseapp.com",
+    databaseURL: "https://dima-leveret-vapa-default-rtdb.firebaseio.com",
+    projectId: "dima-leveret-vapa",
+    storageBucket: "dima-leveret-vapa.appspot.com",
+    messagingSenderId: "684473262422",
+    appId: ""
+};
+
+firebase.initializeApp(firebaseConfig);
 
 ReactDOM.render(
   <Provider store={store} >

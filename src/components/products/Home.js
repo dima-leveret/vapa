@@ -8,66 +8,67 @@ import Button from 'react-bootstrap/Button';
 import img123 from '../../img/img123.jpg';
 import Modal from 'react-bootstrap/Modal';
 import AddProduct from './AddProduct';
+import Products from './Products'
 
 const DATABASE_URL = 'https://dima-leveret-vapa-default-rtdb.firebaseio.com';
 
 class Home extends React.Component {
 
-    state = {
-        productList: [],
-        show: false,
-        productId: null,
-    }
+    // state = {
+    //     productList: [],
+    //     show: false, 
+    //     productId: null,
+    // }
 
-    fetchProducts = () => {
-        fetch(`${DATABASE_URL}/products.json`)
-        .then(r => r.json())
-        .then(data => {
-            if (!data) {
-                this.setState({
-                    productList: []
-                })
-            } else {
-                const formattedData = Object.keys(data)
-                .map(key => {
-                    return {
-                        id: key,
-                        ...data[key]
-                    }
-                })
-                console.log(formattedData);
-                this.setState({
-                    productList: formattedData
-                })
-            }
+    // fetchProducts = () => {
+    //     fetch(`${DATABASE_URL}/products.json`)
+    //     .then(r => r.json())
+    //     .then(data => {
+    //         if (!data) {
+    //             this.setState({
+    //                 productList: []
+    //             })
+    //         } else {
+    //             const formattedData = Object.keys(data)
+    //             .map(key => {
+    //                 return {
+    //                     id: key,
+    //                     ...data[key]
+    //                 }
+    //             })
+    //             console.log(formattedData);
+    //             this.setState({
+    //                 productList: formattedData
+    //             })
+    //         }
             
-        })
-    }
+    //     })
+    // }
 
-    componentDidMount() {
-        this.fetchProducts()
-    }
+    // componentDidMount() {
+    //     this.fetchProducts()
+    // }
 
-    openModal = (oneProductId) => {
-        this.setState({
-            productId: oneProductId,
-            show: true,
-        })
-    }
+    // openModal = (oneProductId) => {
+    //     this.setState({
+    //         productId: oneProductId,
+    //         show: true,
+    //     })
+    // }
 
-    closeModal = () => {
-        this.setState({
-            productId: null,
-            show: false,
-        })
-    }
+    // closeModal = () => {
+    //     this.setState({
+    //         productId: null,
+    //         show: false,
+    //     })
+    // }
 
     render (){
         return ( <>
             <div className="bobyContainer" >
                 <div className='cardContainer' >
                     <NavProducts/>
-                {
+                {/* {
                     this.state.productList.map(product => (
                         this.state.productId === product.id
 
@@ -143,7 +144,8 @@ class Home extends React.Component {
                         </div>
                     </Card>
                 ))
-                }
+                } */}
+                <Products/>
                 <AddProduct />
                 </div>
             </div>

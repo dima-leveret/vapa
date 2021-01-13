@@ -28,7 +28,7 @@ function AboutVapa({ value, increment, decrement, reset }) {
 
 const mapStateToProps = (state) => {
     return{
-        value: state
+        value: state.counter
     }
 };
 

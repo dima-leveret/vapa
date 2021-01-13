@@ -14,27 +14,27 @@ function Footer() {
     <div>
         <Navbar className='footer'>
             <Link to='/home' >
-            <Navbar.Brand  className='navBrand' >
-                <img className="navBrandImage" src={DarkVapaLogo} alt={'vapa_logo'} />
+            <Navbar.Brand  className='menuBrand' >
+                <img className="menuBrandImage" src={DarkVapaLogo} alt={'vapa_logo'} />
             </Navbar.Brand>
             </Link> 
             <a href='https://www.instagram.com/vapa.eco/' target='blank' >
                 <FiInstagram className='instaIcon' />
             </a>
                 <Nav className='menu' >
-                    <Link className='' to='/aboutVapa' >
+                    <Link className='menuLink' to='/aboutVapa' >
                         Про Vapa
                     </Link>
                     
-                    <Link to='/contacts' className='' >
+                    <Link to='/contacts' className='menuLink' >
                         Контакты
                     </Link>
 
-                    <Link to='/partners' className='' >
+                    <Link to='/partners' className='menuLink' >
                         Партнери
                     </Link>
 
-                    <Link to='/paymentAndDelivery' className='' >
+                    <Link to='/paymentAndDelivery' className='menuLink' >
                         Оплата та доставка
                     </Link>
                 </Nav>

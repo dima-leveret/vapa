@@ -1,9 +1,37 @@
 .footer {
     display: flex;
-    background-color: #1f1f1f;
+    justify-content: space-around;
+    align-items: center;
+    background-color: black;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    
 }
 
 .menu {
+    width: 40%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.menuLink {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.menuBrand {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    width: 20px;
+    
+}
+
+.menuBrandImage {
+    width: 20px;
+}
+
+.instaIcon {
+    font-size: x-large;
+    color: #ffffff;
 }
