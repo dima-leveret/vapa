@@ -24,7 +24,21 @@
     border: none;
 }
 
+.cardButtonP {
+    border: solid 1px red;
+    color: #ffffff;
+    border-radius: 50px;
+    padding: 0;
+    margin: 0 5px;
+    width: 115px;
+}
+
 .cardButton:hover {
     background-color: #8aaa73;
     cursor: pointer;
+}
+
+.buttons {
+    display: flex;
+    text-align: center;
 }

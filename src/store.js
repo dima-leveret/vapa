@@ -3,6 +3,7 @@ import thunk from 'redux-thunk';
 
 import { counter } from './state/counter';
 import { products } from './state/products';
+import { shoppingCard } from './state/shoppingCard';
 
 
 const loggerMiddleware = store => next => action => {
@@ -19,9 +20,10 @@ const middlewareEnhancer = applyMiddleware(thunk, loggerMiddleware);
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const enhancer = composeEnhancers(middlewareEnhancer)
 
-const resucer = combineReducers({
+const resducer = combineReducers({
     counter,
-    products
+    products,
+    shoppingCard
 })
 
-export const store = createStore(resucer, enhancer)
+export const store = createStore(resducer, enhancer) 

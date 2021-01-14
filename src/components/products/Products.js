@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from 'react-redux';
 import '../products/Products.css';
 import { fetchProducts } from '../../state/products';
+import { addToCard, removeFromCard } from '../../state/shoppingCard';
 
 import Card from 'react-bootstrap/Card';
 import Modal from 'react-bootstrap/Modal';
@@ -57,7 +58,9 @@ import { Spinner } from "react-bootstrap";
                     
                     <Modal.Body>
                         <p> {product.price} грн. </p> 
-                        <Button className="cardButton" > В кошик </Button>
+                        <Button 
+                        onClick={() => this.props.addToCard(product)} 
+                        className="cardButton" > В кошик </Button>
                         <hr/>
                         <strong>
                             {product.fullDescription}
@@ -107,11 +110,30 @@ import { Spinner } from "react-bootstrap";
                         <Card.Text> {product.description} </Card.Text>
                     </Card.Body>
                     <p> {product.price} </p>
-                    <div>
-                        <Button 
+                    <div className="buttons" >
+                    <Button 
                         onClick={() => this.openModal(product.id)}
-                        className="cardButton" > Детальніше </Button>
-                        <Button className="cardButton" > В кошик </Button>
+                        className="cardButton" > Детальніше 
+                        </Button>
+                        {
+                            product.amount === 0
+                            ? <p className="cardButtonP" > Немає в наявності </p>
+                            : <div>
+                                {
+                                    this.props.productsInCard.id === product.id
+                                    ? <Button 
+                                    className="cardButton" 
+                                    onClick={() => this.props.removeFromCard(product.id)} 
+                                    > Усунути  </Button>
+                                    : <Button
+                                    className="cardButton" 
+                                    onClick={() => this.props.addToCard(product)}
+                                    > В кошик </Button>
+                                }
+                                
+                            </div>
+                        }
+                        
                     </div>
                 </Card>
             ))
@@ -123,10 +145,13 @@ import { Spinner } from "react-bootstrap";
 const mapStateToProps = (state) => ({
     products: state.products.data,
     isLoading: state.products.isLoading,
+    productsInCard: state.shoppingCard
 })
 
 const mapDispatchToProps = {
-    fetchProducts
+    fetchProducts,
+    addToCard,
+    removeFromCard
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Products)

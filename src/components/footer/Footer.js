@@ -5,7 +5,7 @@ import { FiInstagram } from 'react-icons/fi';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import DarkVapaLogo from '../../img/dark_vapa_logo.svg';
-import { Switch, Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 

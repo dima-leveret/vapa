@@ -32,7 +32,7 @@ const mapStateToProps = (state) => {
     }
 };
 
-// сокращенная версия
+// short version
 // const mapStateToProps = (state) => ({
 //         value: state
 // });  
