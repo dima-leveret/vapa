@@ -23,7 +23,7 @@ const enhancer = composeEnhancers(middlewareEnhancer)
 const resducer = combineReducers({
     counter,
     products,
-    shoppingCard
+    shoppingCard,
 })
 
 export const store = createStore(resducer, enhancer) 

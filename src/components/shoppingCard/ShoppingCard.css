@@ -1,0 +1,15 @@
+.imgInShoppingCard {
+    width: 100%;
+}
+
+/* .shoppingCardTable {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+} */
+
+.totalPrice {
+    display: flex;
+    justify-content: flex-end;
+}

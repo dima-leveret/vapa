@@ -12,7 +12,7 @@ import Contacts from '../content/Contacts';
 import PartnersFullVersion from '../content/PartnersFullVersion'
 import PaymentAndDelivery from '../content/PaymentAndDelivery';
 import Home from '../products/Home';
-import ShoppingCard from "../shoppingCard/ShoppingCadr"
+import ShoppingCard from "../shoppingCard/ShoppingCard"
 
 
 

@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from 'react-redux';
 import '../products/Products.css';
 import { fetchProducts } from '../../state/products';
-import { addToCard, removeFromCard } from '../../state/shoppingCard';
+import { addToCard } from '../../state/shoppingCard';
 
 import Card from 'react-bootstrap/Card';
 import Modal from 'react-bootstrap/Modal';
@@ -34,7 +34,7 @@ import { Spinner } from "react-bootstrap";
             productId: null,
             show: false,
         })
-    }
+    }   
     
     render() {
         return(
@@ -118,22 +118,11 @@ import { Spinner } from "react-bootstrap";
                         {
                             product.amount === 0
                             ? <p className="cardButtonP" > Немає в наявності </p>
-                            : <div>
-                                {
-                                    this.props.productsInCard.id === product.id
-                                    ? <Button 
-                                    className="cardButton" 
-                                    onClick={() => this.props.removeFromCard(product.id)} 
-                                    > Усунути  </Button>
-                                    : <Button
-                                    className="cardButton" 
-                                    onClick={() => this.props.addToCard(product)}
-                                    > В кошик </Button>
-                                }
-                                
-                            </div>
+                            : <Button
+                                className="cardButton" 
+                                onClick={() => this.props.addToCard(product)}
+                              > В кошик </Button>
                         }
-                        
                     </div>
                 </Card>
             ))
@@ -151,7 +140,6 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = {
     fetchProducts,
     addToCard,
-    removeFromCard
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Products)
