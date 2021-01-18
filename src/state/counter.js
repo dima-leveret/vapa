@@ -11,7 +11,7 @@ export const counter = (state = 1, action) => {
         case DECREMENT:
             return state - 1;
         case RESET:
-            return 0
+            return 1
         default:
             return state;
     }
@@ -19,6 +19,18 @@ export const counter = (state = 1, action) => {
 
 //ACTION CREATOR
 
-export const increment = () => ({ type: INCREMENT })
-export const decrement = () => ({ type: DECREMENT })
-export const reset = () => ({ type: RESET })
+export const increment = () => {
+    return (dispatch) => {
+        dispatch({ type: INCREMENT })
+    }
+}
+export const decrement = () => {
+    return (dispatch) => {
+        dispatch({ type: DECREMENT })
+    }
+}
+export const reset = () => {
+    return (dispatch) => {
+        dispatch({ type: RESET })
+    }
+}

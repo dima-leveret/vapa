@@ -116,12 +116,20 @@ import { Spinner } from "react-bootstrap";
                         className="cardButton" > Детальніше 
                         </Button>
                         {
-                            product.amount === 0
+                            product.amount === 0 
                             ? <p className="cardButtonP" > Немає в наявності </p>
-                            : <Button
-                                className="cardButton" 
-                                onClick={() => this.props.addToCard(product)}
-                              > В кошик </Button>
+                            : <div>
+                                {
+                                    this.props.productsInCard.id === product.id
+                                    ? <p>продукт додани до кошика</p>
+                                    : <Button
+                                    className="cardButton" 
+                                    onClick={() => this.props.addToCard(product)}
+                                  > В кошик </Button>
+                                }
+                                
+                            </div>
+                            
                         }
                     </div>
                 </Card>
@@ -136,6 +144,7 @@ const mapStateToProps = (state) => ({
     isLoading: state.products.isLoading,
     productsInCard: state.shoppingCard
 })
+
 
 const mapDispatchToProps = {
     fetchProducts,

@@ -1,10 +1,11 @@
 import React from 'react';
-import './ShoppingCard.css'
 import { connect } from 'react-redux';
 import {RiShoppingBagLine} from 'react-icons/ri';
 import img123 from '../../img/img123.jpg';
 import Counter from './Counter';
 import { removeFromCard } from '../../state/shoppingCard';
+
+import './ShoppingCard.css'
 
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
@@ -16,6 +17,7 @@ class ShoppingCard extends React.Component {
 
     state = {
         isOpen: false,
+        value: 1
     }
 
 
@@ -30,6 +32,7 @@ class ShoppingCard extends React.Component {
             isOpen: false,
         })
     }
+
 
     getTotalPrice = () => {
         return this.props.productsInShoppingCard.reduce((accumulator, current)=> {

@@ -8,6 +8,7 @@ import { reset } from '../../state/counter';
 
 import { connect } from 'react-redux';
 
+
 function Counter({ value, increment, decrement, reset }) {
     console.log(value);
     
