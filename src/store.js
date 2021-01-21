@@ -1,7 +1,6 @@
 import { createStore, combineReducers, applyMiddleware, compose } from "redux";
 import thunk from 'redux-thunk';
 
-import { counter } from './state/counter';
 import { products } from './state/products';
 import { shoppingCard } from './state/shoppingCard';
 
@@ -21,7 +20,6 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const enhancer = composeEnhancers(middlewareEnhancer)
 
 const resducer = combineReducers({
-    counter,
     products,
     shoppingCard,
 })
