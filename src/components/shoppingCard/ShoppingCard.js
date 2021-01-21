@@ -121,7 +121,7 @@ class ShoppingCard extends React.Component {
                         </div>        
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button onClick={this.closeModal}>Замкнути</Button>
+                        <Button onClick={this.closeModal}>Назад</Button>
                         <Button variant='success' >
                             Підсумок та оплата 
                         </Button>
