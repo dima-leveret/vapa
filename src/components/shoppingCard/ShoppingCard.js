@@ -38,7 +38,7 @@ class ShoppingCard extends React.Component {
              return accumulator + current.price;
         }, 0)
     }
-
+    
 
     render() {
         console.log(this.props.productsInShoppingCard);
@@ -76,7 +76,7 @@ class ShoppingCard extends React.Component {
                             </thead>
                             <tbody>
                                 {
-                                    this.props.productsInShoppingCard.map(productInCard => (
+                                    this.props.productsInShoppingCard.map(productInCard => (    
                                         <tr key={this.props.productsInShoppingCard.indexOf(productInCard)} >
                                             <td>
                                                 <Card.Img variant="top" src={img123} alt='some picture' className='imgInShoppingCard'/>
@@ -107,7 +107,7 @@ class ShoppingCard extends React.Component {
 
                                                 </div>
                                             </td>
-                                            <td>{productInCard.price}</td>
+                                            <td> {productInCard.price * productInCard.value}</td>
                                             <td>
                                                 <Button
                                                 className='buttnonInShoppingCard'
