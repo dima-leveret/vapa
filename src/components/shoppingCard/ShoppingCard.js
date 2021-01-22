@@ -17,7 +17,6 @@ class ShoppingCard extends React.Component {
 
     state = {
         isOpen: false,
-        value: 1
     }
 
 
@@ -39,6 +38,7 @@ class ShoppingCard extends React.Component {
              return accumulator + current.price;
         }, 0)
     }
+
 
     render() {
         console.log(this.props.productsInShoppingCard);
@@ -84,6 +84,17 @@ class ShoppingCard extends React.Component {
                                             <td>{productInCard.product} "{productInCard.name}"</td>
                                             <td>
                                                 <div className='counter' >
+                                                    {
+                                                        productInCard.value === 1
+                                                        ?
+                                                        <ButtonGroup>
+                                                        <Button variant='danger' disabled
+                                                        onClick={() => this.props.decrement(productInCard.id)} >minus</Button>
+                                                        <h2 style={{ color: 'black' }} > {productInCard.value} </h2>
+                                                        <Button variant='primary' 
+                                                        onClick={() => this.props.increment(productInCard.id)} >plus</Button>
+                                                    </ButtonGroup>
+                                                    :
                                                     <ButtonGroup>
                                                         <Button variant='danger' 
                                                         onClick={() => this.props.decrement(productInCard.id)} >minus</Button>
@@ -91,6 +102,8 @@ class ShoppingCard extends React.Component {
                                                         <Button variant='primary' 
                                                         onClick={() => this.props.increment(productInCard.id)} >plus</Button>
                                                     </ButtonGroup>
+                                                    }
+                                                    
 
                                                 </div>
                                             </td>
