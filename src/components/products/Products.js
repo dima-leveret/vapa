@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from 'react-redux';
 import '../products/Products.css';
-import { fetchProducts } from '../../state/products';
+import { fetchProducts, products } from '../../state/products';
 import { addToCard } from '../../state/shoppingCard';
 
 import Card from 'react-bootstrap/Card';
@@ -42,7 +42,7 @@ import { Spinner } from "react-bootstrap";
             {this.props.isLoading && <Spinner animation="grow" variant="warning" /> }
             {
                 this.props.products.map(product => (
-                    this.state.productId === product.id
+                    this.state.productId === product.id 
 
                  ?<Modal
                     key={product.id}
@@ -118,18 +118,10 @@ import { Spinner } from "react-bootstrap";
                         {
                             product.amount === 0 
                             ? <p className="cardButtonP" > Немає в наявності </p>
-                            : <div>
-                                {
-                                    this.props.productsInCard.id === product.id
-                                    ? <p>продукт додани до кошика</p>
-                                    : <Button
-                                    className="cardButton" 
-                                    onClick={() => this.props.addToCard(product)}
-                                  > В кошик </Button>
-                                }
-                                
-                            </div>
-                            
+                            : <Button
+                                className="cardButton" 
+                                onClick={() => this.props.addToCard(product)}
+                                > В кошик </Button>
                         }
                     </div>
                 </Card>

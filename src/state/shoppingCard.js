@@ -4,21 +4,22 @@ const REMOVE_FROM_CARD = 'REMOVE_DROM_CARD';
 const INCREMENT = 'INCREMENT';
 const DECREMENT = 'DENCREMENT';
 
+
 //REDUCER
 export const shoppingCard = (state = [], action) => {
     switch(action.type) {
         case ADD_TO_CARD:
-            return [...state, {...action.payload, value: 1}];
+            return [...state, {...action.payload, number: 1}];
         case REMOVE_FROM_CARD:
             return state.filter(product => product.id !== action.payload);
         case INCREMENT:
            return state.map(product => product.id === action.payload 
-            ? { ...product, value: product.value + 1 } 
+            ? { ...product, number: product.number + 1 } 
             : product)
         case DECREMENT:
             return state.map(product => {
                 if (product.id === action.payload) {
-                    return { ...product, value: product.value - 1 }
+                    return { ...product, number: product.number - 1 }
                 } else {
                     return product
                 }

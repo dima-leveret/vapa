@@ -9,6 +9,7 @@ const initialSate = {
 //ACTIONS
 const SET_PRODUCTS = 'SET_PRODUCTS';
 const SET_LOADING = 'SET_LOADING';
+const FILTER_PRODUCTS_BY_TYPE = 'FILTER_PRODUCTS_BY_TYPE';
 
 //REDUCER
 export const products = (state = initialSate, action) => {

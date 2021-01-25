@@ -35,13 +35,18 @@ class ShoppingCard extends React.Component {
 
     getTotalPrice = () => {
         return this.props.productsInShoppingCard.reduce((accumulator, current)=> {
-             return accumulator + current.price;
+             return accumulator + current.price * current.number;
         }, 0)
     }
     
-
+    
+    
     render() {
-        console.log(this.props.productsInShoppingCard);
+        console.log(this.getTotalPrice());
+        let sum = (a, b) => {
+            return a * b
+        }
+        
         return(
             <>
                 <Button  variant="outline-success" size='lg' onClick={this.openModal} >
@@ -76,7 +81,7 @@ class ShoppingCard extends React.Component {
                             </thead>
                             <tbody>
                                 {
-                                    this.props.productsInShoppingCard.map(productInCard => (    
+                                    this.props.productsInShoppingCard.map(productInCard => (  
                                         <tr key={this.props.productsInShoppingCard.indexOf(productInCard)} >
                                             <td>
                                                 <Card.Img variant="top" src={img123} alt='some picture' className='imgInShoppingCard'/>
@@ -85,12 +90,12 @@ class ShoppingCard extends React.Component {
                                             <td>
                                                 <div className='counter' >
                                                     {
-                                                        productInCard.value === 1
+                                                        productInCard.number === 1
                                                         ?
                                                         <ButtonGroup>
                                                         <Button variant='danger' disabled
                                                         onClick={() => this.props.decrement(productInCard.id)} >minus</Button>
-                                                        <h2 style={{ color: 'black' }} > {productInCard.value} </h2>
+                                                        <h2 style={{ color: 'black' }} > {productInCard.number} </h2>
                                                         <Button variant='primary' 
                                                         onClick={() => this.props.increment(productInCard.id)} >plus</Button>
                                                     </ButtonGroup>
@@ -98,16 +103,14 @@ class ShoppingCard extends React.Component {
                                                     <ButtonGroup>
                                                         <Button variant='danger' 
                                                         onClick={() => this.props.decrement(productInCard.id)} >minus</Button>
-                                                        <h2 style={{ color: 'black' }} > {productInCard.value} </h2>
+                                                        <h2 style={{ color: 'black' }} > {productInCard.number} </h2>
                                                         <Button variant='primary' 
                                                         onClick={() => this.props.increment(productInCard.id)} >plus</Button>
                                                     </ButtonGroup>
                                                     }
-                                                    
-
                                                 </div>
                                             </td>
-                                            <td> {productInCard.price * productInCard.value}</td>
+                                            <td> {sum(productInCard.price, productInCard.number)}</td>
                                             <td>
                                                 <Button
                                                 className='buttnonInShoppingCard'
