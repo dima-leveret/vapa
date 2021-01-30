@@ -42,7 +42,6 @@ class ShoppingCard extends React.Component {
     
     
     render() {
-        console.log(this.getTotalPrice());
         let sum = (a, b) => {
             return a * b
         }

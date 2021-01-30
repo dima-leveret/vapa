@@ -21,10 +21,23 @@ function ProductDetailsModal (props) {
         </Modal.Header>
                     
         <Modal.Body>
-          <p> {props.productPrice} грн. </p> 
-          <Button 
-            onClick={() => props.addToCard(props.product)} 
-            className="cardButton" > В кошик </Button>
+          <p> {props.productPrice} грн. </p>
+          {
+            props.productAmount === 0 
+            ? 
+            <p > Немає в наявності </p>
+            : 
+            <div>
+              {
+                props.isProductInCart(props.productId)
+                ? <p>added</p>
+                :<Button
+                  className="cardButton" 
+                  onClick={() => props.addToCard(props.product)}
+                  > В кошик </Button>
+              }
+            </div>
+          }
           <hr/>
           <strong>{props.productFullDescription}</strong>
           <br/>
@@ -40,6 +53,8 @@ function ProductDetailsModal (props) {
           <p>{props.productDate}</p>
           <strong>Об'єм:</strong>
           <p>{props.productSize}</p>
+          <strong>У наявності:</strong>
+          <p>{props.available} шт</p>
         </Modal.Body>
       </Modal>
     );

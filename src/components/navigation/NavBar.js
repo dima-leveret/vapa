@@ -8,7 +8,6 @@ import { FiInstagram } from 'react-icons/fi';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 
-// import VapaLogo from '../../img/vapa_logo.png';
 import DarkVapaLogo from '../../img/dark_vapa_logo.svg';
 
 import AboutVapa from '../content/AboutVapa';
@@ -16,7 +15,7 @@ import Contacts from '../content/Contacts';
 import PartnersFullVersion from '../content/PartnersFullVersion'
 import PaymentAndDelivery from '../content/PaymentAndDelivery';
 
-import Home from '../products/Home';
+import Home from '../home/Home';
 import ShoppingCard from "../shoppingCard/ShoppingCard"
 
 

@@ -32,9 +32,14 @@ import { Spinner } from "react-bootstrap";
             productId: null,
             show: false,
         })
-    }   
+    }
+
+    isProductInCart = (productIdInCart) => {
+        return this.props.productsInCart.some(product => product.id === productIdInCart)
+    }
     
     render() {
+        
         return(
             <>
             {this.props.isLoading && <Spinner animation="grow" variant="warning" /> }
@@ -43,6 +48,7 @@ import { Spinner } from "react-bootstrap";
                     this.state.productId === product.id
                  ? 
                  <ProductDetailsModal
+                    key={product.id}
                     show={this.state.show}
                     onHide={() => this.closeModal()}
                     productProduct={product.product}
@@ -56,19 +62,24 @@ import { Spinner } from "react-bootstrap";
                     productPreservation={product.preservation}
                     productDate={product.date}
                     productSize={product.size}
+                    productAmount={product.amount}
+                    productId={product.id}
+                    isProductInCart={this.isProductInCart}
+                    available={product.amount}
                  
                  />
                  : 
                  <ProductCard
-                 key={product.id} 
-                 productId={product.id}
-                 productProduct={product.product}
-                 productName={product.name}
-                 productDescription={product.description}
-                 productPrice={product.price}
-                 productAmount={product.amount}
-                 product={product}
-                 openModal={() => this.openModal(product.id)}
+                    key={product.id} 
+                    productId={product.id}
+                    productProduct={product.product}
+                    productName={product.name}
+                    productDescription={product.description}
+                    productPrice={product.price}
+                    productAmount={product.amount}
+                    product={product}
+                    openModal={() => this.openModal(product.id)}
+                    isProductInCart={this.isProductInCart}
                  />
             ))
             }
@@ -80,6 +91,7 @@ import { Spinner } from "react-bootstrap";
 const mapStateToProps = (state) => ({
     products: state.products.data,
     isLoading: state.products.isLoading,
+    productsInCart: state.shoppingCard,
 })
 
 
