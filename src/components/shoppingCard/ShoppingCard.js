@@ -42,7 +42,7 @@ class ShoppingCard extends React.Component {
     
     
     render() {
-        let sum = (a, b) => {
+        let oneProductPrice = (a, b) => {
             return a * b
         }
         
@@ -90,12 +90,23 @@ class ShoppingCard extends React.Component {
                                                 <div className='counter' >
                                                     {
                                                         productInCard.number === 1
-                                                        ?
-                                                        <ButtonGroup>
+                                                    ?
+                                                    <ButtonGroup>
                                                         <Button variant='danger' disabled
                                                         onClick={() => this.props.decrement(productInCard.id)} >minus</Button>
                                                         <h2 style={{ color: 'black' }} > {productInCard.number} </h2>
                                                         <Button variant='primary' 
+                                                        onClick={() => this.props.increment(productInCard.id)} >plus</Button>
+                                                    </ButtonGroup>
+                                                    :<div>
+                                                        {
+                                                            productInCard.number === productInCard.amount
+                                                            ?
+                                                        <ButtonGroup>
+                                                        <Button variant='danger' 
+                                                        onClick={() => this.props.decrement(productInCard.id)} >minus</Button>
+                                                        <h2 style={{ color: 'black' }} > {productInCard.number} </h2>
+                                                        <Button variant='primary' disabled
                                                         onClick={() => this.props.increment(productInCard.id)} >plus</Button>
                                                     </ButtonGroup>
                                                     :
@@ -106,10 +117,12 @@ class ShoppingCard extends React.Component {
                                                         <Button variant='primary' 
                                                         onClick={() => this.props.increment(productInCard.id)} >plus</Button>
                                                     </ButtonGroup>
+                                                        }
+                                                    </div>
                                                     }
                                                 </div>
                                             </td>
-                                            <td> {sum(productInCard.price, productInCard.number)}</td>
+                                            <td> {oneProductPrice(productInCard.price, productInCard.number)}</td>
                                             <td>
                                                 <Button
                                                 className='buttnonInShoppingCard'

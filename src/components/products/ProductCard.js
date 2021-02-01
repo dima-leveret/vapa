@@ -33,7 +33,7 @@ function ProductCard (props) {
                         <div>
                             {
                                 props.isProductInCart(props.productId)
-                                ? <p>added</p>
+                                ? <p className="cardButtonP" > Продукт додано </p>
                                 :<Button
                                 className="cardButton" 
                                 onClick={() => props.addToCard(props.product)}

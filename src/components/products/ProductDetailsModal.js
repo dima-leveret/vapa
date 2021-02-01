@@ -2,6 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { addToCard } from '../../state/shoppingCard';
 
+import './ProductDetailsModal.css';
+
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 
@@ -30,7 +32,7 @@ function ProductDetailsModal (props) {
             <div>
               {
                 props.isProductInCart(props.productId)
-                ? <p>added</p>
+                ? <p className="paragraf" > Продукт додано </p>
                 :<Button
                   className="cardButton" 
                   onClick={() => props.addToCard(props.product)}

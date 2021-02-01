@@ -9,6 +9,7 @@ const initialSate = {
 //ACTIONS
 const SET_PRODUCTS = 'SET_PRODUCTS';
 const SET_LOADING = 'SET_LOADING';
+// const SORT_BY_TYPE = 'SORT_BY_TYPE';
 
 //REDUCER
 export const products = (state = initialSate, action) => {
@@ -24,6 +25,11 @@ export const products = (state = initialSate, action) => {
                 ...state,
                 isLoading: true
             }
+        // case SORT_BY_TYPE:
+        //     return {
+        //         ...state,
+        //         data: state.data.filter(product => product.type === action.payload)
+        //     }    
         default:
             return state;
     }
@@ -48,3 +54,53 @@ export const fetchProducts = () => (dispatch) => {
         })
 };
 
+export const sortByTypeHair = () => (dispatch) => {
+    dispatch(setLoading()); 
+    fetch(`${DATABASE_URL}/products.json`)
+        .then(r => r.json())
+        .then(data => {
+            const formattedData = Object.keys(data)
+            .map(key => {
+                return {
+                    id: key,
+                    ...data[key]
+                }
+            })
+            .filter(product => product.type === "hair")
+            dispatch(setProducts(formattedData))
+        })
+}
+
+export const sortByTypeBody = () => (dispatch) => {
+    dispatch(setLoading()); 
+    fetch(`${DATABASE_URL}/products.json`)
+        .then(r => r.json())
+        .then(data => {
+            const formattedData = Object.keys(data)
+            .map(key => {
+                return {
+                    id: key,
+                    ...data[key]
+                }
+            })
+            .filter(product => product.type === "body")
+            dispatch(setProducts(formattedData))
+        })
+}
+
+export const sortByTypeFace = () => (dispatch) => {
+    dispatch(setLoading()); 
+    fetch(`${DATABASE_URL}/products.json`)
+        .then(r => r.json())
+        .then(data => {
+            const formattedData = Object.keys(data)
+            .map(key => {
+                return {
+                    id: key,
+                    ...data[key]
+                }
+            })
+            .filter(product => product.type === "face")
+            dispatch(setProducts(formattedData))
+        })
+}
