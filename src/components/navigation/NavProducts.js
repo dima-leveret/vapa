@@ -1,13 +1,26 @@
 import React from 'react';
 import '../navigation/NavProducts.css';
 
-import { fetchProducts, sortByTypeHair, sortByTypeBody, sortByTypeFace } from '../../state/products';
+import { 
+    fetchProducts, 
+    sortByTypeHair, 
+    sortByTypeFace, 
+    sortByTypeBody, 
+    sortByTypeAccessories,
+    sortByDiscount, } from '../../state/products';
+
 import { connect } from 'react-redux';
 
 import Nav from 'react-bootstrap/Nav';
 
 
-function NavProducts({ fetchProducts, sortByTypeHair, sortByTypeBody, sortByTypeFace }) {
+function NavProducts({ 
+    fetchProducts, 
+    sortByTypeHair, 
+    sortByTypeFace, 
+    sortByTypeBody, 
+    sortByTypeAccessories,
+    sortByDiscount,  }) {
     return(
         <div className='navContainer' >
             <Nav className='navBody' >
@@ -25,11 +38,11 @@ function NavProducts({ fetchProducts, sortByTypeHair, sortByTypeBody, sortByType
                 </Nav.Item>
 
                 <Nav.Item>
-                    <Nav.Link className="navBodyLink" >Аксесуари</Nav.Link>
+                    <Nav.Link onClick={sortByTypeAccessories} className="navBodyLink" >Аксесуари</Nav.Link>
                 </Nav.Item>
 
                 <Nav.Item>
-                    <Nav.Link className="navBodyLink" >Знижки</Nav.Link>
+                    <Nav.Link onClick={sortByDiscount} className="navBodyLink" >Знижки</Nav.Link>
                 </Nav.Item>
 
                 <Nav.Item>
@@ -48,8 +61,10 @@ const mapStateToProps = () => ({
 const mapDispatchToProps = {
     fetchProducts,
     sortByTypeHair,
-    sortByTypeBody,
     sortByTypeFace,
+    sortByTypeBody,
+    sortByTypeAccessories,
+    sortByDiscount,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(NavProducts);

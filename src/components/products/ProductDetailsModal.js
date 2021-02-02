@@ -19,7 +19,7 @@ function ProductDetailsModal (props) {
         onHide={props.onHide} 
        >
         <Modal.Header closeButton>
-          <Modal.Title> {props.productProduct} "{props.productName}" </Modal.Title>
+          <Modal.Title> {props.productProduct} {props.productName} </Modal.Title>
         </Modal.Header>
                     
         <Modal.Body>
@@ -54,7 +54,7 @@ function ProductDetailsModal (props) {
           <strong>Дата віготовлення:</strong>
           <p>{props.productDate}</p>
           <strong>Об'єм:</strong>
-          <p>{props.productSize}</p>
+          <p>{props.productVolume}</p>
           <strong>У наявності:</strong>
           <p>{props.available} шт</p>
         </Modal.Body>

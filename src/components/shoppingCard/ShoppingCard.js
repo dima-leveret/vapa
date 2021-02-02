@@ -100,23 +100,23 @@ class ShoppingCard extends React.Component {
                                                     </ButtonGroup>
                                                     :<div>
                                                         {
-                                                            productInCard.number === productInCard.amount
-                                                            ?
+                                                         productInCard.number === productInCard.amount
+                                                         ?
                                                         <ButtonGroup>
-                                                        <Button variant='danger' 
-                                                        onClick={() => this.props.decrement(productInCard.id)} >minus</Button>
-                                                        <h2 style={{ color: 'black' }} > {productInCard.number} </h2>
-                                                        <Button variant='primary' disabled
-                                                        onClick={() => this.props.increment(productInCard.id)} >plus</Button>
-                                                    </ButtonGroup>
-                                                    :
-                                                    <ButtonGroup>
-                                                        <Button variant='danger' 
-                                                        onClick={() => this.props.decrement(productInCard.id)} >minus</Button>
-                                                        <h2 style={{ color: 'black' }} > {productInCard.number} </h2>
-                                                        <Button variant='primary' 
-                                                        onClick={() => this.props.increment(productInCard.id)} >plus</Button>
-                                                    </ButtonGroup>
+                                                            <Button variant='danger' 
+                                                            onClick={() => this.props.decrement(productInCard.id)} >minus</Button>
+                                                            <h2 style={{ color: 'black' }} > {productInCard.number} </h2>
+                                                            <Button variant='primary' disabled
+                                                            onClick={() => this.props.increment(productInCard.id)} >plus</Button>
+                                                        </ButtonGroup>
+                                                         :
+                                                        <ButtonGroup>
+                                                            <Button variant='danger' 
+                                                            onClick={() => this.props.decrement(productInCard.id)} >minus</Button>
+                                                            <h2 style={{ color: 'black' }} > {productInCard.number} </h2>
+                                                            <Button variant='primary' 
+                                                            onClick={() => this.props.increment(productInCard.id)} >plus</Button>
+                                                        </ButtonGroup>
                                                         }
                                                     </div>
                                                     }

@@ -61,7 +61,7 @@ import { Spinner } from "react-bootstrap";
                     productStructure={product.structure}
                     productPreservation={product.preservation}
                     productDate={product.date}
-                    productSize={product.size}
+                    productVolume={product.volume}
                     productAmount={product.amount}
                     productId={product.id}
                     isProductInCart={this.isProductInCart}
