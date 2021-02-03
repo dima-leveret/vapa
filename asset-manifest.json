@@ -1,25 +1,26 @@
 {
   "files": {
-    "main.css": "/vapa/static/css/main.b8b1bc52.chunk.css",
-    "main.js": "/vapa/static/js/main.bce983d2.chunk.js",
-    "main.js.map": "/vapa/static/js/main.bce983d2.chunk.js.map",
-    "runtime-main.js": "/vapa/static/js/runtime-main.e4602a73.js",
-    "runtime-main.js.map": "/vapa/static/js/runtime-main.e4602a73.js.map",
-    "static/js/2.dee2ef2f.chunk.js": "/vapa/static/js/2.dee2ef2f.chunk.js",
-    "static/js/2.dee2ef2f.chunk.js.map": "/vapa/static/js/2.dee2ef2f.chunk.js.map",
-    "static/js/3.445e9a9a.chunk.js": "/vapa/static/js/3.445e9a9a.chunk.js",
-    "static/js/3.445e9a9a.chunk.js.map": "/vapa/static/js/3.445e9a9a.chunk.js.map",
+    "main.css": "/vapa/static/css/main.4b035607.chunk.css",
+    "main.js": "/vapa/static/js/main.e7ac38d1.chunk.js",
+    "main.js.map": "/vapa/static/js/main.e7ac38d1.chunk.js.map",
+    "runtime-main.js": "/vapa/static/js/runtime-main.1ba968c2.js",
+    "runtime-main.js.map": "/vapa/static/js/runtime-main.1ba968c2.js.map",
+    "static/js/2.5cb15afd.chunk.js": "/vapa/static/js/2.5cb15afd.chunk.js",
+    "static/js/2.5cb15afd.chunk.js.map": "/vapa/static/js/2.5cb15afd.chunk.js.map",
+    "static/js/3.b152ede0.chunk.js": "/vapa/static/js/3.b152ede0.chunk.js",
+    "static/js/3.b152ede0.chunk.js.map": "/vapa/static/js/3.b152ede0.chunk.js.map",
     "index.html": "/vapa/index.html",
-    "static/css/main.b8b1bc52.chunk.css.map": "/vapa/static/css/main.b8b1bc52.chunk.css.map",
-    "static/js/2.dee2ef2f.chunk.js.LICENSE.txt": "/vapa/static/js/2.dee2ef2f.chunk.js.LICENSE.txt",
+    "static/css/main.4b035607.chunk.css.map": "/vapa/static/css/main.4b035607.chunk.css.map",
+    "static/js/2.5cb15afd.chunk.js.LICENSE.txt": "/vapa/static/js/2.5cb15afd.chunk.js.LICENSE.txt",
     "static/media/App.css": "/vapa/static/media/background1.1e415bb8.jpg",
     "static/media/dark_vapa_logo.bf35dbe4.svg": "/vapa/static/media/dark_vapa_logo.bf35dbe4.svg",
-    "static/media/img123.da3d51cd.jpg": "/vapa/static/media/img123.da3d51cd.jpg"
+    "static/media/img123.da3d51cd.jpg": "/vapa/static/media/img123.da3d51cd.jpg",
+    "static/media/img223.5ba66f7a.jpg": "/vapa/static/media/img223.5ba66f7a.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.e4602a73.js",
-    "static/js/2.dee2ef2f.chunk.js",
-    "static/css/main.b8b1bc52.chunk.css",
-    "static/js/main.bce983d2.chunk.js"
+    "static/js/runtime-main.1ba968c2.js",
+    "static/js/2.5cb15afd.chunk.js",
+    "static/css/main.4b035607.chunk.css",
+    "static/js/main.e7ac38d1.chunk.js"
   ]
 }
