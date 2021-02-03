@@ -12,7 +12,7 @@ import DarkVapaLogo from '../../img/dark_vapa_logo.svg';
 
 import AboutVapa from '../content/AboutVapa';
 import Contacts from '../content/Contacts';
-import PartnersFullVersion from '../content/PartnersFullVersion'
+import Partners from "../partners/Partners";
 import PaymentAndDelivery from '../content/PaymentAndDelivery';
 
 import Home from '../home/Home';
@@ -67,7 +67,7 @@ import ShoppingCard from "../shoppingCard/ShoppingCard"
                 </Route>
         
                 <Route path='/partners' >
-                    <PartnersFullVersion />
+                    <Partners />
                 </Route>
         
                 <Route path='/paymentAndDelivery' >
