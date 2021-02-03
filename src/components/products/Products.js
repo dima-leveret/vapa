@@ -66,6 +66,7 @@ import { Spinner } from "react-bootstrap";
                     productId={product.id}
                     isProductInCart={this.isProductInCart}
                     available={product.amount}
+                    productType={product.type}
                  
                  />
                  : 

@@ -7,7 +7,8 @@ import {
     sortByTypeFace, 
     sortByTypeBody, 
     sortByTypeAccessories,
-    sortByDiscount, } from '../../state/products';
+    sortByDiscount,
+    sortByComplex, } from '../../state/products';
 
 import { connect } from 'react-redux';
 
@@ -20,7 +21,8 @@ function NavProducts({
     sortByTypeFace, 
     sortByTypeBody, 
     sortByTypeAccessories,
-    sortByDiscount,  }) {
+    sortByDiscount,
+    sortByComplex,  }) {
     return(
         <div className='navContainer' >
             <Nav className='navBody' >
@@ -46,7 +48,7 @@ function NavProducts({
                 </Nav.Item>
 
                 <Nav.Item>
-                    <Nav.Link className="navBodyLink" >Комплекс</Nav.Link>
+                    <Nav.Link onClick={sortByComplex} className="navBodyLink" >Комплекс</Nav.Link>
                 </Nav.Item>
             </Nav>
         </div>
@@ -65,6 +67,7 @@ const mapDispatchToProps = {
     sortByTypeBody,
     sortByTypeAccessories,
     sortByDiscount,
+    sortByComplex,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(NavProducts);

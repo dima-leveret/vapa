@@ -133,3 +133,20 @@ export const sortByDiscount = () => (dispatch) => {
             dispatch(setProducts(formattedData))
         })
 }
+
+export const sortByComplex = () => (dispatch) => {
+    dispatch(setLoading()); 
+    fetch(`${DATABASE_URL}/products.json`)
+        .then(r => r.json())
+        .then(data => {
+            const formattedData = Object.keys(data)
+            .map(key => {
+                return {
+                    id: key,
+                    ...data[key]
+                }
+            })
+            .filter(product => product.complex === true)
+            dispatch(setProducts(formattedData))
+        })
+}
