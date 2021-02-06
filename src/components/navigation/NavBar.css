@@ -10,12 +10,11 @@
 .navBrand {
     display: flex;
     justify-content: center;
-    width: 20px;
-    
+    width: 50%;
 }
 
 .navBrandImage {
-    width: 20px;
+    width: 100%;
 }
 
 .nav {

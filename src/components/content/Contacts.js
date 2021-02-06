@@ -22,11 +22,11 @@ function Contacts() {
             </div>
             <div className="ContactsInfo" >
                 <div>
-                    <h1> Контакти: </h1>
+                    <h1> Contacts: </h1>
                     <h3> +38 063 497 03 20 </h3>
                     <h3> info@vapa.com.ua </h3>
-                    <h4> бул. Шевченка 345/1, Черкаси, Україна </h4>
-                    <h4> Якщо у вас є запитання, пишіть мені - з радістю відповім) </h4>
+                    <h4> blvd. Shewchenka 345/1, Cherassy, Ukraine </h4>
+                    <h4> Have some questions? Just let me know </h4>
 
                     <a href='https://www.instagram.com/vapa.eco/' target='blank' >
                         <FiInstagram className='instaIcon' />

@@ -23,20 +23,20 @@ function ProductDetailsModal (props) {
         </Modal.Header>
                     
         <Modal.Body>
-          <p> {props.productPrice} грн. </p>
+          <p> {props.productPrice} UAH </p>
           {
             props.productAmount === 0 
             ? 
-            <p > Немає в наявності </p>
+            <p style={{ color: 'red' }} > Not available </p>
             : 
             <div>
               {
                 props.isProductInCart(props.productId)
-                ? <p className="paragraf" > Продукт додано </p>
+                ? <p className="paragraf" > Product added </p>
                 :<Button
                   className="cardButton" 
                   onClick={() => props.addToCard(props.product)}
-                  > В кошик </Button>
+                  > Add to cart </Button>
               }
             </div>
           }
@@ -45,18 +45,18 @@ function ProductDetailsModal (props) {
           <br/>
           <br/>
           <p>{props.productDetails}</p>
-          <strong>Спосіб застосування:</strong>
+          <strong>How to use:</strong>
           <p>{props.productUsage}</p>
-          <strong>Склад:</strong>
+          <strong>Structure:</strong>
           <p>{props.productStructure}</p>
-          <strong>Зберігання:</strong>
+          <strong>Preservation:</strong>
           <p>{props.productPreservation}</p>
-          <strong>Дата віготовлення:</strong>
+          <strong>Date:</strong>
           <p>{props.productDate}</p>
-          <strong>Об'єм:</strong>
+          <strong>Volume:</strong>
           <p>{props.productVolume}</p>
-          <strong>У наявності:</strong>
-          <p>{props.available} шт</p>
+          <strong>Is available:</strong>
+          <p>{props.available} units</p>
         </Modal.Body>
       </Modal>
     );

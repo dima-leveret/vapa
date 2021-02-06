@@ -19,25 +19,25 @@ function ProductCard (props) {
                 <Card.Title> {props.productProduct} { props.productName} </Card.Title>
                 <Card.Text> { props.productDescription} </Card.Text>
             </Card.Body>
-            <p> {props.productPrice} грн </p>
+            <p> {props.productPrice} UAH </p>
             <div className="buttons" >
                 <Button 
                 onClick={props.openModal}
-                className="cardButton" > Детальніше 
+                className="cardButton" > Details 
                 </Button>
                     {
                         props.productAmount === 0 
                         ? 
-                        <p className="cardButtonP" > Немає в наявності </p>
+                        <p className="cardButtonP" > Not available </p>
                         : 
                         <div>
                             {
                                 props.isProductInCart(props.productId)
-                                ? <p className="cardButtonP" > Продукт додано </p>
+                                ? <p className="cardButtonP" > Product added </p>
                                 :<Button
                                 className="cardButton" 
                                 onClick={() => props.addToCard(props.product)}
-                                > В кошик </Button>
+                                > Add to cart </Button>
                             }
                         </div>      
                     }

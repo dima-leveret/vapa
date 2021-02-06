@@ -23,19 +23,19 @@ function Footer() {
             </a>
                 <Nav className='menu' >
                     <Link className='menuLink' to='/aboutVapa' >
-                        Про Vapa
+                        About Vapa
                     </Link>
                     
                     <Link to='/contacts' className='menuLink' >
-                        Контакты
+                        Contacts
                     </Link>
 
                     <Link to='/partners' className='menuLink' >
-                        Партнери
+                        Partners
                     </Link>
 
                     <Link to='/paymentAndDelivery' className='menuLink' >
-                        Оплата та доставка
+                        Payment and delivery
                     </Link>
                 </Nav>
                 

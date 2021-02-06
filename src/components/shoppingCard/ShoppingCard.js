@@ -60,11 +60,11 @@ class ShoppingCard extends React.Component {
                     onHide={this.closeModal} 
                     >
                     <Modal.Header closeButton>
-                    <Modal.Title> Ваше замовлення </Modal.Title>
+                    <Modal.Title> Your order </Modal.Title>
                     </Modal.Header>
                         
                     <Modal.Body>
-                        Список замовлень:
+                        Products list:
                         {
                             this.props.productsInShoppingCard.length > 0
                             ? (
@@ -93,10 +93,10 @@ class ShoppingCard extends React.Component {
                                                     ?
                                                     <ButtonGroup>
                                                         <Button variant='danger' disabled
-                                                        onClick={() => this.props.decrement(productInCard.id)} >minus</Button>
+                                                        onClick={() => this.props.decrement(productInCard.id)} >-</Button>
                                                         <h2 style={{ color: 'black' }} > {productInCard.number} </h2>
                                                         <Button variant='primary' 
-                                                        onClick={() => this.props.increment(productInCard.id)} >plus</Button>
+                                                        onClick={() => this.props.increment(productInCard.id)} >+</Button>
                                                     </ButtonGroup>
                                                     :<div>
                                                         {
@@ -104,18 +104,18 @@ class ShoppingCard extends React.Component {
                                                          ?
                                                         <ButtonGroup>
                                                             <Button variant='danger' 
-                                                            onClick={() => this.props.decrement(productInCard.id)} >minus</Button>
+                                                            onClick={() => this.props.decrement(productInCard.id)} >-</Button>
                                                             <h2 style={{ color: 'black' }} > {productInCard.number} </h2>
                                                             <Button variant='primary' disabled
-                                                            onClick={() => this.props.increment(productInCard.id)} >plus</Button>
+                                                            onClick={() => this.props.increment(productInCard.id)} >+</Button>
                                                         </ButtonGroup>
                                                          :
                                                         <ButtonGroup>
                                                             <Button variant='danger' 
-                                                            onClick={() => this.props.decrement(productInCard.id)} >minus</Button>
+                                                            onClick={() => this.props.decrement(productInCard.id)} >-</Button>
                                                             <h2 style={{ color: 'black' }} > {productInCard.number} </h2>
                                                             <Button variant='primary' 
-                                                            onClick={() => this.props.increment(productInCard.id)} >plus</Button>
+                                                            onClick={() => this.props.increment(productInCard.id)} >+</Button>
                                                         </ButtonGroup>
                                                         }
                                                     </div>
@@ -128,7 +128,7 @@ class ShoppingCard extends React.Component {
                                                 className='buttnonInShoppingCard'
                                                 variant='danger'
                                                 onClick={() => this.props.removeFromCard(productInCard.id)} 
-                                                > Усунути  </Button>
+                                                > Remove  </Button>
                                             </td>
                                         </tr>
                                     ))
@@ -138,20 +138,20 @@ class ShoppingCard extends React.Component {
                             </Table>
                             )
                             : <p>
-                                Твій кошик порожній :(
+                                Your cart is empty :(
                             </p>
                         }
                         
                         <div className="totalPrice" >
                             <h2 >
-                                Сума: <Badge variant='info' > {this.getTotalPrice()} </Badge> грн
+                                Sum: <Badge variant='info' > {this.getTotalPrice()} </Badge> UAH
                             </h2>
                         </div>        
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button onClick={this.closeModal}>Назад</Button>
+                        <Button onClick={this.closeModal}>Back</Button>
                         <Button variant='success' >
-                            Підсумок та оплата 
+                            Result and payment
                         </Button>
                     </Modal.Footer>
 
