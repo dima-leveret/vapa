@@ -25,7 +25,7 @@ function ProductDetailsModal (props) {
         <Modal.Body>
           <p> {props.productPrice} UAH </p>
           {
-            props.productAmount === 0 
+            props.productAmount == '0' 
             ? 
             <p style={{ color: 'red' }} > Not available </p>
             : 

@@ -54,9 +54,7 @@ import ShoppingCard from "../shoppingCard/ShoppingCard"
             </Navbar>
         
             <Switch>
-                <Route exact path='/home' >
-                    <Home  />
-                </Route>
+                <Route exact path='/home' />
         
                 <Route path='/aboutVapa' >
                     <AboutVapa />

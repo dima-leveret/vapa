@@ -89,7 +89,7 @@ class ShoppingCard extends React.Component {
                                             <td>
                                                 <div className='counter' >
                                                     {
-                                                        productInCard.number === 1
+                                                        productInCard.number == '1'
                                                     ?
                                                     <ButtonGroup>
                                                         <Button variant='danger' disabled
@@ -100,7 +100,7 @@ class ShoppingCard extends React.Component {
                                                     </ButtonGroup>
                                                     :<div>
                                                         {
-                                                         productInCard.number === productInCard.amount
+                                                         productInCard.number == productInCard.amount
                                                          ?
                                                         <ButtonGroup>
                                                             <Button variant='danger' 

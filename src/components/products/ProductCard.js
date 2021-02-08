@@ -26,7 +26,7 @@ function ProductCard (props) {
                 className="cardButton" > Details 
                 </Button>
                     {
-                        props.productAmount === 0 
+                        props.productAmount == '0' 
                         ? 
                         <p className="cardButtonP" > Not available </p>
                         : 

@@ -9,10 +9,10 @@ function PaymentAndDelivery() {
             <div className="PaDcontainer" >  
                 <div className='PaDhead' >
                     <h1>
-                        Оплата та доставка
+                        Payment and delivery
                     </h1>
                     <h4>
-                        Як замовити, оплатити та отримати?
+                        How to order, pay and get?
                     </h4>
                 </div>
                 <div>

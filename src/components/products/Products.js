@@ -35,7 +35,7 @@ import { Spinner } from "react-bootstrap";
     }
 
     isProductInCart = (productIdInCart) => {
-        return this.props.productsInCart.some(product => product.id === productIdInCart)
+        return this.props.productsInCart.some(product => product.id == productIdInCart)
     }
     
     render() {
@@ -45,7 +45,7 @@ import { Spinner } from "react-bootstrap";
             {this.props.isLoading && <Spinner animation="grow" variant="warning" /> }
             {
                 this.props.products.map(product => (
-                    this.state.productId === product.id
+                    this.state.productId == product.id
                  ? 
                  <ProductDetailsModal
                     key={product.id}
