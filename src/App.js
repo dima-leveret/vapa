@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <NavBar/>
-      <Home/>
+      {/* <Home/> */}
       <Footer/>
     </>
   );

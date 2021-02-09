@@ -15,8 +15,8 @@ import Contacts from '../content/Contacts';
 import Partners from "../partners/Partners";
 import PaymentAndDelivery from '../content/PaymentAndDelivery';
 
-import Home from '../home/Home';
 import ShoppingCard from "../shoppingCard/ShoppingCard"
+import Home from '../home/Home';
 
 
 
@@ -54,7 +54,9 @@ import ShoppingCard from "../shoppingCard/ShoppingCard"
             </Navbar>
         
             <Switch>
-                <Route exact path='/home' />
+                <Route exact path='/home' >
+                    <Home/>
+                </Route>
         
                 <Route path='/aboutVapa' >
                     <AboutVapa />

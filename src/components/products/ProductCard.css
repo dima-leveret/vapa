@@ -44,3 +44,12 @@
     align-items: center;
 }
 
+.cardButtonED {
+    background-color: gray;
+    color: #ffffff;
+    border-radius: 50px;
+    padding: 13px;
+    margin: 5px 5px;
+    width: 115px;
+    border: none;
+}

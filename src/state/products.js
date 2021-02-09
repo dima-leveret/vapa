@@ -150,3 +150,12 @@ export const sortByComplex = () => (dispatch) => {
             dispatch(setProducts(formattedData))
         })
 }
+
+export const deleteProduct = (productId) => (dispatch) => {
+    dispatch(setLoading());
+    fetch(`${DATABASE_URL}/products/${productId}.json`, {
+        method: 'DELETE'
+    }).then(() => {
+        dispatch(fetchProducts())
+    })
+}

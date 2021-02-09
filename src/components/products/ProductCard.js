@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { addToCard } from '../../state/shoppingCard';
+import { fetchProducts, deleteProduct } from '../../state/products';
 
 import './ProductCard.css';
 
@@ -25,23 +26,34 @@ function ProductCard (props) {
                 onClick={props.openModal}
                 className="cardButton" > Details 
                 </Button>
-                    {
-                        props.productAmount == '0' 
-                        ? 
-                        <p className="cardButtonP" > Not available </p>
-                        : 
-                        <div>
-                            {
-                                props.isProductInCart(props.productId)
-                                ? <p className="cardButtonP" > Product added </p>
-                                :<Button
-                                className="cardButton" 
-                                onClick={() => props.addToCard(props.product)}
-                                > Add to cart </Button>
-                            }
-                        </div>      
-                    }
-                </div>
+                {
+                    props.productAmount == '0' 
+                    ? 
+                    <p className="cardButtonP" > Not available </p>
+                    : 
+                    <div>
+                        {
+                            props.isProductInCart(props.productId)
+                            ? <p className="cardButtonP" > Product added </p>
+                            :<Button
+                            className="cardButton" 
+                            onClick={() => props.addToCard(props.product)}
+                            > Add to cart </Button>
+                        }
+                    </div>      
+                }
+            </div>
+            <div className='buttons' >
+                <Button
+                className="cardButtonED"
+                >Edit</Button>
+
+                <Button
+                className="cardButtonED"
+                onClick={() => props.deleteProduct(props.productId)}
+                >Delete</Button>
+
+            </div>
         </Card>
         )
     }
@@ -54,6 +66,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = {
     addToCard,
+    deleteProduct
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProductCard);
