@@ -4,38 +4,54 @@ import './Products.css';
 import { fetchProducts } from '../../state/products';
 
 import ProductCard from "./ProductCard";
-import ProductDetailsModal from "./ProductDetailsModal";
+// import ProductDetailsModal from "./ProductDetailsModal";
 
 import { Spinner } from "react-bootstrap";
 
 
  class Products extends React.Component {
 
-    state = {
-        show: false, 
-        productId: null,
-    }
+    // state = {
+    //     showDetails: false, 
+    //     productId: null,
+    //     showEdit: false, 
+    //     editId: null, 
+    // }
 
     componentDidMount(){
          this.props.fetchProducts();
      }
 
-    openModal = (oneProductId) => {
-        this.setState({
-            productId: oneProductId,
-            show: true,
-        })
-    }
+    // openModalDetails = (oneProductId) => {
+    //     this.setState({
+    //         productId: oneProductId,
+    //         showDetails: true,
+    //     })
+    // }
 
-    closeModal = () => {
-        this.setState({
-            productId: null,
-            show: false,
-        })
-    }
+    // closeModalDetails = () => {
+    //     this.setState({
+    //         productId: null,
+    //         showDetails: false,
+    //     })
+    // }
+
+    // openModalEdit = (oneProductId) => {
+    //     this.setState({
+    //         editId: oneProductId,
+    //         showEdit: true,
+    //     })
+    // }
+
+    // closeModalEdit = () => {
+    //     this.setState({
+    //         editId: null,
+    //         showEdit: false,
+    //     })
+    // }
 
     isProductInCart = (productIdInCart) => {
-        return this.props.productsInCart.some(product => product.id == productIdInCart)
+        return this.props.productsInCart.some(product => product.id === productIdInCart)
     }
     
     render() {
@@ -45,42 +61,62 @@ import { Spinner } from "react-bootstrap";
             {this.props.isLoading && <Spinner animation="grow" variant="warning" /> }
             {
                 this.props.products.map(product => (
-                    this.state.productId == product.id
-                 ? 
-                 <ProductDetailsModal
+                    // this.state.productId === product.id
+                //  ? 
+                //  <ProductDetailsModal
+                //     key={product.id}
+                //     show={this.state.showDetails}
+                //     onHide={() => this.closeModalDetails()}
+                //     isProductInCart={this.isProductInCart}
+
+                //     product={product}
+
+                //     productProduct={product.product}
+                //     productName={product.name}
+                //     productPrice={product.price}
+                //     productFullDescription={product.fullDescription}
+                //     productDetails={product.details}
+                //     productUsage={product.usage}
+                //     productStructure={product.structure}
+                //     productPreservation={product.preservation}
+                //     productDate={product.date}
+                //     productVolume={product.volume}
+                //     productAmount={product.amount}
+                //     productId={product.id}
+                //     available={product.amount}
+                //     productType={product.type}
+                 
+                //  />
+                //  : 
+                 <ProductCard
                     key={product.id}
-                    show={this.state.show}
-                    onHide={() => this.closeModal()}
+                    product={product}
+
+                    productId={product.id}
                     productProduct={product.product}
                     productName={product.name}
-                    productPrice={product.price}
-                    product={product}
+                    productDescription={product.description}
                     productFullDescription={product.fullDescription}
+                    productPrice={product.price}
+                    productNewPrice={product.newPrice}
+                    productAmount={product.amount}
                     productDetails={product.details}
                     productUsage={product.usage}
                     productStructure={product.structure}
                     productPreservation={product.preservation}
                     productDate={product.date}
                     productVolume={product.volume}
-                    productAmount={product.amount}
-                    productId={product.id}
-                    isProductInCart={this.isProductInCart}
                     available={product.amount}
                     productType={product.type}
-                 
-                 />
-                 : 
-                 <ProductCard
-                    key={product.id} 
-                    productId={product.id}
-                    productProduct={product.product}
-                    productName={product.name}
-                    productDescription={product.description}
-                    productPrice={product.price}
-                    productAmount={product.amount}
-                    product={product}
-                    openModal={() => this.openModal(product.id)}
+                    productComplex={product.complex}
+                    productDiscount={product.discount}
+                    productSize={product.size}
+                    
+
+                    // openModalDetails={() => this.openModalDetails(product.id)}
                     isProductInCart={this.isProductInCart}
+
+
                  />
             ))
             }

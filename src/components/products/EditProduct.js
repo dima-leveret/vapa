@@ -1,8 +1,8 @@
 import React from 'react';
+
 import { connect } from 'react-redux';
 import { fetchProducts } from '../../state/products';
 
-import  './AddProduct.css';
 
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
@@ -10,77 +10,33 @@ import Form from 'react-bootstrap/Form';
 
 const DATABASE_URL = 'https://dima-leveret-vapa-default-rtdb.firebaseio.com';
 
-class AddProduct extends React.Component {
+
+class EditProduct extends React.Component {
+
 
     state = {
-        open: false,
-
-        amount: 0,
-        complex: false,
-        date: '',
-        description: '',
-        details: '',
-        discount: false,
-        fullDescription: '',
-        name: '',
-        newPrice: 0,
-        preservation: '',
-        price: 0,
-        structure: '',
-        size: '',
-        type: '',
-        usage: '',
-        volume: 0,
-        product: '',
-    }
-
-    openModal = () => {
-        this.setState({
-            open: true,
-        })
-    }
-    
-    closeModal = () => {
-        this.setState({
-            open: false,
-        })
+        amount: this.props.productAmount,
+        complex: this.props.productComplex,
+        date: this.props.productDate,
+        description: this.props.productDescription,
+        details: this.props.productDetails,
+        discount: this.props.productDiscount,
+        fullDescription: this.props.productFullDescription,
+        name: this.props.productName,
+        newPrice: this.props.productNewPrice,
+        preservation: this.props.productPreservation,
+        price: this.props.productPrice,
+        structure: this.props.productStructure,
+        size: this.props.productSize,
+        type: this.props.productType,
+        usage: this.props.productUsage,
+        volume:this.props.productVolume,
+        product: this.props.productProduct
     }
 
     handleOnChange = (event) => {
         this.setState({
             [event.target.name]: event.target.value
-        })
-    }
-
-    handleOnSubmit = (event) => {
-        event.preventDefault();
-
-        const newProduct = {
-            amount: this.state.amount,
-            complex: this.state.complex,
-            date: this.state.date,
-            description: this.state.description,
-            details: this.state.details,
-            discount: this.state.discount,
-            fullDescription: this.state.fullDescription,
-            name: this.state.name,
-            newPrice: this.state.newPrice,
-            preservation: this.state.preservation,
-            price: this.state.price,
-            structure: this.state.structure,
-            size: this.state.size,
-            type: this.state.type,
-            usage: this.state.usage,
-            volume: this.state.volume,
-            product: this.state.product
-        }
-
-        fetch(`${DATABASE_URL}/products.json`, {
-            method: 'POST',
-            body: JSON.stringify(newProduct)
-        }).then(() => {
-            this.closeModal();
-            this.props.fetchProducts()
         })
     }
 
@@ -96,32 +52,34 @@ class AddProduct extends React.Component {
         })
     }
 
-    render (){
-        return(
-            <>
-               <Button 
-               variant="outline-success" 
-               className="addButton"
-               onClick={() => this.openModal()} 
-               > 
-                Add new product 
-               </Button>
+    handleOnSave = () => {
+        fetch(`${DATABASE_URL}/products/${this.props.productId}.json`, {
+            method: 'PUT',
+            body: JSON.stringify(this.state)
+        }).then(() => {
+            this.props.closeModalEdit();
+            this.props.fetchProducts()
+        })
+    }
 
-               <Modal
-                        
+
+    render() {
+        return (
+            <>
+               <Modal     
                     size="lg"
                     aria-labelledby="contained-modal-title-vcenter"
                     centered
-                    show={this.state.open}
-                    onHide={this.closeModal} 
+                    show={this.props.show}
+                    onHide={this.props.onHide}  
                     >
                     <Modal.Header closeButton>
-                    <Modal.Title> Add new product </Modal.Title>
+                    <Modal.Title> Edit the product {this.props.productName} </Modal.Title>
                     </Modal.Header>
                         
                     <Modal.Body>
 
-                        <Form onSubmit={this.handleOnSubmit} >
+                        <Form >
                             <Form.Group controlId="exampleForm.ControlInput1">
                                 <Form.Label>Product name</Form.Label>
                                 <Form.Control 
@@ -218,7 +176,7 @@ class AddProduct extends React.Component {
                                 type="text" 
                                 name="volume" 
                                 onChange={this.handleOnChange}
-                                value={this.state.value}
+                                value={this.state.volume}
                                 />
 
                                 <Form.Label>Amount</Form.Label>
@@ -252,13 +210,15 @@ class AddProduct extends React.Component {
                                 label='discount'
                                 name="discount"
                                 onChange={() => this.discountChange(this.state.discount)}
+                                checked={this.state.discount}
                                 value={this.state.discount}
                             />
                             <Form.Check 
                                 type='checkbox'
                                 label='complex'
                                 name="complex"
-                                onChange={() => this.complexChange(this.state.complex)}
+                                onChange={() =>  this.complexChange(this.state.complex)}
+                                checked={this.state.complex}
                                 value={this.state.complex}
                             />
                             </Form.Group>
@@ -283,9 +243,17 @@ class AddProduct extends React.Component {
                             <Button 
                             variant="outline-success" 
                             className="addButton" 
-                            type='submit'
+                            onClick={this.handleOnSave}
                             > 
-                                Add  
+                                Save  
+                            </Button>
+
+                            <Button 
+                            variant="outline-success" 
+                            className="addButton" 
+                            onClick={() => this.props.closeModalEdit()}
+                            > 
+                                Close  
                             </Button>
                             
                         </Form>
@@ -294,13 +262,13 @@ class AddProduct extends React.Component {
             </>
         )
     }
-
 }
 
 const mapStateToProps = (state) => ({})
+
 
 const mapDispatchToProps = {
     fetchProducts,
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(AddProduct);
+export default  connect(mapStateToProps, mapDispatchToProps)(EditProduct);
