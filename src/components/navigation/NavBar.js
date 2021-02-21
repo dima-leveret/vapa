@@ -7,6 +7,7 @@ import { FiInstagram } from 'react-icons/fi';
 
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
+import Image from 'react-bootstrap/Image';
 
 import WhiteVapaLogo from '../../img/white_vapa_logo.svg';
 
@@ -26,8 +27,12 @@ import Home from '../home/Home';
         <>
             <Navbar className='navBar'>
                 <Link to='/home' >
-                    <Navbar.Brand className='navBrand' >
-                        <img className="navBrandImage" src={WhiteVapaLogo} alt={'vapa_logo'} />
+                    <Navbar.Brand 
+                    className='navBrand'
+                     >
+                        <Image 
+                        className="navBrandImage" 
+                        src={WhiteVapaLogo} alt={'vapa_logo'} />
                     </Navbar.Brand>
                 </Link> 
                 <Nav  className='nav' >
