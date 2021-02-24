@@ -13,14 +13,15 @@ import { store } from './store';
 
 
 const firebaseConfig = {
-    apiKey: "",
-    authDomain: "dima-leveret-vapa.firebaseapp.com",
-    databaseURL: "https://dima-leveret-vapa-default-rtdb.firebaseio.com",
-    projectId: "dima-leveret-vapa",
-    storageBucket: "dima-leveret-vapa.appspot.com",
-    messagingSenderId: "684473262422",
-    appId: ""
+  apiKey: "AIzaSyApRMOlRM-H4DmqnuuhBEHrkkdmbbIoCTM",
+  authDomain: "dima-leveret-vapa.firebaseapp.com",
+  databaseURL: "https://dima-leveret-vapa-default-rtdb.firebaseio.com",
+  projectId: "dima-leveret-vapa",
+  storageBucket: "dima-leveret-vapa.appspot.com",
+  messagingSenderId: "684473262422",
+  appId: "1:684473262422:web:80e334f33f5ee56400f6f7"
 };
+
 
 firebase.initializeApp(firebaseConfig);
 

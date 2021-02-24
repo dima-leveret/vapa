@@ -15,6 +15,7 @@ import AboutVapa from '../content/AboutVapa';
 import Contacts from '../content/Contacts';
 import Partners from "../partners/Partners";
 import PaymentAndDelivery from '../content/PaymentAndDelivery';
+import Sign from '../sign/Sign';
 
 import ShoppingCard from "../shoppingCard/ShoppingCard"
 import Home from '../home/Home';
@@ -53,6 +54,9 @@ import Home from '../home/Home';
                     </Link>
                 </Nav>
                 <ShoppingCard/>
+                <Link to='/sign-in'  className='navLink'>
+                    Sign in
+                </Link>
                 <a href='https://www.instagram.com/vapa.eco/' target='blank' >
                     <FiInstagram className='instaIcon' />
                 </a>
@@ -77,6 +81,10 @@ import Home from '../home/Home';
         
                 <Route path='/paymentAndDelivery' >
                     <PaymentAndDelivery />
+                </Route>
+
+                <Route path='/sign-in' >
+                    <Sign/>
                 </Route>
         
             </Switch>
