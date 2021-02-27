@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom'
 
 import firebase from 'firebase';
 
@@ -13,6 +14,7 @@ class Sign extends React.Component {
     state = {
         email: '',
         password: '',
+        redirect: false, 
     }
 
 
@@ -25,12 +27,22 @@ class Sign extends React.Component {
     handleOnSubmit = (event) => {
         event.preventDefault();
         firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
-            .then(() => alert('Signed in!'))
+            .then(() => {
+                alert('Signed in!');
+                this.setState({
+                    redirect: true
+                });
+            })
             .catch((error) => alert(error.message))
     }
 
 
     render() {
+
+        if(this.state.redirect) {
+            return <Redirect to="/home" />
+        }
+
         return(
             <div className='form-container'>
             <Form className='form' onSubmit={this.handleOnSubmit} >

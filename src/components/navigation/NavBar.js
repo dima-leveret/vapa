@@ -29,14 +29,24 @@ import Home from '../home/Home';
 
     state = {
         user: null,
+        authSubscription: null,
     }
 
     componentDidMount() {
-        firebase.auth().onAuthStateChanged(user => {
+        const authSubscription = firebase.auth()
+            .onAuthStateChanged(user => {
+            console.log('onAuthStateChanged');
             this.setState({
                 user
             })
         })
+        this.setState({
+            authSubscription
+        })
+    }
+
+    componentWillUnmount() {
+        this.state.authSubscription && this.state.authSubscription();
     }
 
     signOut = () => {
@@ -79,10 +89,14 @@ import Home from '../home/Home';
 
                     {this.state.user
                     ?
-                    <Button
+                    <div>
+                        <p style={{ color: "white", backgroundColor: "grey" }} >Wellcome <br/> {this.state.user.email}</p>
+                        <Button
                         onClick={this.signOut} 
                         variant='warning' 
                     >Sign out</Button>
+                    </div>
+                    
                     : 
                     <Link to='/sign-in'  className='navLink'>
                         <Button variant='success' >Sign in</Button>
