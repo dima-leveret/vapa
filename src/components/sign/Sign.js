@@ -1,5 +1,5 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
 
 import firebase from 'firebase';
 
@@ -26,7 +26,9 @@ class Sign extends React.Component {
 
     handleOnSubmit = (event) => {
         event.preventDefault();
-        firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
+
+        if (this.props.isSignUp) {
+            firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
             .then(() => {
                 alert('Signed in!');
                 this.setState({
@@ -34,10 +36,23 @@ class Sign extends React.Component {
                 });
             })
             .catch((error) => alert(error.message))
+        } else {
+            firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
+            .then(() => {
+                alert('Signed in!');
+                this.setState({
+                    redirect: true
+                });
+            })
+            .catch((error) => alert(error.message))
+        }
+        
     }
 
 
     render() {
+
+        const {isSignUp} = this.props;
 
         if(this.state.redirect) {
             return <Redirect to="/home" />
@@ -46,6 +61,7 @@ class Sign extends React.Component {
         return(
             <div className='form-container'>
             <Form className='form' onSubmit={this.handleOnSubmit} >
+            <h2> {isSignUp ? 'Sign up' : 'Sign in'} </h2>
                 <Form.Group controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
                     <Form.Control 
@@ -69,8 +85,16 @@ class Sign extends React.Component {
                     placeholder="Password" />
                 </Form.Group>
                 <Button variant="primary" type="submit">
-                    Sign In
+                {isSignUp ? 'Sign up' : 'Sign in'}
                 </Button>
+                <br/>
+                <br/>
+                {isSignUp
+                ?
+                <Link to="sign-in" >Already have an account? Sign in!</Link>
+                :
+                <Link to="sign-up" >Don`t have an account? Sign up!</Link>
+                }
              </Form>
             </div>
         )

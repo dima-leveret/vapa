@@ -29,25 +29,26 @@ import Home from '../home/Home';
 
     state = {
         user: null,
-        authSubscription: null,
+        // authSubscription: null, 'static nav is not requared unmounting'
     }
 
     componentDidMount() {
-        const authSubscription = firebase.auth()
+        // const authSubscription = 'static nav is not requared unmounting'
+        firebase.auth()
             .onAuthStateChanged(user => {
             console.log('onAuthStateChanged');
             this.setState({
                 user
             })
         })
-        this.setState({
-            authSubscription
-        })
+        // this.setState({ 'static nav is not requared unmounting'
+        //     authSubscription 
+        // })
     }
 
-    componentWillUnmount() {
-        this.state.authSubscription && this.state.authSubscription();
-    }
+    // componentWillUnmount() {
+    //     this.state.authSubscription && this.state.authSubscription(); 'static nav is not requared unmounting'
+    // }
 
     signOut = () => {
         firebase.auth().signOut()
@@ -131,6 +132,10 @@ import Home from '../home/Home';
     
                     <Route path='/sign-in' >
                         <Sign/>
+                    </Route>
+
+                    <Route path='/sign-up' >
+                        <Sign isSignUp/>
                     </Route>
             
                 </Switch>
