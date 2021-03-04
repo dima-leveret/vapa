@@ -42,6 +42,7 @@ class ShoppingCard extends React.Component {
     
     
     render() {
+
         let oneProductPrice = (a, b) => {
             return a * b
         }
@@ -81,7 +82,7 @@ class ShoppingCard extends React.Component {
                             <tbody>
                                 {
                                     this.props.productsInShoppingCard.map(productInCard => (  
-                                        <tr key={this.props.productsInShoppingCard.indexOf(productInCard)} >
+                                         <tr key={this.props.productsInShoppingCard.indexOf(productInCard)} >
                                             <td>
                                                 <Card.Img variant="top" src={img123} alt='some picture' className='imgInShoppingCard'/>
                                             </td>
@@ -89,7 +90,7 @@ class ShoppingCard extends React.Component {
                                             <td>
                                                 <div className='counter' >
                                                     {
-                                                        productInCard.number == '1'
+                                                        productInCard.number <= '1'
                                                     ?
                                                     <ButtonGroup>
                                                         <Button variant='danger' disabled
@@ -100,7 +101,7 @@ class ShoppingCard extends React.Component {
                                                     </ButtonGroup>
                                                     :<div>
                                                         {
-                                                         productInCard.number == productInCard.amount
+                                                         productInCard.number >= productInCard.amount 
                                                          ?
                                                         <ButtonGroup>
                                                             <Button variant='danger' 
@@ -117,7 +118,7 @@ class ShoppingCard extends React.Component {
                                                             <Button variant='primary' 
                                                             onClick={() => this.props.increment(productInCard.id)} >+</Button>
                                                         </ButtonGroup>
-                                                        }
+                                                        } 
                                                     </div>
                                                     }
                                                 </div>

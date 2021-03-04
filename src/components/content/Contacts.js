@@ -11,16 +11,8 @@ function Contacts() {
     const WrappedMap = withScriptjs(withGoogleMap(Map));
     
     return (
-        <div className='ContactsBody' >
-            <div className='ContactsMap' >
-            <WrappedMap 
-                googleMapURL = {`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyABXq7l1yJ16e4DGL-Wpup5WJ_AlIJdISk`}
-                loadingElement = { <div style={{ height: '100%' }} /> }
-                containerElement = {<div style={{ height: '100%' }} /> }
-                mapElement = {<div style={{ height: '100%' }} /> }
-                />
-            </div>
-            <div className="ContactsInfo" >
+        <div className='contactsBody' >
+            <div className="contactsInfo" >
                 <div>
                     <h1> Contacts: </h1>
                     <h3> +38 063 497 03 20 </h3>
@@ -32,7 +24,14 @@ function Contacts() {
                         <FiInstagram className='instaIcon' />
                     </a>
                 </div>
-                
+            </div>
+            <div className='contactsMap' >
+            <WrappedMap 
+                googleMapURL = {`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyABXq7l1yJ16e4DGL-Wpup5WJ_AlIJdISk`}
+                loadingElement = { <div style={{ height: '100%' }} /> }
+                containerElement = {<div style={{ height: '100%' }} /> }
+                mapElement = {<div style={{ height: '100%' }} /> }
+                />
             </div>
         </div>
         

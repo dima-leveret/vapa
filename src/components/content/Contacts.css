@@ -1,14 +1,15 @@
-.ContactsBody{
+.contactsBody{
     display: flex;
     width: 100%;
 }
 
-.ContactsMap{
+
+.contactsMap{
     width: 50vw;
     height: 86vh;
 }
 
-.ContactsInfo {
+.contactsInfo {
     width: 50%;
     color: white;
     background-color: #292929;
@@ -16,9 +17,30 @@
     padding: 5%;    
 }
 
-.ContactsInfo > div {
+.contactsInfo > div {
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+}
+
+@media screen and (max-width: 800px) {
+    .contactsBody {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .contactsMap {
+        width: 100vw;
+        height: 86vh;
+    }
+
+    .contactsInfo {
+        width: 100%;
+        color: white;
+        background-color: #292929;
+        display: flex;
+        padding: 5%;    
+    }
 }
