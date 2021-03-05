@@ -63,7 +63,7 @@ import { Spinner } from "react-bootstrap";
                 this.props.products.map(product => (
                     // this.state.productId === product.id
                 //  ? 
-                //  <ProductDetailsModal
+                //  <ProductDetailsModal 
                 //     key={product.id}
                 //     show={this.state.showDetails}
                 //     onHide={() => this.closeModalDetails()}

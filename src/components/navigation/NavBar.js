@@ -4,7 +4,7 @@ import firebase from 'firebase';
 
 import '../navigation/NavBar.css';
 
-import { FiInstagram } from 'react-icons/fi';
+// import { FiInstagram } from 'react-icons/fi';
 
 import Button from 'react-bootstrap/Button'
 
@@ -104,9 +104,9 @@ import Home from '../home/Home';
                     </Link>
                     }
 
-                    <a href='https://www.instagram.com/vapa.eco/' target='blank' >
+                    {/* <a href='https://www.instagram.com/vapa.eco/' target='blank' >
                         <FiInstagram className='instaIcon' />
-                    </a>
+                    </a> */}
                 </Navbar>
             
                 <Switch>

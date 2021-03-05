@@ -61,7 +61,15 @@ class ProductCard extends React.Component {
                     <Card.Title> {this.props.productProduct} { this.props.productName} </Card.Title>
                     <Card.Text> { this.props.productDescription} </Card.Text>
                 </Card.Body>
+                {this.props.productDiscount === true 
+                ? 
+                <div style={{ display: 'flex', marginTop: '10px' }} >
+                    <p style={{ marginRight: '10px' }} > {this.props.productNewPrice} UAH </p>
+                    <sup> <del> {this.props.productPrice} UAH </del> </sup> 
+                </div>
+                :
                 <p> {this.props.productPrice} UAH </p>
+                }
                 <div className="buttons" >
                     <Button 
                     onClick={() => this.openModalDetails(this.props.productId)}
