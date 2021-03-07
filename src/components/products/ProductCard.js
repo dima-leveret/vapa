@@ -78,12 +78,12 @@ class ProductCard extends React.Component {
                     {
                         this.props.productAmount == '0' 
                         ? 
-                        <p className="cardButtonP" > Not available </p>
+                        <p className="cardButtonNa" > Not available </p>
                         : 
-                        <div>
+                        <div className="buttons" >
                             {
                                 this.props.isProductInCart(this.props.productId)
-                                ? <p className="cardButtonP" > Product added </p>
+                                ? <p className="cardButtonPa" > Product added </p>
                                 :<Button
                                 className="cardButton" 
                                 onClick={() => this.props.addToCard(this.props.product)}

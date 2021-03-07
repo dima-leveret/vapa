@@ -14,9 +14,9 @@ class Home extends React.Component {
         return ( <>
             <div className="bobyContainer" >
                 <div className='cardContainer' >
-                <NavProducts/>
-                <Products/>
-                <AddProduct />
+                    <NavProducts/>
+                    <Products/>
+                    <AddProduct />
                 </div>
             </div>
             <Partners/>

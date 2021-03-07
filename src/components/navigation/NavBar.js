@@ -110,9 +110,9 @@ import Home from '../home/Home';
                 </Navbar>
             
                 <Switch>
-                    <Route exact path='/home' >
+                    {/* <Route exact path='/home' >
                         <Home/>
-                    </Route>
+                    </Route> */}
             
                     <Route path='/aboutVapa' >
                         <AboutVapa />

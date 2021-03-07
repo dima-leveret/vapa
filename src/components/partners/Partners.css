@@ -5,13 +5,10 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding: 100px 20px;
 }
 .partnersContainer > div {
     text-align: center;
-}
-
-.partnersContainer > div > h1 {
-    margin-top: 150px;
 }
 
 .partnersContainer > div > h4 {
@@ -24,27 +21,19 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin-bottom: 100px;
+    justify-content: center;
 }
 
 .partners > div {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 25%;
+    width: 300px;
     height: auto;
-}
-
-.partners > div > a {
-    display: flex;
-    justify-content: center;
-    align-self: center;
-    width: auto;
 }
 
 .partners > div > a > img {
     width: 50%;
     height: auto;
-    display: flex;
-
 }
+
