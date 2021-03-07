@@ -32,6 +32,7 @@
     flex-direction: column;
     justify-content: center;
     width: 25%;
+    height: auto;
 }
 
 .partners > div > a {
@@ -41,8 +42,9 @@
     width: auto;
 }
 
-.partners > div > a > Image {
+.partners > div > a > img {
     width: 50%;
+    height: auto;
     display: flex;
 
 }

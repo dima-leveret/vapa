@@ -38,7 +38,7 @@
     padding: 20px;
 }
 
-img {
+.infoContainer > img {
     max-width: 50%;
     width: 100%;
     height: 100%;
@@ -52,7 +52,7 @@ img {
         align-items: center;
     }
 
-    img {
+    .infoContainer > img {
     max-width: 80%;
     width: 100%;
     height: 100%;

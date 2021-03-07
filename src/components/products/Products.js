@@ -57,7 +57,7 @@ import { Spinner } from "react-bootstrap";
     render() {
         
         return(
-            <>
+            <div className='productsContainer'>
             {this.props.isLoading && <Spinner animation="grow" variant="warning" /> }
             {
                 this.props.products.map(product => (
@@ -120,7 +120,7 @@ import { Spinner } from "react-bootstrap";
                  />
             ))
             }
-            </>
+            </div>
         ) 
     }
 }
