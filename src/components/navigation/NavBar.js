@@ -55,11 +55,10 @@ import Home from '../home/Home';
     }
 
     render () {
-
         return(
             <>
                 <Navbar className='navBar'>
-                    <Link to='/home' >
+                    <Link to='/vapa' >
                         <Navbar.Brand 
                         className='navBrand'
                          >
@@ -109,10 +108,10 @@ import Home from '../home/Home';
                     </a> */}
                 </Navbar>
             
-                <Switch>
-                    {/* <Route exact path='/home' >
+                {/* <Switch>
+                    <Route exact path='/home' >
                         <Home/>
-                    </Route> */}
+                    </Route>
             
                     <Route path='/aboutVapa' >
                         <AboutVapa />
@@ -138,7 +137,7 @@ import Home from '../home/Home';
                         <Sign isSignUp/>
                     </Route>
             
-                </Switch>
+                </Switch> */}
             </>
         )
 

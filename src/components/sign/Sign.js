@@ -55,7 +55,7 @@ class Sign extends React.Component {
         const {isSignUp} = this.props;
 
         if(this.state.redirect) {
-            return <Redirect to="/home" />
+            return <Redirect to="/vapa" />
         }
 
         return(
