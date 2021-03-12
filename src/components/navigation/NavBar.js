@@ -5,6 +5,7 @@ import firebase from 'firebase';
 import '../navigation/NavBar.css';
 
 // import { FiInstagram } from 'react-icons/fi';
+import { VscAccount } from "react-icons/vsc";
 
 import Button from 'react-bootstrap/Button'
 
@@ -22,6 +23,7 @@ import Sign from '../sign/Sign';
 
 import ShoppingCard from "../shoppingCard/ShoppingCard"
 import Home from '../home/Home';
+import Profile from '../profile/Profile';
 
 
 
@@ -86,6 +88,9 @@ import Home from '../home/Home';
                     </Nav>
                     <ShoppingCard/>
                     
+                    <Link to='/profile'>
+                        <VscAccount className="instaIcon" />
+                    </Link>
 
                     {this.state.user
                     ?

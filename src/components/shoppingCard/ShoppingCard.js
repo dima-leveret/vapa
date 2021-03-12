@@ -49,7 +49,7 @@ class ShoppingCard extends React.Component {
         
         return(
             <>
-                <Button  variant="outline-success" size='lg' onClick={this.openModal} >
+                <Button variant="success" size='lg' onClick={this.openModal} >
                     <RiShoppingBagLine/>
                     <Badge pill variant='dark' > {this.props.productsInShoppingCard.length} </Badge>
                 </Button>
@@ -65,11 +65,10 @@ class ShoppingCard extends React.Component {
                     </Modal.Header>
                         
                     <Modal.Body>
-                        Products list:
                         {
                             this.props.productsInShoppingCard.length > 0
                             ? (
-                            <Table bordered  >
+                            <Table bordered responsive >
                             <thead>
                                 <tr>
                                     <td>Продукт</td>

@@ -12,6 +12,7 @@ import Sign from './components/sign/Sign';
 import NavBar from "./components/navigation/NavBar";
 import Home from './components/home/Home';
 import Footer from './components/footer/Footer';
+import Profile from './components/profile/Profile';
 
 
 function App() {
@@ -46,6 +47,10 @@ function App() {
 
           <Route path='/sign-up' >
             <Sign isSignUp/>
+          </Route>
+
+          <Route path='/profile' >
+            <Profile/>
           </Route>
               
         </Switch>

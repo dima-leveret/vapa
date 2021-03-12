@@ -1,5 +1,5 @@
 import React from 'react';
-import Map from "../Map/Map"
+import Map from "../googleMap/Map"
 
 import {  withScriptjs, withGoogleMap } from 'react-google-maps';
 
