@@ -7,7 +7,7 @@ import '../navigation/NavBar.css';
 // import { FiInstagram } from 'react-icons/fi';
 import { VscAccount } from "react-icons/vsc";
 
-import Button from 'react-bootstrap/Button'
+import Button from 'react-bootstrap/Button';
 
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
@@ -89,7 +89,7 @@ import Profile from '../profile/Profile';
                     <ShoppingCard/>
                     
                     <Link to='/profile'>
-                        <VscAccount className="instaIcon" />
+                        <VscAccount className="profileIcon" />
                     </Link>
 
                     {this.state.user

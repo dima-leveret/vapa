@@ -1,0 +1,19 @@
+.profileBody {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+}
+
+.profileContainer {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.avatartImg {
+    max-width: 100px;
+    width: 100%;
+    height: auto;
+}
