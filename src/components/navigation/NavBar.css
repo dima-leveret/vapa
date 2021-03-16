@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: rgba(31,31,31,0.30);
+    background-color: rgba(31, 31, 31, 0.685);
     padding-top: 10px;
     padding-bottom: 10px;
 }
