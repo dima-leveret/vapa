@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
 import firebase from 'firebase';
 
 class Auth extends React.Component {
@@ -10,6 +9,7 @@ class Auth extends React.Component {
 
     componentDidMount() {
         const authSubscription = firebase.auth().onAuthStateChanged(user => {
+            console.log('onAuthStateChanged', user);
             this.setState ({ user })
         })
 
@@ -21,13 +21,7 @@ class Auth extends React.Component {
     }
 
     render () {
-        return (
-            this.state.user 
-            ? this.props.children
-            : <div style={{ color: 'white' }} >
-                Yuo are not logged in. Please <Link to="sign-in"> sign in</Link>.
-            </div>
-        )
+        return this.props.children({ user: this.state.user })
     }
 }
 

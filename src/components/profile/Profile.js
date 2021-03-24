@@ -2,13 +2,15 @@ import React from 'react';
 import firebase from 'firebase';
 import { Link } from 'react-router-dom';
 
+import Auth from '../sign/Auth'
+
 import '../profile/Profile.css';
 
 import avatarPlaceholder from "../../img/avatar_placeholder.png"
 
 import Button  from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import FormFile from 'react-bootstrap/FormFile';
+import FormFile from 'react-bootstrap/FormFile'
 
 import { BsCardImage } from 'react-icons/bs'
 
@@ -16,43 +18,46 @@ import { BsCardImage } from 'react-icons/bs'
 class Profile extends React.Component {
 
     state = {
-        user: null,
-        authSubscription: null,
+        // user: null,
+        // authSubscription: null,
         file: null, 
-        downloadURL: '',
+        avatarURL: '',
+        // nick: '',
     }
 
-    componentDidMount() {
-        const authSubscription = 
-        firebase.auth()
-            .onAuthStateChanged(user => {
-            
-                const currentUser = firebase.auth().currentUser
-                console.log(currentUser);
 
-            console.log('onAuthStateChanged');
-            this.setState({
-                user
-            })
-        })
-        this.setState({ 
-            authSubscription 
-        })
+    // componentDidMount() {
+    //     const authSubscription = 
+    //     firebase.auth()
+    //         .onAuthStateChanged(user => {
+            
+    //             const currentUser = firebase.auth().currentUser
+    //             console.log(currentUser);
+
+    //         console.log('onAuthStateChanged');
+    //         this.setState({
+    //             user
+    //         })
+    //     })
+    //     this.setState({ 
+    //         authSubscription 
+    //     })
+        
 
         
-    }
+    // }
 
     componentDidUpdate() {
         if (this.state.user) {
-            firebase.storage().ref(`avatars/${this.state.user.uid}`)
+            firebase.storage().ref(`avatars/${firebase.auth().currentUser.uid}`)
                 .getDownloadURL()
-                .then(downloadURL => this.setState({ downloadURL }))
+                .then(avatarURL => this.setState({ avatarURL }))
         }
     }
 
-    componentWillUnmount() {
-        this.state.authSubscription && this.state.authSubscription(); 
-    }
+    // componentWillUnmount() {
+    //     this.state.authSubscription && this.state.authSubscription(); 
+    // }
     
     handleOnChange = (event) => {
         this.setState({
@@ -66,68 +71,67 @@ class Profile extends React.Component {
         firebase.storage().ref(`avatars/${this.state.user.uid}`).put(this.state.file)
             .then(snapshot => {
                 snapshot.ref.getDownloadURL()
-                    .then((downloadURL) => {
+                    .then((avatarURL) => {
                         this.setState({
-                            downloadURL,
+                            avatarURL,
                             file: null
                         })
                     })
             })
     }
+
+    
  
     render() {
         return (
-            <div className='profileBody' >
-            {
-                this.state.user
-                ? <div className='profileContainer' >
-                    <p>Your profile</p>
-                    <p>Wellcome {this.state.user.email} ! </p>
-                    <img
-                    src={this.state.downloadURL || avatarPlaceholder} 
-                    alt='avatar' 
-                    className="avatartImg" />
+            <Auth>
+                {
+                    ({ user }) => {
+                        return (
+                            <div className='profileBody'>
+                                {
+                                user
+                                ? <div className='profileContainer' >
+                                    <p>Your profile</p>
+                                    <p>Wellcome {user.displayName} ! </p>
+                                    <p>Your email is {user.email} </p>
+                                    <p>Your uid is {user.uid} </p>
+                                    {/* <img
+                                    src={this.state.avatarURL || avatarPlaceholder} 
+                                    alt='avatarka' 
+                                    className="avatartImg" />
 
-                    <p> { this.state.file && this.state.file.name } </p>
-                    <Form onSubmit={this.handelOnSubmit} >
-                        <FormFile.Input
-                        accept='image/*'
-                        id='avatar'
-                        type='file'
-                        onChange={this.handleOnChange}
-                        />
-                        <FormFile.Label htmlFor='avatar' >
-                            <Button variant='secondary' >
-                                <BsCardImage/>
-                            </Button>
-                        </FormFile.Label>
-                        {this.state.file && 
-                        (<Button variant='warning' type='submit' >
-                            Upload
-                        </Button>
-                        )}
-                        
-                    </Form>
-                    
-                    {/* <input
-                    accept="image/*"
-                    id="avatar"
-                    type="file"
-                    onChange={this.handleOnChange}
-                    />
-                    <label htmlFor="avatar">
-                        <Button variant="secondary">
-                            Upload
-                        </Button>
-                    </label> */}
+                                    <Form onSubmit={this.handelOnSubmit} >
+                                        <Form.File>
+                                            <FormFile.Input
+                                                accept='image/*'
+                                                id='avatar'
+                                                type='file'
+                                                lable='choose your photo'
+                                                onChange={this.handleOnChange}
+                                                />
 
-                </div>
-                : <div className='profileContainer' >
-                You are not logged in. Please <Link to="sign-in"> sign in</Link>
-                </div>
-            }
-                 
-            </div>
+                                                {this.state.file && 
+                                                (<Button variant='warning' type='submit' >
+                                                    Upload
+                                                </Button>
+                                                )}
+                                        </Form.File>
+
+                                    </Form>
+                                    <p> { this.state.file && this.state.file.name } </p> */}
+
+                                    </div>
+
+                                    : <div className='profileContainer' >
+                                        You are not logged in. Please <Link to="sign-in"> sign in</Link>
+                                </div>
+                            }    
+                            </div>
+                        )
+                    }
+                }
+            </Auth>
         ) 
     }
 }

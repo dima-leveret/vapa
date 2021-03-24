@@ -14,7 +14,8 @@ class Sign extends React.Component {
     state = {
         email: '',
         password: '',
-        redirect: false, 
+        redirect: false,
+        userName: '',
     }
 
 
@@ -29,10 +30,15 @@ class Sign extends React.Component {
 
         if (this.props.isSignUp) {
             firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
+            .then(()=>{
+                firebase.auth().currentUser.updateProfile({
+                    displayName: this.state.userName
+                })
+            })
             .then(() => {
                 alert('Signed in!');
                 this.setState({
-                    redirect: true
+                    redirect: true,
                 });
             })
             .catch((error) => alert(error.message))
@@ -46,44 +52,87 @@ class Sign extends React.Component {
             })
             .catch((error) => alert(error.message))
         }
+
         
     }
-
 
     render() {
 
         const {isSignUp} = this.props;
 
         if(this.state.redirect) {
-            return <Redirect to="/vapa" />
+            return <Redirect to="/profile" />
         }
 
         return(
             <div className='form-container'>
             <Form className='form' onSubmit={this.handleOnSubmit} >
             <h2> {isSignUp ? 'Sign up' : 'Sign in'} </h2>
-                <Form.Group controlId="formBasicEmail">
-                    <Form.Label>Email address</Form.Label>
-                    <Form.Control 
-                    name="email"
-                    value={this.state.email}
-                    onChange={this.handleOnChange} 
-                    type="email" 
-                    placeholder="Enter email" />
-                    <Form.Text className="text-muted">
-                    We'll never share your email with anyone else.
-                    </Form.Text>
-                </Form.Group>
 
-                <Form.Group controlId="formBasicPassword">
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control 
-                    name="password"
-                    value={this.state.password}
-                    onChange={this.handleOnChange} 
-                    type="password" 
-                    placeholder="Password" />
-                </Form.Group>
+            {
+                isSignUp
+                ?
+                <div>
+                    <Form.Group >
+                        <Form.Label>Name</Form.Label>
+                        <Form.Control 
+                        name="userName"
+                        value={this.state.userName}
+                        onChange={this.handleOnChange} 
+                        type="name" 
+                        placeholder="Enter your name" />
+                    </Form.Group>
+
+                    <Form.Group >
+                        <Form.Label>Email address</Form.Label>
+                        <Form.Control 
+                        name="email"
+                        value={this.state.email}
+                        onChange={this.handleOnChange} 
+                        type="email" 
+                        placeholder="Enter email" />
+                        <Form.Text className="text-muted">
+                        We'll never share your email with anyone else.
+                        </Form.Text>
+                    </Form.Group>
+
+                    <Form.Group >
+                        <Form.Label>Password</Form.Label>
+                        <Form.Control 
+                        name="password"
+                        value={this.state.password}
+                        onChange={this.handleOnChange} 
+                        type="password" 
+                        placeholder="Password" />
+                    </Form.Group>
+                </div>
+                :
+                <div>
+                    <Form.Group >
+                        <Form.Label>Email address</Form.Label>
+                        <Form.Control 
+                        name="email"
+                        value={this.state.email}
+                        onChange={this.handleOnChange} 
+                        type="email" 
+                        placeholder="Enter email" />
+                        <Form.Text className="text-muted">
+                        We'll never share your email with anyone else.
+                        </Form.Text>
+                    </Form.Group>
+
+                    <Form.Group >
+                        <Form.Label>Password</Form.Label>
+                        <Form.Control 
+                        name="password"
+                        value={this.state.password}
+                        onChange={this.handleOnChange} 
+                        type="password" 
+                        placeholder="Password" />
+                    </Form.Group>
+                </div>
+            }
+                
                 <Button variant="primary" type="submit">
                 {isSignUp ? 'Sign up' : 'Sign in'}
                 </Button>

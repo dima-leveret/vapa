@@ -56,8 +56,7 @@ function NavProducts({
     
 }
 
-const mapStateToProps = () => ({
-})
+const mapStateToProps = () => ({})
 
 
 const mapDispatchToProps = {
