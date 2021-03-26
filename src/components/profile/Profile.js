@@ -2,7 +2,9 @@ import React from 'react';
 import firebase from 'firebase';
 import { Link } from 'react-router-dom';
 
-import Auth from '../sign/Auth'
+import Auth from '../sign/Auth';
+
+import SetUserData from '../sign/SetUserData'
 
 import '../profile/Profile.css';
 
@@ -84,18 +86,41 @@ class Profile extends React.Component {
  
     render() {
         return (
+            <>
             <Auth>
                 {
-                    ({ user }) => {
+                    ({  user, userData }) => {
                         return (
                             <div className='profileBody'>
                                 {
                                 user
                                 ? <div className='profileContainer' >
-                                    <p>Your profile</p>
-                                    <p>Wellcome {user.displayName} ! </p>
-                                    <p>Your email is {user.email} </p>
-                                    <p>Your uid is {user.uid} </p>
+                                    {
+                                        userData
+                                        &&
+                                        <div>
+                                            <p>Wellcome to VAPA user profile! </p>
+                                            <p>Yuor name {userData.userName} </p>
+                                            <p>Your surname is {userData.userSurname} </p>
+                                            <p>Your city is {userData.city} </p>
+                                            <p>Your parcel locker number is {userData.parcelLocker} </p>
+                                            <p>Your phone number is {userData.phoneNr} </p>
+                                            <p>Your post office number is {userData.postOfficeNr} </p>
+                                            <p>Your postcode is {userData.postcode} </p>
+                                        </div> 
+                                    }
+                                    
+                                        {
+                                            !userData
+                                            &&
+                                            <div>
+                                                <p>Your email is {user.email} </p>
+                                                <p>Your uid is {user.uid} </p>
+                                                <p>Update your information</p>
+                                                <SetUserData/>
+                                            </div>
+                                        }
+                                    
                                     {/* <img
                                     src={this.state.avatarURL || avatarPlaceholder} 
                                     alt='avatarka' 
@@ -125,13 +150,15 @@ class Profile extends React.Component {
 
                                     : <div className='profileContainer' >
                                         You are not logged in. Please <Link to="sign-in"> sign in</Link>
-                                </div>
+                                    </div>
                             }    
                             </div>
                         )
                     }
                 }
             </Auth>
+
+        </>
         ) 
     }
 }
