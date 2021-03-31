@@ -140,7 +140,6 @@ class EditUserData extends React.Component {
                                 Close
                             </Button>
                         </div>
-                        
                     </Form>
                 </Modal.Body>
             </Modal>
