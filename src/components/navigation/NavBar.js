@@ -6,6 +6,8 @@ import '../navigation/NavBar.css';
 
 // import { FiInstagram } from 'react-icons/fi';
 import { VscAccount } from "react-icons/vsc";
+import { BsSearch } from "react-icons/bs";
+import { BsPerson } from "react-icons/bs";
 
 import Button from 'react-bootstrap/Button';
 
@@ -58,41 +60,45 @@ import Profile from '../profile/Profile';
 
     render () {
         return(
-            <>
+            <div className="navBarBody" >
                 <Navbar className='navBar'>
-                    <Link to='/vapa' >
-                        <Navbar.Brand 
-                        className='navBrand'
-                         >
+                    <div className="imageNav">
+                        <Link to='/vapa' >
                             <Image 
-                            className="navBrandImage" 
-                            src={WhiteVapaLogo} alt={'vapa_logo'} />
-                        </Navbar.Brand>
-                    </Link> 
-                    <Nav  className='nav' >
-                        <Link  to='/aboutVapa' className='navLink' >
-                            About Vapa
+                                className="navBrandImage" 
+                                src={WhiteVapaLogo} alt={'vapa_logo'} 
+                            />
                         </Link>
-                                
-                        <Link to='/contacts' className='navLink' >
-                            Contacts
-                        </Link>
-            
-                        <Link to='/partners' className='navLink' >
-                            Partners
-                        </Link>
-            
-                        <Link to='/paymentAndDelivery' className='navLink' >
-                            Payment and delivery
-                        </Link>
-                    </Nav>
-                    <ShoppingCard/>
-                    
-                    <Link to='/profile'>
-                        <VscAccount className="profileIcon" />
-                    </Link>
 
-                    {this.state.user
+                        <Nav  className='nav' >
+                            <Link  to='/aboutVapa' className='navLink' >
+                                About Vapa
+                            </Link>
+                                    
+                            <Link to='/contacts' className='navLink' >
+                                Contacts
+                            </Link>
+                
+                            <Link to='/partners' className='navLink' >
+                                Partners
+                            </Link>
+                
+                            <Link to='/paymentAndDelivery' className='navLink' >
+                                Payment and delivery
+                            </Link>
+                        </Nav>
+                    </div>
+                    
+
+                    <div className="icons" >
+                        <BsSearch className="searchIcon"/>
+                        <Link to='/profile'>
+                            <BsPerson className="profileIcon" />
+                        </Link>
+                        <ShoppingCard className="shippingCardIcon"/>
+                    </div>
+
+                    {/* {this.state.user
                     ?
                     <div>
                         <p style={{ color: "white", backgroundColor: "grey" }} >Wellcome <br/> {this.state.user.email}</p>
@@ -106,7 +112,7 @@ import Profile from '../profile/Profile';
                     <Link to='/sign-in'  className='navLink'>
                         <Button variant='success' >Sign in</Button>
                     </Link>
-                    }
+                    } */}
 
                     {/* <a href='https://www.instagram.com/vapa.eco/' target='blank' >
                         <FiInstagram className='instaIcon' />
@@ -143,7 +149,7 @@ import Profile from '../profile/Profile';
                     </Route>
             
                 </Switch> */}
-            </>
+            </div>
         )
 
     }

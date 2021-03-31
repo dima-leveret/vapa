@@ -49,10 +49,10 @@ class ShoppingCard extends React.Component {
         
         return(
             <>
-                <Button variant="success" size='lg' onClick={this.openModal} >
-                    <RiShoppingBagLine/>
-                    <Badge pill variant='dark' > {this.props.productsInShoppingCard.length} </Badge>
-                </Button>
+                <div className={this.props.className} onClick={this.openModal}>
+                    <RiShoppingBagLine  />
+                    <p style={{ fontSize: '15px' }} > {this.props.productsInShoppingCard.length} </p>
+                </div>
                 <Modal
                     size="lg"
                     aria-labelledby="contained-modal-title-vcenter"
