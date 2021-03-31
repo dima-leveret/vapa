@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 
 import Auth from '../sign/Auth';
 
-import SetUserData from '../sign/SetUserData'
+import SetUserData from '../sign/SetUserData';
+import EditUserData from './EditUserData'
 
 import '../profile/Profile.css';
 
@@ -24,7 +25,20 @@ class Profile extends React.Component {
         // authSubscription: null,
         file: null, 
         avatarURL: '',
+        showEditUserModal: false,
         // nick: '',
+    }
+
+    openEditUserModal = () => {
+        this.setState({
+            showEditUserModal: true
+        })
+    }
+
+    closeEditUserModal = () =>{
+        this.setState({
+            showEditUserModal: false
+        })
     }
 
 
@@ -49,37 +63,37 @@ class Profile extends React.Component {
         
     // }
 
-    componentDidUpdate() {
-        if (this.state.user) {
-            firebase.storage().ref(`avatars/${firebase.auth().currentUser.uid}`)
-                .getDownloadURL()
-                .then(avatarURL => this.setState({ avatarURL }))
-        }
-    }
+    // componentDidUpdate() {
+    //     if (this.state.user) {
+    //         firebase.storage().ref(`avatars/${firebase.auth().currentUser.uid}`)
+    //             .getDownloadURL()
+    //             .then(avatarURL => this.setState({ avatarURL }))
+    //     }
+    // }
 
     // componentWillUnmount() {
     //     this.state.authSubscription && this.state.authSubscription(); 
     // }
     
     handleOnChange = (event) => {
-        this.setState({
-            file: event.target.files[0]
-        })
+        // this.setState({
+        //     file: event.target.files[0]
+        // })
     }
 
     handelOnSubmit = (event) => {
         event.preventDefault();
         
-        firebase.storage().ref(`avatars/${this.state.user.uid}`).put(this.state.file)
-            .then(snapshot => {
-                snapshot.ref.getDownloadURL()
-                    .then((avatarURL) => {
-                        this.setState({
-                            avatarURL,
-                            file: null
-                        })
-                    })
-            })
+        // firebase.storage().ref(`avatars/${this.state.user.uid}`).put(this.state.file)
+        //     .then(snapshot => {
+        //         snapshot.ref.getDownloadURL()
+        //             .then((avatarURL) => {
+        //                 this.setState({
+        //                     avatarURL,
+        //                     file: null
+        //                 })
+        //             })
+        //     })
     }
 
     
@@ -97,7 +111,7 @@ class Profile extends React.Component {
                                 ? <div className='profileContainer' >
                                     {
                                         userData
-                                        &&
+                                        ?
                                         <div>
                                             <p>Wellcome to VAPA user profile! </p>
                                             <p>Yuor name {userData.userName} </p>
@@ -107,19 +121,32 @@ class Profile extends React.Component {
                                             <p>Your phone number is {userData.phoneNr} </p>
                                             <p>Your post office number is {userData.postOfficeNr} </p>
                                             <p>Your postcode is {userData.postcode} </p>
-                                        </div> 
-                                    }
-                                    
-                                        {
-                                            !userData
-                                            &&
-                                            <div>
+                                            <Button
+                                            onClick={this.openEditUserModal}
+                                            >Edit user data</Button>
+                                            <EditUserData
+                                            showEditUserModal={this.state.showEditUserModal}
+                                            onHide={this.closeEditUserModal}
+                                            closeEditUserModal={this.closeEditUserModal}
+
+                                            userName={userData.userName}
+                                            userSurname={userData.userSurname}
+                                            city={userData.city}
+                                            parcelLocker={userData.parcelLocker}
+                                            phoneNr={userData.phoneNr}
+                                            postOfficeNr={userData.postOfficeNr}
+                                            postcode={userData.postcode}
+                                            />
+                                        </div>
+                                        :
+                                        <div>
                                                 <p>Your email is {user.email} </p>
                                                 <p>Your uid is {user.uid} </p>
                                                 <p>Update your information</p>
                                                 <SetUserData/>
                                             </div>
-                                        }
+                                    }
+                                    
                                     
                                     {/* <img
                                     src={this.state.avatarURL || avatarPlaceholder} 

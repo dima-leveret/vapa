@@ -54,7 +54,7 @@ class ProductCard extends React.Component {
 
     render (){
         return (
-            <>
+        <>
             <Card  className='card' >
                 <Card.Img variant="top" src={img123} alt='some picture' className='cardImg'/>
                 <Card.Body>
@@ -129,37 +129,34 @@ class ProductCard extends React.Component {
             />
 
             <EditProduct
-            show={this.state.showEdit}
-            onHide={() => this.closeModalEdit()}
-            closeModalEdit={() => this.closeModalEdit()}
+                show={this.state.showEdit}
+                onHide={() => this.closeModalEdit()}
+                closeModalEdit={() => this.closeModalEdit()}
 
-            productDescription={this.props.productDescription}
-            productName={this.props.productName}
-            productProduct={this.props.productProduct}
-            productPrice={this.props.productPrice}
-            productFullDescription={this.props.productFullDescription}
-            productDetails={this.props.productDetails}
-            productUsage={this.props.productUsage}
-            productStructure={this.props.productStructure}
-            productPreservation={this.props.productPreservation}
-            productDate={this.props.productDate}
-            productVolume={this.props.productVolume}
-            productAmount={this.props.productAmount}
-            productId={this.props.productId}
-            available={this.props.productAmount}
-            productType={this.props.productType}
-            productDiscount={this.props.productDiscount}
-            productComplex={this.props.productComplex}
-            productNewPrice={this.props.productNewPrice}
-            productSize={this.props.productSize}
-
+                productDescription={this.props.productDescription}
+                productName={this.props.productName}
+                productProduct={this.props.productProduct}
+                productPrice={this.props.productPrice}
+                productFullDescription={this.props.productFullDescription}
+                productDetails={this.props.productDetails}
+                productUsage={this.props.productUsage}
+                productStructure={this.props.productStructure}
+                productPreservation={this.props.productPreservation}
+                productDate={this.props.productDate}
+                productVolume={this.props.productVolume}
+                productAmount={this.props.productAmount}
+                productId={this.props.productId}
+                available={this.props.productAmount}
+                productType={this.props.productType}
+                productDiscount={this.props.productDiscount}
+                productComplex={this.props.productComplex}
+                productNewPrice={this.props.productNewPrice}
+                productSize={this.props.productSize}
             />
-            </>
-            )
+        </>
+        )
     }
-
-    
-    }
+}
 
 
 const mapStateToProps = (state) => ({

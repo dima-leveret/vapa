@@ -4,7 +4,8 @@ import '../home/Home.css';
 import Partners from "../partners/Partners";
 import NavProducts from '../navigation/NavProducts'
 import AddProduct from '../products/AddProduct';
-import Products from '../products/Products'
+import Products from '../products/Products';
+import Slider from '../slider/Slider'
 
 
 class Home extends React.Component {
@@ -14,6 +15,7 @@ class Home extends React.Component {
         return ( <>
             <div className="bobyContainer" >
                 <div className='cardContainer' >
+                    <Slider/>
                     <NavProducts/>
                     <Products/>
                     <AddProduct />
