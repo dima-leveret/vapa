@@ -4,11 +4,6 @@ import firebase from 'firebase';
 
 import '../navigation/NavBar.css';
 
-// import { FiInstagram } from 'react-icons/fi';
-import { VscAccount } from "react-icons/vsc";
-import { BsSearch } from "react-icons/bs";
-import { BsPerson } from "react-icons/bs";
-
 import Button from 'react-bootstrap/Button';
 
 import Navbar from 'react-bootstrap/Navbar';
@@ -16,6 +11,8 @@ import Nav from 'react-bootstrap/Nav';
 import Image from 'react-bootstrap/Image';
 
 import WhiteVapaLogo from '../../img/white_vapa_logo.svg';
+import SearchIcon from '../../img/search.svg';
+import UserIcon from '../../img/user.svg';
 
 import AboutVapa from '../content/AboutVapa';
 import Contacts from '../content/Contacts';
@@ -91,11 +88,18 @@ import Profile from '../profile/Profile';
                     
 
                     <div className="icons" >
-                        <BsSearch className="searchIcon"/>
+                        <img
+                            className="searchIcon"
+                            src={SearchIcon}
+                            alt='search icon'
+                        />
                         <Link to='/profile'>
-                            <BsPerson className="profileIcon" />
+                            <img
+                            className="profileIcon"
+                            src={UserIcon}
+                            />
                         </Link>
-                        <ShoppingCard className="shippingCardIcon"/>
+                        <ShoppingCard />
                     </div>
 
                     {/* {this.state.user
@@ -129,11 +133,18 @@ import Profile from '../profile/Profile';
                     </Link>
 
                     <div className="icons" >
-                        <BsSearch className="searchIcon"/>
+                        <img
+                            className="searchIcon"
+                            src={SearchIcon}
+                            alt='search icon'
+                        />
                         <Link to='/profile'>
-                            <BsPerson className="profileIcon" />
+                            <img
+                            className="profileIcon"
+                            src={UserIcon}
+                            />
                         </Link>
-                        <ShoppingCard className="shippingCardIcon"/>
+                        <ShoppingCard />
                     </div>
 
                     <Navbar.Toggle className='navBarToggle' aria-controls="responsive-navbar-nav" />

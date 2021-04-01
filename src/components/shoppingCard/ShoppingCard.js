@@ -5,6 +5,7 @@ import img123 from '../../img/img123.jpg';
 import { removeFromCard, increment, decrement } from '../../state/shoppingCard';
 
 import './ShoppingCard.css'
+import ShopIcon from '../../img/shop.svg';
 
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Button from 'react-bootstrap/Button';
@@ -49,9 +50,13 @@ class ShoppingCard extends React.Component {
         
         return(
             <>
-                <div className={this.props.className} onClick={this.openModal}>
-                    <RiShoppingBagLine  />
-                    <p style={{ fontSize: '15px' }} > {this.props.productsInShoppingCard.length} </p>
+                <div className="shopIcon" onClick={this.openModal}>
+                    <img 
+                    className="shippingCardIcon"
+                    src={ShopIcon}
+                    alt="shop icon"
+                    />
+                    <p className="shoppingCardIconNr" > {this.props.productsInShoppingCard.length} </p>
                 </div>
                 <Modal
                     size="lg"

@@ -4,20 +4,24 @@
     height: auto;
 }
 
-/* .shoppingCardTable {
+.shopIcon {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 100%;
-} */
+    align-items: center;
+}
+
+.shippingCardIcon {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}
+
+.shoppingCardIconNr {
+    color: #ffffff;
+    font-size: 13px;
+    cursor: pointer;
+}
 
 .totalPrice {
     display: flex;
     justify-content: flex-end;
 }
-
-/* .shoppingCardIcon {
-    color: #ffffff;
-    font-size: 25px;
-    cursor: pointer;
-} */
