@@ -74,15 +74,15 @@ import Profile from '../profile/Profile';
                             <Link  to='/aboutVapa' className='navLink' >
                                 About Vapa
                             </Link>
-                                    
+                                        
                             <Link to='/contacts' className='navLink' >
                                 Contacts
                             </Link>
-                
+                    
                             <Link to='/partners' className='navLink' >
                                 Partners
                             </Link>
-                
+                    
                             <Link to='/paymentAndDelivery' className='navLink' >
                                 Payment and delivery
                             </Link>
@@ -118,37 +118,46 @@ import Profile from '../profile/Profile';
                         <FiInstagram className='instaIcon' />
                     </a> */}
                 </Navbar>
-            
-                {/* <Switch>
-                    <Route exact path='/home' >
-                        <Home/>
-                    </Route>
-            
-                    <Route path='/aboutVapa' >
-                        <AboutVapa />
-                    </Route>
-            
-                    <Route path='/contacts' >
-                        <Contacts />
-                    </Route>
-            
-                    <Route path='/partners' >
-                        <Partners />
-                    </Route>
-            
-                    <Route path='/paymentAndDelivery' >
-                        <PaymentAndDelivery />
-                    </Route>
-    
-                    <Route path='/sign-in' >
-                        <Sign/>
-                    </Route>
 
-                    <Route path='/sign-up' >
-                        <Sign isSignUp/>
-                    </Route>
-            
-                </Switch> */}
+                <Navbar className="burgerBar" collapseOnSelect expand='md'>
+
+                    <Link to='/vapa' >
+                        <Image 
+                            className="navBrandImage" 
+                            src={WhiteVapaLogo} alt={'vapa_logo'} 
+                        />
+                    </Link>
+
+                    <div className="icons" >
+                        <BsSearch className="searchIcon"/>
+                        <Link to='/profile'>
+                            <BsPerson className="profileIcon" />
+                        </Link>
+                        <ShoppingCard className="shippingCardIcon"/>
+                    </div>
+
+                    <Navbar.Toggle className='navBarToggle' aria-controls="responsive-navbar-nav" />
+                    <Navbar.Collapse className='navBarCollaps' id="responsive-navbar-nav" >
+                        <Nav  className='nav' >
+                            <Link  to='/aboutVapa' className='navLink' >
+                                About Vapa
+                            </Link>
+                                    
+                            <Link to='/contacts' className='navLink' >
+                                Contacts
+                            </Link>
+                
+                            <Link to='/partners' className='navLink' >
+                                Partners
+                            </Link>
+                
+                            <Link to='/paymentAndDelivery' className='navLink' >
+                                Payment and delivery
+                            </Link>
+                        </Nav>
+                    </Navbar.Collapse>
+                </Navbar>
+
             </div>
         )
 
