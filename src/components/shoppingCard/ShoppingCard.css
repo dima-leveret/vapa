@@ -9,6 +9,10 @@
     align-items: center;
 }
 
+.shopIcon:hover {
+    filter: invert(40%);
+}
+
 .shippingCardIcon {
     cursor: pointer;
     width: 20px;

@@ -1,9 +1,10 @@
 import React from 'react';
 
 import '../slider/Slider.css';
-import slide1 from '../../img/slide1.jpg'
-import slide2 from '../../img/slide2.jpg'
-import slide3 from '../../img/slide3.jpg'
+import DesctopBanner1 from '../../img/DesctopBanner1.jpg'
+import DesctopBanner2 from '../../img/DesctopBanner2.jpg'
+import DesctopBanner3 from '../../img/DesctopBanner3.jpg'
+
 
 import Carousel from 'react-bootstrap/Carousel';
 
@@ -18,21 +19,21 @@ class Slider extends React.Component {
                     <Carousel.Item className="slide">
                         <img
                         className="slideImg"
-                        src={slide1}
+                        src={DesctopBanner1}
                         alt="First slide"
                         />
                     </Carousel.Item>
                     <Carousel.Item className="slide">
                         <img
                         className="slideImg"
-                        src={slide2}
+                        src={DesctopBanner2}
                         alt="Second slide"
                         />
                     </Carousel.Item>
                     <Carousel.Item className="slide">
                         <img
                         className="slideImg"
-                        src={slide3}
+                        src={DesctopBanner3}
                         alt="Third slide"
                         />
                     </Carousel.Item>

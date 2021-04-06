@@ -13,6 +13,8 @@ import Image from 'react-bootstrap/Image';
 import WhiteVapaLogo from '../../img/white_vapa_logo.svg';
 import SearchIcon from '../../img/search.svg';
 import UserIcon from '../../img/user.svg';
+import openBurger from '../../img/openBurger.svg';
+import closeBurger from '../../img/closeBurger.svg';
 
 import AboutVapa from '../content/AboutVapa';
 import Contacts from '../content/Contacts';
@@ -23,6 +25,7 @@ import Sign from '../sign/Sign';
 import ShoppingCard from "../shoppingCard/ShoppingCard"
 import Home from '../home/Home';
 import Profile from '../profile/Profile';
+import { icon } from '@fortawesome/fontawesome-svg-core';
 
 
 
@@ -30,7 +33,36 @@ import Profile from '../profile/Profile';
 
     state = {
         user: null,
+        burgerMenu: openBurger,
+        openBurgerMenu: false,
         // authSubscription: null, 'static nav is not requared unmounting'
+    }
+
+    // openBurger = () => {
+    //     this.setState({
+    //         burgerMenu: closeBurger
+    //     })
+    // }
+
+    closeBurger = () => {
+        this.setState({
+            burgerMenu: openBurger,
+            openBurgerMenu: false,
+        })
+    }
+
+    changeBurgerMenu = () => {
+        if (this.state.burgerMenu === openBurger) {
+            this.setState({
+                burgerMenu: closeBurger,
+                openBurgerMenu: true,
+            })
+        } if (this.state.burgerMenu === closeBurger) {
+            this.setState({
+                burgerMenu: openBurger,
+                openBurgerMenu: false,
+            })
+        }
     }
 
     componentDidMount() {
@@ -56,6 +88,8 @@ import Profile from '../profile/Profile';
     }
 
     render () {
+
+        console.log(this.state.burgerMenu, this.state.openBurgerMenu);
         return(
             <div className="navBarBody" >
                 <Navbar className='navBar'>
@@ -123,7 +157,7 @@ import Profile from '../profile/Profile';
                     </a> */}
                 </Navbar>
 
-                <Navbar className="burgerBar" collapseOnSelect expand='md'>
+                {/* <Navbar className="burgerBar" collapseOnSelect expand='md'>
 
                     <Link to='/vapa' >
                         <Image 
@@ -167,7 +201,75 @@ import Profile from '../profile/Profile';
                             </Link>
                         </Nav>
                     </Navbar.Collapse>
-                </Navbar>
+                </Navbar> */}
+
+                <div className="burgerBar">
+
+                    <Link to='/vapa' >
+                        <Image 
+                            className="navBrandImage" 
+                            src={WhiteVapaLogo} alt={'vapa_logo'} 
+                        />
+                    </Link>
+
+                    <div className="icons" >
+                        <img
+                            className="searchIcon"
+                            src={SearchIcon}
+                            alt='search icon'
+                        />
+                        <Link to='/profile'>
+                            <img
+                            className="profileIcon"
+                            src={UserIcon}
+                            />
+                        </Link>
+                        <ShoppingCard />
+                    </div>
+
+                    <Image onClick={() =>  this.changeBurgerMenu()} src={this.state.burgerMenu} className="burger" alt='burger open'></Image>
+                    {
+                        this.state.openBurgerMenu === true
+                        ?
+                        <Nav  className='openedNav' >
+                            <Link  onClick={() => this.closeBurger()} to='/aboutVapa' className='navLink' >
+                                About Vapa
+                            </Link>
+                                        
+                            <Link onClick={() => this.closeBurger()} to='/contacts' className='navLink' >
+                                Contacts
+                            </Link>
+                    
+                            <Link onClick={() => this.closeBurger()} to='/partners' className='navLink' >
+                                Partners
+                            </Link>
+                    
+                            <Link onClick={() => this.closeBurger()} to='/paymentAndDelivery' className='navLink' >
+                                Payment and delivery
+                            </Link>
+                        </Nav>
+                        :
+                        <Nav  className='closedNav' >
+                            <Link  onClick={() => this.closeBurger()} to='/aboutVapa' className='navLink' >
+                                About Vapa
+                            </Link>
+                                        
+                            <Link onClick={() => this.closeBurger()} to='/contacts' className='navLink' >
+                                Contacts
+                            </Link>
+                    
+                            <Link onClick={() => this.closeBurger()} to='/partners' className='navLink' >
+                                Partners
+                            </Link>
+                    
+                            <Link onClick={() => this.closeBurger()} to='/paymentAndDelivery' className='navLink' >
+                                Payment and delivery
+                            </Link>
+                        </Nav>
+                    }
+                    
+
+                </div>
 
             </div>
         )
