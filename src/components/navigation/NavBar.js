@@ -217,7 +217,7 @@ import Profile from '../profile/Profile';
                             src={SearchIcon}
                             alt='search icon'
                         />
-                        <Link to='/profile'>
+                        <Link style={{ display: 'flex' }} to='/profile'>
                             <img
                             onClick={() => this.closeBurger()}
                             className="profileIcon"
