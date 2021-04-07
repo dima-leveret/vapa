@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/vapa/static/css/main.f81730f7.chunk.css",
-    "main.js": "/vapa/static/js/main.f6d771a5.chunk.js",
-    "main.js.map": "/vapa/static/js/main.f6d771a5.chunk.js.map",
+    "main.css": "/vapa/static/css/main.05fdc0fd.chunk.css",
+    "main.js": "/vapa/static/js/main.d9dcfa6c.chunk.js",
+    "main.js.map": "/vapa/static/js/main.d9dcfa6c.chunk.js.map",
     "runtime-main.js": "/vapa/static/js/runtime-main.a4d4b5a7.js",
     "runtime-main.js.map": "/vapa/static/js/runtime-main.a4d4b5a7.js.map",
-    "static/js/2.7a115a93.chunk.js": "/vapa/static/js/2.7a115a93.chunk.js",
-    "static/js/2.7a115a93.chunk.js.map": "/vapa/static/js/2.7a115a93.chunk.js.map",
+    "static/js/2.4a86cdbf.chunk.js": "/vapa/static/js/2.4a86cdbf.chunk.js",
+    "static/js/2.4a86cdbf.chunk.js.map": "/vapa/static/js/2.4a86cdbf.chunk.js.map",
     "static/js/3.9cfd21f2.chunk.js": "/vapa/static/js/3.9cfd21f2.chunk.js",
     "static/js/3.9cfd21f2.chunk.js.map": "/vapa/static/js/3.9cfd21f2.chunk.js.map",
     "index.html": "/vapa/index.html",
-    "static/css/main.f81730f7.chunk.css.map": "/vapa/static/css/main.f81730f7.chunk.css.map",
-    "static/js/2.7a115a93.chunk.js.LICENSE.txt": "/vapa/static/js/2.7a115a93.chunk.js.LICENSE.txt",
+    "static/css/main.05fdc0fd.chunk.css.map": "/vapa/static/css/main.05fdc0fd.chunk.css.map",
+    "static/js/2.4a86cdbf.chunk.js.LICENSE.txt": "/vapa/static/js/2.4a86cdbf.chunk.js.LICENSE.txt",
     "static/media/DesctopBanner1.633c610c.jpg": "/vapa/static/media/DesctopBanner1.633c610c.jpg",
     "static/media/DesctopBanner2.5633dcdf.jpg": "/vapa/static/media/DesctopBanner2.5633dcdf.jpg",
     "static/media/DesctopBanner3.f698aa69.jpg": "/vapa/static/media/DesctopBanner3.f698aa69.jpg",
@@ -24,12 +24,13 @@
     "static/media/search.592579b4.svg": "/vapa/static/media/search.592579b4.svg",
     "static/media/shop.4cb95222.svg": "/vapa/static/media/shop.4cb95222.svg",
     "static/media/user.f456c4f9.svg": "/vapa/static/media/user.f456c4f9.svg",
+    "static/media/user_loggged_in.2a7a1d99.svg": "/vapa/static/media/user_loggged_in.2a7a1d99.svg",
     "static/media/white_vapa_logo.db381333.svg": "/vapa/static/media/white_vapa_logo.db381333.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.a4d4b5a7.js",
-    "static/js/2.7a115a93.chunk.js",
-    "static/css/main.f81730f7.chunk.css",
-    "static/js/main.f6d771a5.chunk.js"
+    "static/js/2.4a86cdbf.chunk.js",
+    "static/css/main.05fdc0fd.chunk.css",
+    "static/js/main.d9dcfa6c.chunk.js"
   ]
 }
