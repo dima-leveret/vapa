@@ -10,8 +10,7 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding: 30px 0px;
 }
 
 .navBodyLink {
@@ -19,4 +18,24 @@
     text-decoration: none;
     text-align: center;
     white-space: nowrap;
+    width: 120px;
+    height: auto;
 }
+
+.navIcon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: honeydew;
+}
+
+.nav-item {
+    width: 120px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    cursor: pointer;
+}
+

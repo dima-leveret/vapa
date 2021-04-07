@@ -92,7 +92,7 @@ class ProductCard extends React.Component {
                         </div>      
                     }
                 </div>
-                <div className='buttons' >
+                {/* <div className='buttons' >
                     <Button
                     className="cardButtonED"
                     onClick={() => this.openModalEdit(this.props.productId)}
@@ -103,7 +103,7 @@ class ProductCard extends React.Component {
                     onClick={() => this.props.deleteProduct(this.props.productId)}
                     >Delete</Button>
     
-                </div>
+                </div> */}
             </Card>
 
             <ProductDetailsModal

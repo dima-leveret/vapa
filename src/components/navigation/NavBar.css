@@ -2,6 +2,9 @@
     display: flex;
     justify-content: center;
     background-color: #292929;
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
 }
 
 .navBar {
@@ -96,7 +99,7 @@
     .navBrandImage {
         width: 45px;
         height: 45px;
-        margin: 16px;
+        margin: 16px 0px 16px 10px;
     }
 
     .openedNav {
@@ -114,7 +117,7 @@
         margin-top: 70px;
         /* margin-top: 70px; */
         transform: translateX(0);
-        transition: ease-in-out 0.5s;
+        transition: ease-in-out 0.3s;
     }
 
     .closedNav {
@@ -132,7 +135,7 @@
         margin-top: 70px;
         /* margin-top: 70px; */
         transform: translateX(100%);
-        transition: ease-in-out 0.5s;
+        transition: ease-in-out 0.3s;
     }
 
 

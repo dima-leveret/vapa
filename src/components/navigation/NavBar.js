@@ -273,10 +273,7 @@ import Profile from '../profile/Profile';
                         </div>
                         
                     }
-                    
-
                 </div>
-
             </div>
         )
 
