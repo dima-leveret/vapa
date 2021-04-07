@@ -57,6 +57,11 @@
     filter: invert(40%);
 }
 
+.loggedInProfileIcon {
+    display: flex;
+    height: 20px;
+}
+
 .searchIcon {
     width: 20px;
     height: 20px;

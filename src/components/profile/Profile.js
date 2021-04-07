@@ -96,6 +96,10 @@ class Profile extends React.Component {
         //     })
     }
 
+    signOut = () => {
+        firebase.auth().signOut()
+    }
+
     
  
     render() {
@@ -137,6 +141,11 @@ class Profile extends React.Component {
                                             postOfficeNr={userData.postOfficeNr}
                                             postcode={userData.postcode}
                                             />
+
+                                            <Button
+                                                onClick={this.signOut} 
+                                                variant='warning' 
+                                            >Sign out</Button>
                                         </div>
                                         :
                                         <div>
@@ -144,6 +153,10 @@ class Profile extends React.Component {
                                                 <p>Your uid is {user.uid} </p>
                                                 <p>Update your information</p>
                                                 <SetUserData/>
+                                                <Button
+                                                    onClick={this.signOut} 
+                                                    variant='warning' 
+                                                >Sign out</Button>
                                             </div>
                                     }
                                     

@@ -13,6 +13,7 @@ import Image from 'react-bootstrap/Image';
 import WhiteVapaLogo from '../../img/white_vapa_logo.svg';
 import SearchIcon from '../../img/search.svg';
 import UserIcon from '../../img/user.svg';
+import LoggedInUserIcon from '../../img/user_loggged_in.svg';
 import openBurger from '../../img/openBurger.svg';
 import closeBurger from '../../img/closeBurger.svg';
 
@@ -25,6 +26,8 @@ import Sign from '../sign/Sign';
 import ShoppingCard from "../shoppingCard/ShoppingCard"
 import Home from '../home/Home';
 import Profile from '../profile/Profile';
+
+import Auth from "../sign/Auth"
 
 
 
@@ -124,12 +127,32 @@ import Profile from '../profile/Profile';
                             src={SearchIcon}
                             alt='search icon'
                         />
-                        <Link to='/profile'>
-                            <img
-                            className="profileIcon"
-                            src={UserIcon}
-                            />
-                        </Link>
+
+                        <Auth>
+                            {
+                               ({ user }) => {
+                                   return (
+                                    <Link to='/profile'>
+                                        {
+                                            user
+                                            ?
+                                            <img
+                                            className="loggedInProfileIcon"
+                                            src={LoggedInUserIcon}
+                                            />
+                                            :
+                                            <img
+                                            className="profileIcon"
+                                            src={UserIcon}
+                                            />
+                                        }
+                                        
+                                    </Link>
+                                   )
+                               } 
+                            }
+                        </Auth>
+                        
                         <ShoppingCard />
                     </div>
 
@@ -217,13 +240,32 @@ import Profile from '../profile/Profile';
                             src={SearchIcon}
                             alt='search icon'
                         />
-                        <Link style={{ display: 'flex' }} to='/profile'>
-                            <img
-                            onClick={() => this.closeBurger()}
-                            className="profileIcon"
-                            src={UserIcon}
-                            />
-                        </Link>
+
+                        <Auth>
+                            {
+                               ({ user }) => {
+                                   return (
+                                    <Link to='/profile'>
+                                        {
+                                            user
+                                            ?
+                                            <img
+                                            className="loggedInProfileIcon"
+                                            src={LoggedInUserIcon}
+                                            />
+                                            :
+                                            <img
+                                            className="profileIcon"
+                                            src={UserIcon}
+                                            />
+                                        }
+                                        
+                                    </Link>
+                                   )
+                               } 
+                            }
+                        </Auth>
+
                         <ShoppingCard />
                     </div>
 
