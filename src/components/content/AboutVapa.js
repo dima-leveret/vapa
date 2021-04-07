@@ -8,7 +8,7 @@ function AboutVapa() {
     
     return (
         <div className="aVbody" >
-            <div className='container'>
+            <div className='aVcontainer'>
                 <div className="aboutVapa" >
                     <h1><strong>Про Vapa</strong></h1>
                     <p>VAPA – це найприродніше рішення, бо є втіленням цінностей двох закоханих людей. Від самого початку ВОНА сміялась, вигадувала й пророщувала ідеї, а ВІН уявляв, малював і планував кожен етап. Разом ми створюємо не просто екологічну косметику, але й спільноту змінотворців. VAPA – це завжди МИ і ніколи Я.</p>
