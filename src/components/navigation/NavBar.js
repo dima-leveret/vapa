@@ -25,7 +25,6 @@ import Sign from '../sign/Sign';
 import ShoppingCard from "../shoppingCard/ShoppingCard"
 import Home from '../home/Home';
 import Profile from '../profile/Profile';
-import { icon } from '@fortawesome/fontawesome-svg-core';
 
 
 
@@ -88,8 +87,6 @@ import { icon } from '@fortawesome/fontawesome-svg-core';
     }
 
     render () {
-
-        console.log(this.state.burgerMenu, this.state.openBurgerMenu);
         return(
             <div className="navBarBody" >
                 <Navbar className='navBar'>
@@ -207,6 +204,7 @@ import { icon } from '@fortawesome/fontawesome-svg-core';
 
                     <Link to='/vapa' >
                         <Image 
+                            onClick={() => this.closeBurger()}
                             className="navBrandImage" 
                             src={WhiteVapaLogo} alt={'vapa_logo'} 
                         />
@@ -214,12 +212,14 @@ import { icon } from '@fortawesome/fontawesome-svg-core';
 
                     <div className="icons" >
                         <img
+                            onClick={() => this.closeBurger()}
                             className="searchIcon"
                             src={SearchIcon}
                             alt='search icon'
                         />
                         <Link to='/profile'>
                             <img
+                            onClick={() => this.closeBurger()}
                             className="profileIcon"
                             src={UserIcon}
                             />
@@ -231,41 +231,47 @@ import { icon } from '@fortawesome/fontawesome-svg-core';
                     {
                         this.state.openBurgerMenu === true
                         ?
-                        <Nav  className='openedNav' >
-                            <Link  onClick={() => this.closeBurger()} to='/aboutVapa' className='navLink' >
-                                About Vapa
-                            </Link>
-                                        
-                            <Link onClick={() => this.closeBurger()} to='/contacts' className='navLink' >
-                                Contacts
-                            </Link>
-                    
-                            <Link onClick={() => this.closeBurger()} to='/partners' className='navLink' >
-                                Partners
-                            </Link>
-                    
-                            <Link onClick={() => this.closeBurger()} to='/paymentAndDelivery' className='navLink' >
-                                Payment and delivery
-                            </Link>
-                        </Nav>
+                        <div className='openedNav' >
+                            <Nav >
+                                <Link  onClick={() => this.closeBurger()} to='/aboutVapa' className='navLink' >
+                                    About Vapa
+                                </Link>
+                                            
+                                <Link onClick={() => this.closeBurger()} to='/contacts' className='navLink' >
+                                    Contacts
+                                </Link>
+                        
+                                <Link onClick={() => this.closeBurger()} to='/partners' className='navLink' >
+                                    Partners
+                                </Link>
+                        
+                                <Link onClick={() => this.closeBurger()} to='/paymentAndDelivery' className='navLink' >
+                                    Payment and delivery
+                                </Link>
+                            </Nav>
+                        </div>
+                        
                         :
-                        <Nav  className='closedNav' >
-                            <Link  onClick={() => this.closeBurger()} to='/aboutVapa' className='navLink' >
-                                About Vapa
-                            </Link>
-                                        
-                            <Link onClick={() => this.closeBurger()} to='/contacts' className='navLink' >
-                                Contacts
-                            </Link>
-                    
-                            <Link onClick={() => this.closeBurger()} to='/partners' className='navLink' >
-                                Partners
-                            </Link>
-                    
-                            <Link onClick={() => this.closeBurger()} to='/paymentAndDelivery' className='navLink' >
-                                Payment and delivery
-                            </Link>
-                        </Nav>
+                        <div className='closedNav' >
+                            <Nav >
+                                <Link  onClick={() => this.closeBurger()} to='/aboutVapa' className='navLink' >
+                                    About Vapa
+                                </Link>
+                                            
+                                <Link onClick={() => this.closeBurger()} to='/contacts' className='navLink' >
+                                    Contacts
+                                </Link>
+                        
+                                <Link onClick={() => this.closeBurger()} to='/partners' className='navLink' >
+                                    Partners
+                                </Link>
+                        
+                                <Link onClick={() => this.closeBurger()} to='/paymentAndDelivery' className='navLink' >
+                                    Payment and delivery
+                                </Link>
+                            </Nav>
+                        </div>
+                        
                     }
                     
 

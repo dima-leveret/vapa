@@ -45,6 +45,7 @@
 .profileIcon {
     width: 20px;
     height: 20px;
+    fill: white;
 }
 
 .profileIcon:hover {
@@ -107,7 +108,7 @@
         top: 0;
         left: 0;
         z-index: 100;
-        justify-content: center;
+        /* justify-content: center; */
         align-items: center;
         background-color: #292929;
         margin-top: 70px;
@@ -125,7 +126,7 @@
         top: 0;
         left: 0;
         z-index: 100;
-        justify-content: center;
+        /* justify-content: center; */
         align-items: center;
         background-color: #292929;
         margin-top: 70px;
@@ -133,6 +134,7 @@
         transform: translateX(100%);
         transition: ease-in-out 0.5s;
     }
+
 
     .navLink {
         width: 98%;
