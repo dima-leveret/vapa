@@ -217,6 +217,15 @@ import Auth from "../sign/Auth"
                     <Image onClick={() =>  this.changeBurgerMenu()} src={this.state.burgerMenu} className="burger" alt='burger open'></Image>
                         <div className={this.state.bugregMenuClass} >
                             <Nav >
+
+                                <Link  to='/vapa' className='navLink' >
+                                    Main
+                                </Link>
+
+                                <Link  to='/catalog' className='navLink' >
+                                    Catalog
+                                </Link>
+
                                 <Link  onClick={() => this.closeBurger()} to='/aboutVapa' className='navLink' >
                                     About Vapa
                                 </Link>
@@ -228,10 +237,14 @@ import Auth from "../sign/Auth"
                                 <Link onClick={() => this.closeBurger()} to='/partners' className='navLink' >
                                     Partners
                                 </Link>
-                        
-                                <Link onClick={() => this.closeBurger()} to='/paymentAndDelivery' className='navLink' >
-                                    Payment and delivery
+
+                                <Link onClick={() => this.closeBurger()} to='/certificate' className='navLink' >
+                                    Сertificate
                                 </Link>
+                        
+                                {/* <Link onClick={() => this.closeBurger()} to='/paymentAndDelivery' className='navLink' >
+                                    Payment and delivery
+                                </Link> */}
                             </Nav>
                         </div>
                 </div>
