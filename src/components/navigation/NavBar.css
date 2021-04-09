@@ -20,7 +20,7 @@
 
 .imageNav {
     display: flex;
-    width: 600px;
+    width: 800px;
     align-items: center;
     justify-content: space-between;
     padding: 0px 16px;
@@ -60,6 +60,10 @@
 .loggedInProfileIcon {
     display: flex;
     height: 20px;
+}
+
+.loggedInProfileIcon:hover{
+    filter: invert(40%);
 }
 
 .searchIcon {

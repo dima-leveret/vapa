@@ -7,6 +7,9 @@ import AboutVapa from './components/content/AboutVapa';
 import Contacts from './components/content/Contacts';
 import Partners from './components/partners/Partners';
 import PaymentAndDelivery from './components/content/PaymentAndDelivery';
+import Catalog from './components/content/Catalog';
+import Certificate from './components/content/Certificate';
+
 import Sign from './components/sign/Sign';
 
 import NavBar from "./components/navigation/NavBar";
@@ -24,6 +27,10 @@ function App() {
           <Route exact path='/vapa' >
             <Home />
           </Route>
+
+          <Route path='/catalog' >
+            <Catalog />
+          </Route>
               
           <Route path='/aboutVapa' >
             <AboutVapa />
@@ -39,6 +46,10 @@ function App() {
               
           <Route path='/paymentAndDelivery' >
             <PaymentAndDelivery />
+          </Route>
+
+          <Route path='/certificate' >
+            <Certificate />
           </Route>
       
           <Route path='/sign-in' >

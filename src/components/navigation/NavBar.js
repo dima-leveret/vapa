@@ -36,7 +36,7 @@ import Auth from "../sign/Auth"
     state = {
         user: null,
         burgerMenu: openBurger,
-        openBurgerMenu: false,
+        bugregMenuClass: 'closedNav',
         // authSubscription: null, 'static nav is not requared unmounting'
     }
 
@@ -57,12 +57,12 @@ import Auth from "../sign/Auth"
         if (this.state.burgerMenu === openBurger) {
             this.setState({
                 burgerMenu: closeBurger,
-                openBurgerMenu: true,
+                bugregMenuClass: 'openedNav',
             })
         } if (this.state.burgerMenu === closeBurger) {
             this.setState({
                 burgerMenu: openBurger,
-                openBurgerMenu: false,
+                bugregMenuClass: 'closedNav',
             })
         }
     }
@@ -102,6 +102,14 @@ import Auth from "../sign/Auth"
                         </Link>
 
                         <Nav  className='nav' >
+                            <Link  to='/vapa' className='navLink' >
+                                Main
+                            </Link>
+
+                            <Link  to='/catalog' className='navLink' >
+                                Catalog
+                            </Link>
+
                             <Link  to='/aboutVapa' className='navLink' >
                                 About Vapa
                             </Link>
@@ -113,14 +121,17 @@ import Auth from "../sign/Auth"
                             <Link to='/partners' className='navLink' >
                                 Partners
                             </Link>
-                    
-                            <Link to='/paymentAndDelivery' className='navLink' >
-                                Payment and delivery
+
+                            <Link  to='/certificate' className='navLink' >
+                                Сertificate
                             </Link>
+                    
+                            {/* <Link to='/paymentAndDelivery' className='navLink' >
+                                Payment and delivery
+                            </Link> */}
                         </Nav>
                     </div>
                     
-
                     <div className="icons" >
                         <img
                             className="searchIcon"
@@ -155,73 +166,7 @@ import Auth from "../sign/Auth"
                         
                         <ShoppingCard />
                     </div>
-
-                    {/* {this.state.user
-                    ?
-                    <div>
-                        <p style={{ color: "white", backgroundColor: "grey" }} >Wellcome <br/> {this.state.user.email}</p>
-                        <Button
-                        onClick={this.signOut} 
-                        variant='warning' 
-                    >Sign out</Button>
-                    </div>
-                    
-                    : 
-                    <Link to='/sign-in'  className='navLink'>
-                        <Button variant='success' >Sign in</Button>
-                    </Link>
-                    } */}
-
-                    {/* <a href='https://www.instagram.com/vapa.eco/' target='blank' >
-                        <FiInstagram className='instaIcon' />
-                    </a> */}
                 </Navbar>
-
-                {/* <Navbar className="burgerBar" collapseOnSelect expand='md'>
-
-                    <Link to='/vapa' >
-                        <Image 
-                            className="navBrandImage" 
-                            src={WhiteVapaLogo} alt={'vapa_logo'} 
-                        />
-                    </Link>
-
-                    <div className="icons" >
-                        <img
-                            className="searchIcon"
-                            src={SearchIcon}
-                            alt='search icon'
-                        />
-                        <Link to='/profile'>
-                            <img
-                            className="profileIcon"
-                            src={UserIcon}
-                            />
-                        </Link>
-                        <ShoppingCard />
-                    </div>
-
-                    <Navbar.Toggle className='navBarToggle' aria-controls="responsive-navbar-nav" />
-                    <Navbar.Collapse className='navBarCollaps' id="responsive-navbar-nav" >
-                        <Nav  className='nav' >
-                            <Link  to='/aboutVapa' className='navLink' >
-                                About Vapa
-                            </Link>
-                                    
-                            <Link to='/contacts' className='navLink' >
-                                Contacts
-                            </Link>
-                
-                            <Link to='/partners' className='navLink' >
-                                Partners
-                            </Link>
-                
-                            <Link to='/paymentAndDelivery' className='navLink' >
-                                Payment and delivery
-                            </Link>
-                        </Nav>
-                    </Navbar.Collapse>
-                </Navbar> */}
 
                 <div className="burgerBar">
 
@@ -270,10 +215,7 @@ import Auth from "../sign/Auth"
                     </div>
 
                     <Image onClick={() =>  this.changeBurgerMenu()} src={this.state.burgerMenu} className="burger" alt='burger open'></Image>
-                    {
-                        this.state.openBurgerMenu === true
-                        ?
-                        <div className='openedNav' >
+                        <div className={this.state.bugregMenuClass} >
                             <Nav >
                                 <Link  onClick={() => this.closeBurger()} to='/aboutVapa' className='navLink' >
                                     About Vapa
@@ -292,29 +234,6 @@ import Auth from "../sign/Auth"
                                 </Link>
                             </Nav>
                         </div>
-                        
-                        :
-                        <div className='closedNav' >
-                            <Nav >
-                                <Link  onClick={() => this.closeBurger()} to='/aboutVapa' className='navLink' >
-                                    About Vapa
-                                </Link>
-                                            
-                                <Link onClick={() => this.closeBurger()} to='/contacts' className='navLink' >
-                                    Contacts
-                                </Link>
-                        
-                                <Link onClick={() => this.closeBurger()} to='/partners' className='navLink' >
-                                    Partners
-                                </Link>
-                        
-                                <Link onClick={() => this.closeBurger()} to='/paymentAndDelivery' className='navLink' >
-                                    Payment and delivery
-                                </Link>
-                            </Nav>
-                        </div>
-                        
-                    }
                 </div>
             </div>
         )
