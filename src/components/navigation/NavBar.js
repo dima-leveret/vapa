@@ -49,7 +49,7 @@ import Auth from "../sign/Auth"
     closeBurger = () => {
         this.setState({
             burgerMenu: openBurger,
-            openBurgerMenu: false,
+            bugregMenuClass: 'closedNav',
         })
     }
 
@@ -218,11 +218,11 @@ import Auth from "../sign/Auth"
                         <div className={this.state.bugregMenuClass} >
                             <Nav >
 
-                                <Link  to='/vapa' className='navLink' >
+                                <Link onClick={() => this.closeBurger()} to='/vapa' className='navLink' >
                                     Main
                                 </Link>
 
-                                <Link  to='/catalog' className='navLink' >
+                                <Link onClick={() => this.closeBurger()} to='/catalog' className='navLink' >
                                     Catalog
                                 </Link>
 
