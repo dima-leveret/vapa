@@ -10,8 +10,10 @@
     justify-content: space-between;
 }
 
-.cardImg {
+.card-img {
     width: 100%;
+    max-width: 264px;
+    max-height: 350px;
 }
 
 .buttons {
@@ -67,4 +69,15 @@
     margin: 5px 5px;
     width: 115px;
     border: none;
+}
+
+.card-title {
+    max-width: 264px;
+    width: 100%;
+    margin: 0;
+    padding: 20px 0;
+}
+
+.card-body {
+    padding: 0;
 }

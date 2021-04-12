@@ -12,13 +12,14 @@ function ProductDetailsModal (props) {
 
     return (
       <Modal
-        size="lg"
+        size="xl"
         aria-labelledby="contained-modal-title-vcenter"
         centered
         show={props.show}
         onHide={props.onHide} 
        >
-        <Modal.Header closeButton>
+        <Modal.Header>
+          <p style={{ cursor: 'pointer' }} onClick={props.onHide} >Back</p>
           <Modal.Title> {props.productProduct} {props.productName} </Modal.Title>
         </Modal.Header>
                     

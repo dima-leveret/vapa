@@ -10,7 +10,7 @@ import './ProductCard.css';
 
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import img123 from '../../img/img123.jpg';
+import img123 from '../../img/052.jpeg';
 
 
 
@@ -56,16 +56,18 @@ class ProductCard extends React.Component {
         return (
         <>
             <Card  className='card' >
-                <Card.Img variant="top" src={img123} alt='some picture' className='cardImg'/>
+                <Card.Img variant="top" src={img123} alt='some-picture' className="card-img" />
                 <Card.Body>
-                    <Card.Title> {this.props.productProduct} { this.props.productName} </Card.Title>
+                    <Card.Title > {this.props.productProduct} { this.props.productName} </Card.Title>
                     <Card.Text> { this.props.productDescription} </Card.Text>
                 </Card.Body>
                 {this.props.productDiscount === true 
                 ? 
-                <div style={{ display: 'flex', marginTop: '10px' }} >
-                    <p style={{ marginRight: '10px' }} > {this.props.productNewPrice} UAH </p>
-                    <sup> <del> {this.props.productPrice} UAH </del> </sup> 
+                <div style={{ display: 'flex', marginTop: '20px'}} >
+                    <p>  
+                    <sub style={{ marginRight: '10px' }} > <del> {this.props.productPrice} UAH </del> </sub> 
+                    {this.props.productNewPrice} UAH 
+                    </p> 
                 </div>
                 :
                 <p> {this.props.productPrice} UAH </p>

@@ -7,3 +7,24 @@
     width: 115px;
     text-align: center;
 }
+
+.modal-xl {
+    max-width: 12000px;
+    width: 100%;
+    height: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.modal-content {
+    max-width: 1200px;
+    width: 100%;
+    background: #1f1f1f;
+    color: #fff;
+    margin: 0 10px;
+    /* padding-top: 10px; */
+    position: absolute;
+    top: 0;
+}
