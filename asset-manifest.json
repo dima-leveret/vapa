@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/vapa/static/css/main.14bd9715.chunk.css",
-    "main.js": "/vapa/static/js/main.10ed7d2a.chunk.js",
-    "main.js.map": "/vapa/static/js/main.10ed7d2a.chunk.js.map",
+    "main.css": "/vapa/static/css/main.adfb31bf.chunk.css",
+    "main.js": "/vapa/static/js/main.9fa93b39.chunk.js",
+    "main.js.map": "/vapa/static/js/main.9fa93b39.chunk.js.map",
     "runtime-main.js": "/vapa/static/js/runtime-main.adc6ddf1.js",
     "runtime-main.js.map": "/vapa/static/js/runtime-main.adc6ddf1.js.map",
     "static/js/2.4a571cac.chunk.js": "/vapa/static/js/2.4a571cac.chunk.js",
@@ -10,8 +10,9 @@
     "static/js/3.fd58ad0a.chunk.js": "/vapa/static/js/3.fd58ad0a.chunk.js",
     "static/js/3.fd58ad0a.chunk.js.map": "/vapa/static/js/3.fd58ad0a.chunk.js.map",
     "index.html": "/vapa/index.html",
-    "static/css/main.14bd9715.chunk.css.map": "/vapa/static/css/main.14bd9715.chunk.css.map",
+    "static/css/main.adfb31bf.chunk.css.map": "/vapa/static/css/main.adfb31bf.chunk.css.map",
     "static/js/2.4a571cac.chunk.js.LICENSE.txt": "/vapa/static/js/2.4a571cac.chunk.js.LICENSE.txt",
+    "static/media/052.c63184ee.jpeg": "/vapa/static/media/052.c63184ee.jpeg",
     "static/media/DesctopBanner1.633c610c.jpg": "/vapa/static/media/DesctopBanner1.633c610c.jpg",
     "static/media/DesctopBanner2.5633dcdf.jpg": "/vapa/static/media/DesctopBanner2.5633dcdf.jpg",
     "static/media/DesctopBanner3.f698aa69.jpg": "/vapa/static/media/DesctopBanner3.f698aa69.jpg",
@@ -30,7 +31,7 @@
   "entrypoints": [
     "static/js/runtime-main.adc6ddf1.js",
     "static/js/2.4a571cac.chunk.js",
-    "static/css/main.14bd9715.chunk.css",
-    "static/js/main.10ed7d2a.chunk.js"
+    "static/css/main.adfb31bf.chunk.css",
+    "static/js/main.9fa93b39.chunk.js"
   ]
 }
