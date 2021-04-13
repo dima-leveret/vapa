@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/vapa/static/css/main.adfb31bf.chunk.css",
-    "main.js": "/vapa/static/js/main.9fa93b39.chunk.js",
-    "main.js.map": "/vapa/static/js/main.9fa93b39.chunk.js.map",
+    "main.css": "/vapa/static/css/main.abe4b2c0.chunk.css",
+    "main.js": "/vapa/static/js/main.012995ee.chunk.js",
+    "main.js.map": "/vapa/static/js/main.012995ee.chunk.js.map",
     "runtime-main.js": "/vapa/static/js/runtime-main.adc6ddf1.js",
     "runtime-main.js.map": "/vapa/static/js/runtime-main.adc6ddf1.js.map",
-    "static/js/2.4a571cac.chunk.js": "/vapa/static/js/2.4a571cac.chunk.js",
-    "static/js/2.4a571cac.chunk.js.map": "/vapa/static/js/2.4a571cac.chunk.js.map",
+    "static/js/2.3e3be6ef.chunk.js": "/vapa/static/js/2.3e3be6ef.chunk.js",
+    "static/js/2.3e3be6ef.chunk.js.map": "/vapa/static/js/2.3e3be6ef.chunk.js.map",
     "static/js/3.fd58ad0a.chunk.js": "/vapa/static/js/3.fd58ad0a.chunk.js",
     "static/js/3.fd58ad0a.chunk.js.map": "/vapa/static/js/3.fd58ad0a.chunk.js.map",
     "index.html": "/vapa/index.html",
-    "static/css/main.adfb31bf.chunk.css.map": "/vapa/static/css/main.adfb31bf.chunk.css.map",
-    "static/js/2.4a571cac.chunk.js.LICENSE.txt": "/vapa/static/js/2.4a571cac.chunk.js.LICENSE.txt",
+    "static/css/main.abe4b2c0.chunk.css.map": "/vapa/static/css/main.abe4b2c0.chunk.css.map",
+    "static/js/2.3e3be6ef.chunk.js.LICENSE.txt": "/vapa/static/js/2.3e3be6ef.chunk.js.LICENSE.txt",
     "static/media/052.c63184ee.jpeg": "/vapa/static/media/052.c63184ee.jpeg",
     "static/media/DesctopBanner1.633c610c.jpg": "/vapa/static/media/DesctopBanner1.633c610c.jpg",
     "static/media/DesctopBanner2.5633dcdf.jpg": "/vapa/static/media/DesctopBanner2.5633dcdf.jpg",
@@ -30,8 +30,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.adc6ddf1.js",
-    "static/js/2.4a571cac.chunk.js",
-    "static/css/main.adfb31bf.chunk.css",
-    "static/js/main.9fa93b39.chunk.js"
+    "static/js/2.3e3be6ef.chunk.js",
+    "static/css/main.abe4b2c0.chunk.css",
+    "static/js/main.012995ee.chunk.js"
   ]
 }

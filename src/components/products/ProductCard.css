@@ -1,6 +1,7 @@
 .card {
     background-color:  #1f1f1f;
     width: 16rem;
+    height: auto;
     margin: 15px ;
     color: white;
     display: flex;
@@ -14,6 +15,7 @@
     width: 100%;
     max-width: 264px;
     max-height: 350px;
+    cursor: pointer;
 }
 
 .buttons {
@@ -25,10 +27,16 @@
     background-color: #9bba84;
     color: #ffffff;
     border-radius: 50px;
-    padding: 13px;
-    margin: 0 5px;
-    width: 115px;
+    max-width: 126px;
+    max-height: 32px;
+    height: 100%;
+    width: 100%;
+    height: auto;
     border: none;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 14px;
+    margin: 20px 0;
 }
 
 .cardButton:hover {
@@ -74,10 +82,24 @@
 .card-title {
     max-width: 264px;
     width: 100%;
-    margin: 0;
-    padding: 20px 0;
+    margin: 20px 0 0;
+    /* padding: 20px 0; */
+    font-weight: bold;
+    font-size: 14px;
+    /* line-height: 14px; */
+}
+
+.card-text {
+    max-width: 264px;
+    width: 100%;
+    margin: 10px 0 0;
+    font-weight: 300;
+    font-size: 12px;
+    /* line-height: 0px; */
 }
 
 .card-body {
     padding: 0;
+    cursor: pointer;
+    margin: 0;
 }

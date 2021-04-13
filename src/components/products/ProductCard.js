@@ -56,44 +56,49 @@ class ProductCard extends React.Component {
         return (
         <>
             <Card  className='card' >
-                <Card.Img variant="top" src={img123} alt='some-picture' className="card-img" />
-                <Card.Body>
+                <Card.Img
+                onClick={() => this.openModalDetails(this.props.productId)} 
+                variant="top" 
+                src={img123} 
+                alt='some-picture' 
+                className="card-img" />
+                <Card.Body onClick={() => this.openModalDetails(this.props.productId)} >
                     <Card.Title > {this.props.productProduct} { this.props.productName} </Card.Title>
                     <Card.Text> { this.props.productDescription} </Card.Text>
                 </Card.Body>
                 {this.props.productDiscount === true 
                 ? 
-                <div style={{ display: 'flex', marginTop: '20px'}} >
-                    <p>  
+                <div style={{ display: 'flex' }} >
+                    <Card.Text>  
                     <sub style={{ marginRight: '10px' }} > <del> {this.props.productPrice} UAH </del> </sub> 
                     {this.props.productNewPrice} UAH 
-                    </p> 
+                    </Card.Text> 
                 </div>
                 :
-                <p> {this.props.productPrice} UAH </p>
+                <Card.Text> {this.props.productPrice} UAH </Card.Text>
                 }
-                <div className="buttons" >
-                    <Button 
+                {/* <div className="buttons" > */}
+                    {/* <Button 
                     onClick={() => this.openModalDetails(this.props.productId)}
                     className="cardButton" > Details 
-                    </Button>
+                    </Button> */}
                     {
                         this.props.productAmount == '0' 
                         ? 
-                        <p className="cardButtonNa" > Not available </p>
+                        <Button disabled className="cardButton" > NA</Button>
                         : 
-                        <div className="buttons" >
+                        <>
                             {
                                 this.props.isProductInCart(this.props.productId)
-                                ? <p className="cardButtonPa" > Product added </p>
+                                ? <Button disabled className="cardButton" > Product added </Button>
                                 :<Button
                                 className="cardButton" 
                                 onClick={() => this.props.addToCard(this.props.product)}
                                 > Add to cart </Button>
                             }
-                        </div>      
+                        </>      
                     }
-                </div>
+                {/* </div> */}
                 {/* <div className='buttons' >
                     <Button
                     className="cardButtonED"
