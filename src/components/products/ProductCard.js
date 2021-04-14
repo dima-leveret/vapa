@@ -69,13 +69,13 @@ class ProductCard extends React.Component {
                 {this.props.productDiscount === true 
                 ? 
                 <div style={{ display: 'flex' }} >
-                    <Card.Text>  
-                    <sub style={{ marginRight: '10px' }} > <del> {this.props.productPrice} UAH </del> </sub> 
+                    <Card.Text style={{ fontSize: '22px' }} >  
+                    <sub style={{ marginRight: '10px', fontSize: '14px' }} > <del> {this.props.productPrice} UAH </del> </sub> 
                     {this.props.productNewPrice} UAH 
                     </Card.Text> 
                 </div>
                 :
-                <Card.Text> {this.props.productPrice} UAH </Card.Text>
+                <Card.Text style={{ fontSize: '22px' }} > {this.props.productPrice} UAH </Card.Text>
                 }
                 {/* <div className="buttons" > */}
                     {/* <Button 
