@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/vapa/static/css/main.abe4b2c0.chunk.css",
+    "main.css": "/vapa/static/css/main.edcb247f.chunk.css",
     "main.js": "/vapa/static/js/main.e55cabdf.chunk.js",
     "main.js.map": "/vapa/static/js/main.e55cabdf.chunk.js.map",
     "runtime-main.js": "/vapa/static/js/runtime-main.adc6ddf1.js",
@@ -10,7 +10,7 @@
     "static/js/3.fd58ad0a.chunk.js": "/vapa/static/js/3.fd58ad0a.chunk.js",
     "static/js/3.fd58ad0a.chunk.js.map": "/vapa/static/js/3.fd58ad0a.chunk.js.map",
     "index.html": "/vapa/index.html",
-    "static/css/main.abe4b2c0.chunk.css.map": "/vapa/static/css/main.abe4b2c0.chunk.css.map",
+    "static/css/main.edcb247f.chunk.css.map": "/vapa/static/css/main.edcb247f.chunk.css.map",
     "static/js/2.3e3be6ef.chunk.js.LICENSE.txt": "/vapa/static/js/2.3e3be6ef.chunk.js.LICENSE.txt",
     "static/media/052.c63184ee.jpeg": "/vapa/static/media/052.c63184ee.jpeg",
     "static/media/DesctopBanner1.633c610c.jpg": "/vapa/static/media/DesctopBanner1.633c610c.jpg",
@@ -31,7 +31,7 @@
   "entrypoints": [
     "static/js/runtime-main.adc6ddf1.js",
     "static/js/2.3e3be6ef.chunk.js",
-    "static/css/main.abe4b2c0.chunk.css",
+    "static/css/main.edcb247f.chunk.css",
     "static/js/main.e55cabdf.chunk.js"
   ]
 }
