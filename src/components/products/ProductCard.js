@@ -70,7 +70,7 @@ class ProductCard extends React.Component {
                 ? 
                 <div style={{ display: 'flex' }} >
                     <Card.Text style={{ fontSize: '22px' }} >  
-                    <sub style={{ marginRight: '10px', fontSize: '14px' }} > <del> {this.props.productPrice} UAH </del> </sub> 
+                    <del  style={{ fontSize: '14px', marginRight: '10px' }} > {this.props.productPrice} UAH </del>
                     {this.props.productNewPrice} UAH 
                     </Card.Text> 
                 </div>

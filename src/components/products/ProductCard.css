@@ -29,12 +29,10 @@
 .cardButton {
     background-color: #9bba84;
     color: #ffffff;
-    border-radius: 50px;
-    max-width: 126px;
-    max-height: 32px;
-    height: 100%;
+    border-radius: 25px;
+    max-width: 136px;
+    height: 42px;
     width: 100%;
-    height: auto;
     border: none;
     font-size: 14px;
     font-weight: normal;

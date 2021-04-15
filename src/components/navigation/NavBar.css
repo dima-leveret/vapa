@@ -84,6 +84,12 @@
     padding: 0 16px;
 }
 
+.icons a {
+    display: flex;
+    width: 20px;
+    height: 20px;
+}
+
 .burgerBar {
     display: none;
 }
