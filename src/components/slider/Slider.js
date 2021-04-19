@@ -1,9 +1,9 @@
 import React from 'react';
 
 import '../slider/Slider.css';
-import DesctopBanner1 from '../../img/DesctopBanner1.jpg'
-import DesctopBanner2 from '../../img/DesctopBanner2.jpg'
-import DesctopBanner3 from '../../img/DesctopBanner3.jpg'
+import DesctopBanner1 from '../../img/Desctop 1-min.jpg'
+import DesctopBanner2 from '../../img/Desctop 2-min.jpg'
+import DesctopBanner3 from '../../img/Desctop 3-min.jpg'
 
 
 import Carousel from 'react-bootstrap/Carousel';

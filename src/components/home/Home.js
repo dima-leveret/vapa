@@ -18,10 +18,10 @@ class Home extends React.Component {
                     <Slider/>
                     <NavProducts/>
                     <Products/>
-                    <AddProduct />
+                    {/* <AddProduct /> */}
                 </div>
             </div>
-            <Partners/>
+            {/* <Partners/> */}
             </>
         )
     }
