@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/vapa/static/css/main.48bef5bd.chunk.css",
-    "main.js": "/vapa/static/js/main.8186764b.chunk.js",
-    "main.js.map": "/vapa/static/js/main.8186764b.chunk.js.map",
+    "main.css": "/vapa/static/css/main.9cbbe2f2.chunk.css",
+    "main.js": "/vapa/static/js/main.8d3bc888.chunk.js",
+    "main.js.map": "/vapa/static/js/main.8d3bc888.chunk.js.map",
     "runtime-main.js": "/vapa/static/js/runtime-main.adc6ddf1.js",
     "runtime-main.js.map": "/vapa/static/js/runtime-main.adc6ddf1.js.map",
     "static/js/2.3e3be6ef.chunk.js": "/vapa/static/js/2.3e3be6ef.chunk.js",
@@ -10,18 +10,24 @@
     "static/js/3.fd58ad0a.chunk.js": "/vapa/static/js/3.fd58ad0a.chunk.js",
     "static/js/3.fd58ad0a.chunk.js.map": "/vapa/static/js/3.fd58ad0a.chunk.js.map",
     "index.html": "/vapa/index.html",
-    "static/css/main.48bef5bd.chunk.css.map": "/vapa/static/css/main.48bef5bd.chunk.css.map",
+    "static/css/main.9cbbe2f2.chunk.css.map": "/vapa/static/css/main.9cbbe2f2.chunk.css.map",
     "static/js/2.3e3be6ef.chunk.js.LICENSE.txt": "/vapa/static/js/2.3e3be6ef.chunk.js.LICENSE.txt",
     "static/media/052.c63184ee.jpeg": "/vapa/static/media/052.c63184ee.jpeg",
     "static/media/Desctop 1-min.b3480ea8.jpg": "/vapa/static/media/Desctop 1-min.b3480ea8.jpg",
     "static/media/Desctop 2-min.10c586f8.jpg": "/vapa/static/media/Desctop 2-min.10c586f8.jpg",
     "static/media/Desctop 3-min.3c1863ab.jpg": "/vapa/static/media/Desctop 3-min.3c1863ab.jpg",
+    "static/media/accessories.820ed510.svg": "/vapa/static/media/accessories.820ed510.svg",
+    "static/media/body.73d12f0a.svg": "/vapa/static/media/body.73d12f0a.svg",
     "static/media/closeBurger.70f517ea.svg": "/vapa/static/media/closeBurger.70f517ea.svg",
+    "static/media/complex.b4d3c577.svg": "/vapa/static/media/complex.b4d3c577.svg",
     "static/media/dark_vapa_logo.bf35dbe4.svg": "/vapa/static/media/dark_vapa_logo.bf35dbe4.svg",
+    "static/media/face.9342dbad.svg": "/vapa/static/media/face.9342dbad.svg",
+    "static/media/hair.bb0bb9c0.svg": "/vapa/static/media/hair.bb0bb9c0.svg",
     "static/media/img123.da3d51cd.jpg": "/vapa/static/media/img123.da3d51cd.jpg",
     "static/media/img223.5ba66f7a.jpg": "/vapa/static/media/img223.5ba66f7a.jpg",
     "static/media/locationMarker.4c02fde5.png": "/vapa/static/media/locationMarker.4c02fde5.png",
     "static/media/openBurger.b7fa771c.svg": "/vapa/static/media/openBurger.b7fa771c.svg",
+    "static/media/sails.cd262276.svg": "/vapa/static/media/sails.cd262276.svg",
     "static/media/search.592579b4.svg": "/vapa/static/media/search.592579b4.svg",
     "static/media/shop.4cb95222.svg": "/vapa/static/media/shop.4cb95222.svg",
     "static/media/user.f456c4f9.svg": "/vapa/static/media/user.f456c4f9.svg",
@@ -31,7 +37,7 @@
   "entrypoints": [
     "static/js/runtime-main.adc6ddf1.js",
     "static/js/2.3e3be6ef.chunk.js",
-    "static/css/main.48bef5bd.chunk.css",
-    "static/js/main.8186764b.chunk.js"
+    "static/css/main.9cbbe2f2.chunk.css",
+    "static/js/main.8d3bc888.chunk.js"
   ]
 }
