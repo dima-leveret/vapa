@@ -15,14 +15,15 @@
 }
 
 .navBodyLink {
-    color: #708a5e;
     text-decoration: none;
     text-align: center;
     white-space: nowrap;
     width: 120px;
     height: auto;
+    font-family: CeraRegular;
     font-size: 14px;
-    color: #ffffff;
+    line-height: 14px;
+    color: #c4c4c4;
 }
 
 .navBodyLink:hover{

@@ -1,8 +1,24 @@
+@font-face {
+  font-family: CeraBold;
+  src: url(/src/fonts/TypeMates-Cera-Round-Pro-Bold.otf);
+}
+
+@font-face {
+  font-family: CeraLight;
+  src: url(/src/fonts/TypeMates-Cera-Round-Pro-Light.otf);
+}
+
+@font-face {
+  font-family: CeraRegular;
+  src: url(/src/fonts/TypeMates-Cera-Round-Pro-Regular.otf);
+}
+
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: -apple-system, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    sans-serif, CeraBold, CeraLight, CeraRegular;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

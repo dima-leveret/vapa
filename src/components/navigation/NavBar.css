@@ -38,8 +38,11 @@
 }
 
 .navLink {
+    font-family: CeraRegular;
+    font-size: 16px;
+    line-height: 16px;
     text-decoration: none;
-    color: #ffffff;
+    color: #eaeaea;
 }
 
 .navLink:hover {
