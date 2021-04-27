@@ -27,7 +27,7 @@ import ShoppingCard from "../shoppingCard/ShoppingCard"
 import Home from '../home/Home';
 import Profile from '../profile/Profile';
 
-import Auth from "../sign/Auth"
+import Auth from "../sign/Auth";
 
 
 
@@ -37,14 +37,10 @@ import Auth from "../sign/Auth"
         user: null,
         burgerMenu: openBurger,
         bugregMenuClass: 'closedNav',
+        searchInputClass: 'closedSearchInput'
         // authSubscription: null, 'static nav is not requared unmounting'
     }
 
-    // openBurger = () => {
-    //     this.setState({
-    //         burgerMenu: closeBurger
-    //     })
-    // }
 
     closeBurger = () => {
         this.setState({
@@ -65,6 +61,20 @@ import Auth from "../sign/Auth"
                 bugregMenuClass: 'closedNav',
             })
         }
+    }
+
+    changeInputClass = () => {
+        if (this.state.searchInputClass === "closedSearchInput") {
+            this.setState({
+                searchInputClass: 'openedSearchInput'
+            })
+        } 
+
+        if (this.state.searchInputClass === "openedSearchInput") {
+            this.setState({
+                searchInputClass: 'closedSearchInput'
+            })
+        } 
     }
 
     componentDidMount() {
@@ -131,12 +141,15 @@ import Auth from "../sign/Auth"
                             </Link> */}
                         </Nav>
                     </div>
+
                     
                     <div className="icons" >
+                    <input type="text" placeholder="Search" className={this.state.searchInputClass} />
                         <img
-                            className="searchIcon"
+                            className='searchIcon'
                             src={SearchIcon}
                             alt='search icon'
+                            onClick={() => this.changeInputClass()}
                         />
 
                         <Auth>
@@ -197,11 +210,13 @@ import Auth from "../sign/Auth"
                                             <img
                                             className="loggedInProfileIcon"
                                             src={LoggedInUserIcon}
+                                            onClick={() => this.closeBurger()}
                                             />
                                             :
                                             <img
                                             className="profileIcon"
                                             src={UserIcon}
+                                            onClick={() => this.closeBurger()}
                                             />
                                         }
                                         

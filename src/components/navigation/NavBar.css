@@ -69,6 +69,7 @@
     filter: invert(40%);
 }
 
+
 .searchIcon {
     width: 20px;
     height: 20px;
@@ -78,6 +79,53 @@
 .searchIcon:hover {
     filter: invert(40%);
 }
+
+.closedSearchInput {
+    position: absolute;
+    z-index: -1;
+    width: 78%;
+    height: 30px;
+    background: #292929;
+    border: none;
+    border-radius: 25px;
+    color: #ffffff;
+    font-family: CeraRegular;
+    transform: translateX(-101%);
+    transition: 0.4s;
+}
+
+
+.openedSearchInput {
+    position: absolute;
+    z-index: 1;
+    width: 78%;
+    height: 30px;
+    background: #505050;
+    border: none;
+    border-radius: 25px;
+    color: #ffffff;
+    font-family: CeraRegular;
+    transform: translateX(-101%);
+    transition: 0.4s;
+    padding-left: 15px;
+}
+
+.openedSearchInput::placeholder {
+    transition: 0.4s;
+    font-family: CeraRegular;
+}
+
+.openedSearchInput:focus {
+    outline: none;
+}
+
+
+.closedSearchInput::placeholder {
+    color: #292929;
+    transition: 0.4s;
+    font-family: CeraRegular;
+}
+
 
 .icons {
     display: flex;
