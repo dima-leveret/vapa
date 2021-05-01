@@ -109,16 +109,15 @@
 
 .closedSearchInput {
     display: none;
-    max-width: 790px;
-    width: 100%;
+    /* width: 100%;
     height: 30px;
     background: #292929;
     border: none;
     border-radius: 25px;
     color: #ffffff;
     font-family: CeraRegular;
+    padding-left: 15px; */
     transition: 0.4s;
-    padding-left: 15px;
 }
 
 
@@ -136,11 +135,6 @@
 }
 
 .openedSearchInput::placeholder {
-    font-family: CeraRegular;
-}
-
-.closedSearchInput::placeholder {
-    color: #292929;
     font-family: CeraRegular;
 }
 
@@ -180,13 +174,29 @@
     .burgerBar {
         display: flex;
         width: 100%;
+        height: 80px;
         justify-content: space-between;
         position: fixed;
         z-index: 1000;
         background-color: #292929;
     }
 
+    .burgerBarNav {
+        display: flex;
+        width: 100%;
+        height: 80px;
+        justify-content: space-between;
+        position: fixed;
+        z-index: 1000;
+        background-color: #292929;
+    }
+
+    .burgerBarNav-closed {
+        display: none;
+    }
+
     .navBrandImage {
+        display: flex;
         width: 45px;
         height: 45px;
         margin: 16px 0px 16px 10px;
@@ -244,12 +254,61 @@
         margin: 0px 16px;
     }
 
-    .icons-mobile {
+    .searchInputMobile {
         display: flex;
-        width: 150px;
+        width: 100%;
+        height: 80px;
         justify-content: space-between;
         align-items: center;
+        position: fixed;
+        z-index: 1000;
+        background-color: #292929;
         padding: 0 16px;
+    }
+
+    .searchInputMobile-closed {
+        display: none;
+        /* width: 100%;
+        height: 80px;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        z-index: 1000;
+        background-color: #292929;
+        padding: 0 16px; */
+    }
+
+    /* .closedSearchInput {
+        display: none;
+        width: 100%;
+        height: 30px;
+        background: #292929;
+        border: none;
+        border-radius: 25px;
+        color: #ffffff;
+        font-family: CeraRegular;
+        padding-left: 15px;
+        transition: 0.4s;
+    } */
+    
+    .openedSearchInput {
+        display: flex;
+        width: 100%;
+        height: 30px;
+        background: #505050;
+        border: none;
+        border-radius: 25px;
+        color: #fff;
+        font-family: CeraRegular;
+        transition: 0.4s;
+        padding-left: 15px;
+    }
+
+    .closeInputMobile {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        margin-left: 10px;
     }
     
 }

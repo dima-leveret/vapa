@@ -39,6 +39,8 @@ import Auth from "../sign/Auth";
         navbarNavLink: 'navLink',
         navbarNav: 'navbar-nav',
         imageNavInput: 'imageNav',
+        burgerBarNavClass: 'burgerBarNav',
+        searchInputMobileClass: 'searchInputMobile-closed'
         // authSubscription: null, 'static nav is not requared unmounting'
     }
 
@@ -92,6 +94,23 @@ import Auth from "../sign/Auth";
         } 
     }
 
+    changeInputClassMobile = () => {
+        if (this.state.searchInputMobileClass === 'searchInputMobile-closed') {
+            this.setState({
+                burgerBarNavClass: 'burgerBarNav-closed',
+                searchInputMobileClass: 'searchInputMobile'
+            })
+        }
+
+        if (this.state.searchInputMobileClass === 'searchInputMobile') {
+            this.setState({
+                burgerBarNavClass: 'burgerBarNav',
+                searchInputMobileClass: 'searchInputMobile-closed'
+            })
+            this.props.cleanInputValue()
+        }
+    }
+
 
     componentDidMount() {
         // const authSubscription = 'static nav is not requared unmounting'
@@ -116,15 +135,19 @@ import Auth from "../sign/Auth";
     }
 
     handleOnClickOutside = (event) => {
-        const inputSearch = document.querySelector('input');
+        const inputSearch = document.querySelector('.openedSearchInput');
 
         if (!event.path.includes(inputSearch)) {
 
             const searchIcon = document.querySelector('.searchIcon');
             
             if (!event.path.includes(searchIcon) && this.state.searchInputClass === "openedSearchInput") {
-                this.changeInputClass()
+                this.changeInputClass();
             }
+
+            // if (!event.path.includes(searchIcon) && this.state.searchInputMobileClass === 'searchInputMobile') {
+            //     this.changeInputClassMobile()
+            // }
         }
     }
 
@@ -229,89 +252,110 @@ import Auth from "../sign/Auth";
                     </div>
                 </Navbar>
 
-                <div className="burgerBar">
+                <div className='burgerBar' >
 
-                    <Link to='/vapa' >
-                        <Image 
-                            onClick={() => this.closeBurger()}
-                            className="navBrandImage" 
-                            src={WhiteVapaLogo} alt={'vapa_logo'} 
+                    <div className={this.state.searchInputMobileClass} > 
+                        <input 
+                            type="text" 
+                            placeholder="Search" 
+                            className='openedSearchInput'
+                            value={this.props.searchInput}
+                            onChange={this.onInputChange} 
                         />
-                    </Link>
-
-                    <div className="icons-mobile" >
-                        
+                            
                         <img
-                            className={this.state.searchIconClass}
-                            src={SearchIcon}
+                            className='closeInputMobile'
+                            src={closeInput}
                             alt='search icon'
-                            onClick={this.changeInputClass}
+                            onClick={this.changeInputClassMobile}
                         />
-
-                        <Auth>
-                            {
-                               ({ user }) => {
-                                   return (
-                                    <Link to='/profile'>
-                                        {
-                                            user
-                                            ?
-                                            <img
-                                            className="loggedInProfileIcon"
-                                            src={LoggedInUserIcon}
-                                            onClick={() => this.closeBurger()}
-                                            />
-                                            :
-                                            <img
-                                            className="profileIcon"
-                                            src={UserIcon}
-                                            onClick={() => this.closeBurger()}
-                                            />
-                                        }
-                                        
-                                    </Link>
-                                   )
-                               } 
-                            }
-                        </Auth>
-
-                        <ShoppingCard />
-                        
                     </div>
 
-                    <Image onClick={() =>  this.changeBurgerMenu()} src={this.state.burgerMenu} className="burger" alt='burger open'></Image>
-                        <div className={this.state.bugregMenuClass} >
-                            <Nav >
+                    <div className={this.state.burgerBarNavClass} >
+                        <Link to='/vapa' >
+                            <Image 
+                                onClick={() => this.closeBurger()}
+                                className="navBrandImage" 
+                                src={WhiteVapaLogo} alt={'vapa_logo'} 
+                            />
+                        </Link>
 
-                                <Link onClick={() => this.closeBurger()} to='/vapa' className='navLink' >
-                                    Main
-                                </Link>
+                        <div className="icons" >
+                            
+                            <img
+                                className='searchIcon'
+                                src={SearchIcon}
+                                alt='search icon'
+                                onClick={this.changeInputClassMobile}
+                            />
 
-                                <Link onClick={() => this.closeBurger()} to='/catalog' className='navLink' >
-                                    Catalog
-                                </Link>
-
-                                <Link  onClick={() => this.closeBurger()} to='/aboutVapa' className='navLink' >
-                                    About Vapa
-                                </Link>
+                            <Auth>
+                                {
+                                ({ user }) => {
+                                    return (
+                                        <Link to='/profile'>
+                                            {
+                                                user
+                                                ?
+                                                <img
+                                                className="loggedInProfileIcon"
+                                                src={LoggedInUserIcon}
+                                                onClick={() => this.closeBurger()}
+                                                />
+                                                :
+                                                <img
+                                                className="profileIcon"
+                                                src={UserIcon}
+                                                onClick={() => this.closeBurger()}
+                                                />
+                                            }
                                             
-                                <Link onClick={() => this.closeBurger()} to='/contacts' className='navLink' >
-                                    Contacts
-                                </Link>
-                        
-                                <Link onClick={() => this.closeBurger()} to='/partners' className='navLink' >
-                                    Partners
-                                </Link>
+                                        </Link>
+                                    )
+                                } 
+                                }
+                            </Auth>
 
-                                <Link onClick={() => this.closeBurger()} to='/certificate' className='navLink' >
-                                    Сertificate
-                                </Link>
+                            <ShoppingCard />
+                            
+                        </div>
+
+                        <Image onClick={() =>  this.changeBurgerMenu()} src={this.state.burgerMenu} className="burger" alt='burger open'>
+                        </Image>
+                    </div>
+
+                    <div className={this.state.bugregMenuClass} >
+                        <Nav >
+
+                            <Link onClick={() => this.closeBurger()} to='/vapa' className='navLink' >
+                                Main
+                            </Link>
+
+                            <Link onClick={() => this.closeBurger()} to='/catalog' className='navLink' >
+                                Catalog
+                            </Link>
+
+                            <Link  onClick={() => this.closeBurger()} to='/aboutVapa' className='navLink' >
+                                About Vapa
+                            </Link>
+                                            
+                            <Link onClick={() => this.closeBurger()} to='/contacts' className='navLink' >
+                                Contacts
+                            </Link>
+                        
+                            <Link onClick={() => this.closeBurger()} to='/partners' className='navLink' >
+                                Partners
+                            </Link>
+
+                            <Link onClick={() => this.closeBurger()} to='/certificate' className='navLink' >
+                                Сertificate
+                            </Link>
                         
                                 {/* <Link onClick={() => this.closeBurger()} to='/paymentAndDelivery' className='navLink' >
                                     Payment and delivery
                                 </Link> */}
-                            </Nav>
-                        </div>
+                        </Nav>
+                    </div>
                 </div>
             </div>
         )
