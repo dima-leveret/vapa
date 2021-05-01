@@ -1,10 +1,10 @@
 import React from 'react';
-import { Switch, Route, Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { setInputValue, cleanInputValue } from '../../state/products'
+import { Link } from 'react-router-dom';
 import firebase from 'firebase';
 
 import '../navigation/NavBar.css';
-
-import Button from 'react-bootstrap/Button';
 
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
@@ -16,18 +16,14 @@ import UserIcon from '../../img/user.svg';
 import LoggedInUserIcon from '../../img/user_loggged_in.svg';
 import openBurger from '../../img/openBurger.svg';
 import closeBurger from '../../img/closeBurger.svg';
+import closeInput from '../../img/closeInput.svg';
 
-import AboutVapa from '../content/AboutVapa';
-import Contacts from '../content/Contacts';
-import Partners from "../partners/Partners";
-import PaymentAndDelivery from '../content/PaymentAndDelivery';
-import Sign from '../sign/Sign';
 
-import ShoppingCard from "../shoppingCard/ShoppingCard"
-import Home from '../home/Home';
-import Profile from '../profile/Profile';
+import ShoppingCard from "../shoppingCard/ShoppingCard";
+// import SearchProduct from '../products/SearchProduct';
 
 import Auth from "../sign/Auth";
+
 
 
 
@@ -36,8 +32,13 @@ import Auth from "../sign/Auth";
     state = {
         user: null,
         burgerMenu: openBurger,
+        searchIcon: SearchIcon,
         bugregMenuClass: 'closedNav',
-        searchInputClass: 'closedSearchInput'
+        searchInputClass: 'closedSearchInput',
+        searchIconClass: 'searchIcon',
+        navbarNavLink: 'navLink',
+        navbarNav: 'navbar-nav',
+        imageNavInput: 'imageNav',
         // authSubscription: null, 'static nav is not requared unmounting'
     }
 
@@ -63,19 +64,34 @@ import Auth from "../sign/Auth";
         }
     }
 
-    changeInputClass = () => {
+    changeInputClass = (event) => {
         if (this.state.searchInputClass === "closedSearchInput") {
             this.setState({
-                searchInputClass: 'openedSearchInput'
+                searchInputClass: 'openedSearchInput',
+                navbarNavLink: 'navLink-closed',
+                navbarNav: 'navbar-nav-closed',
+                imageNavInput: 'imageInput',
+                searchIcon: closeInput,
+            })
+            console.log(event);
+            event.view.scrollTo({
+                top: 650,
+                behavior: 'smooth'
             })
         } 
 
         if (this.state.searchInputClass === "openedSearchInput") {
             this.setState({
-                searchInputClass: 'closedSearchInput'
+                searchInputClass: 'closedSearchInput',
+                navbarNavLink: 'navLink',
+                navbarNav: 'navbar-nav',
+                imageNavInput: 'imageNav',
+                searchIcon: SearchIcon,
             })
+            this.props.cleanInputValue()
         } 
     }
+
 
     componentDidMount() {
         // const authSubscription = 'static nav is not requared unmounting'
@@ -91,6 +107,27 @@ import Auth from "../sign/Auth";
         // })
     }
 
+    componentWillUnmount() {
+        document.removeEventListener('click', this.handleOnClickOutside, false)
+    }
+
+    componentDidMount() {
+        document.addEventListener('click', this.handleOnClickOutside, false)
+    }
+
+    handleOnClickOutside = (event) => {
+        const inputSearch = document.querySelector('input');
+
+        if (!event.path.includes(inputSearch)) {
+
+            const searchIcon = document.querySelector('.searchIcon');
+            
+            if (!event.path.includes(searchIcon) && this.state.searchInputClass === "openedSearchInput") {
+                this.changeInputClass()
+            }
+        }
+    }
+
     // componentWillUnmount() {
     //     this.state.authSubscription && this.state.authSubscription(); 'static nav is not requared unmounting'
     // }
@@ -99,11 +136,15 @@ import Auth from "../sign/Auth";
         firebase.auth().signOut()
     }
 
+    onInputChange = (event) => {
+        this.props.setInputValue(event.target.value);
+    }
+
     render () {
         return(
             <div className="navBarBody" >
                 <Navbar className='navBar'>
-                    <div className="imageNav">
+                    <div className={this.state.imageNavInput}>
                         <Link to='/vapa' >
                             <Image 
                                 className="navBrandImage" 
@@ -111,28 +152,35 @@ import Auth from "../sign/Auth";
                             />
                         </Link>
 
-                        <Nav  className='nav' >
-                            <Link  to='/vapa' className='navLink' >
+                        <Nav  className={this.state.navbarNav} >
+                        <input 
+                            type="text" 
+                            placeholder="Search" 
+                            className={this.state.searchInputClass}
+                            value={this.props.searchInput}
+                            onChange={this.onInputChange} 
+                        />
+                            <Link  to='/vapa' className={this.state.navbarNavLink} >
                                 Main
                             </Link>
 
-                            <Link  to='/catalog' className='navLink' >
+                            <Link  to='/catalog' className={this.state.navbarNavLink} >
                                 Catalog
                             </Link>
 
-                            <Link  to='/aboutVapa' className='navLink' >
+                            <Link  to='/aboutVapa' className={this.state.navbarNavLink} >
                                 About Vapa
                             </Link>
                                         
-                            <Link to='/contacts' className='navLink' >
+                            <Link to='/contacts' className={this.state.navbarNavLink} >
                                 Contacts
                             </Link>
                     
-                            <Link to='/partners' className='navLink' >
+                            <Link to='/partners' className={this.state.navbarNavLink} >
                                 Partners
                             </Link>
 
-                            <Link  to='/certificate' className='navLink' >
+                            <Link  to='/certificate' className={this.state.navbarNavLink} >
                                 Сertificate
                             </Link>
                     
@@ -144,12 +192,12 @@ import Auth from "../sign/Auth";
 
                     
                     <div className="icons" >
-                    <input type="text" placeholder="Search" className={this.state.searchInputClass} />
+
                         <img
-                            className='searchIcon'
-                            src={SearchIcon}
+                            className={this.state.searchIconClass}
+                            src={this.state.searchIcon}
                             alt='search icon'
-                            onClick={() => this.changeInputClass()}
+                            onClick={this.changeInputClass}
                         />
 
                         <Auth>
@@ -191,12 +239,13 @@ import Auth from "../sign/Auth";
                         />
                     </Link>
 
-                    <div className="icons" >
+                    <div className="icons-mobile" >
+                        
                         <img
-                            onClick={() => this.closeBurger()}
-                            className="searchIcon"
+                            className={this.state.searchIconClass}
                             src={SearchIcon}
                             alt='search icon'
+                            onClick={this.changeInputClass}
                         />
 
                         <Auth>
@@ -227,6 +276,7 @@ import Auth from "../sign/Auth";
                         </Auth>
 
                         <ShoppingCard />
+                        
                     </div>
 
                     <Image onClick={() =>  this.changeBurgerMenu()} src={this.state.burgerMenu} className="burger" alt='burger open'></Image>
@@ -270,4 +320,14 @@ import Auth from "../sign/Auth";
     
 }
 
-export default NavBar;
+const mapStateToProps = (state) => ({
+    searchInput: state.products.searchInput,
+})
+
+
+const mapDispatchToProps = {
+    setInputValue,
+    cleanInputValue
+}
+
+export default connect(mapStateToProps, mapDispatchToProps) (NavBar);

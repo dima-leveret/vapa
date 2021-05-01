@@ -7,6 +7,7 @@ import bodyIcon from '../../img/body.svg';
 import accesspriesIcon from '../../img/accessories.svg';
 import sailsIcon from '../../img/sails.svg';
 import complexIcon from '../../img/complex.svg';
+import allIcon from '../../img/all.svg';
 
 import { 
     fetchProducts, 
@@ -66,7 +67,7 @@ function NavProducts({
 
                 <Nav.Item className="nav-item" onClick={fetchProducts}>
                     <div className="navIcon" >
-                        <img src={complexIcon} alt='all-icon' />
+                        <img src={allIcon} alt='all-icon' />
                     </div>
                     <Nav.Link  className="navBodyLink" >All</Nav.Link>
                 </Nav.Item>

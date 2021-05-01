@@ -3,14 +3,13 @@
     display: flex;
     justify-content: center;
     background-color: #1f1f1f;
-    /* margin-top: 100px; */
 }
 
 .navBody {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    padding: 30px 0 0;
+    padding: 50px 0;
     margin: 0;
 }
 

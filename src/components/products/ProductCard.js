@@ -63,7 +63,7 @@ class ProductCard extends React.Component {
                 alt='some-picture' 
                 className="card-img" />
                 <Card.Body onClick={() => this.openModalDetails(this.props.productId)} >
-                    <Card.Title > {this.props.productProduct} { this.props.productName} </Card.Title>
+                    <Card.Title > {this.props.productProduct} </Card.Title>
                     <Card.Text> { this.props.productDescription} </Card.Text>
                 </Card.Body>
                 {this.props.productDiscount === true 

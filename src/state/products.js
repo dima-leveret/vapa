@@ -4,11 +4,15 @@ const initialSate = {
     data: [],
     isLoading: false,
     error: null,
+    searchInput: '',
 }
 
 //ACTIONS
 const SET_PRODUCTS = 'SET_PRODUCTS';
 const SET_LOADING = 'SET_LOADING';
+
+const SET_INPUT_VALUE = 'SET_INPUT_VALUE';
+const CLEAN_INPUT_VALUE = 'CLEAN_INPUT_VALUE';
 
 //REDUCER
 export const products = (state = initialSate, action) => {
@@ -17,13 +21,25 @@ export const products = (state = initialSate, action) => {
             return {
                 error: null,
                 isLoading: false,
-                data: action.payload
+                data: action.payload,
+                searchInput: '',
             }
         case SET_LOADING:
             return {
                 ...state,
                 isLoading: true
             }
+        case SET_INPUT_VALUE:
+            return {
+                ...state,
+                searchInput: action.payload
+            }
+        case CLEAN_INPUT_VALUE: {
+            return {
+                ...state,
+                searchInput: ''
+            }
+        }
         default:
             return state;
     }
@@ -32,6 +48,15 @@ export const products = (state = initialSate, action) => {
 //ACTION CREATORS
 export const setProducts = (products) => ({ type: SET_PRODUCTS, payload: products });
 export const setLoading = () => ({ type: SET_LOADING });
+
+export const setInputValue = (str) => ({
+    type:SET_INPUT_VALUE,
+    payload: str
+})
+
+export const cleanInputValue = () => ({
+    type:CLEAN_INPUT_VALUE,
+})
 
 export const fetchProducts = () => (dispatch) => {
     dispatch(setLoading()); 
@@ -150,6 +175,7 @@ export const sortByComplex = () => (dispatch) => {
             dispatch(setProducts(formattedData))
         })
 }
+
 
 export const deleteProduct = (productId) => (dispatch) => {
     dispatch(setLoading());

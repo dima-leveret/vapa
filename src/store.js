@@ -3,6 +3,7 @@ import thunk from 'redux-thunk';
 
 import { products } from './state/products';
 import { shoppingCard } from './state/shoppingCard';
+// import { searchInpyt } from './state/searchInput';
 
 
 const loggerMiddleware = store => next => action => {
@@ -22,6 +23,7 @@ const enhancer = composeEnhancers(middlewareEnhancer)
 const resducer = combineReducers({
     products,
     shoppingCard,
+    // searchInpyt,
 })
 
 export const store = createStore(resducer, enhancer) 

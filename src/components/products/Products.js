@@ -11,13 +11,6 @@ import { Spinner } from "react-bootstrap";
 
  class Products extends React.Component {
 
-    // state = {
-    //     showDetails: false, 
-    //     productId: null,
-    //     showEdit: false, 
-    //     editId: null, 
-    // }
-
     componentDidMount(){
          this.props.fetchProducts();
      }
@@ -55,39 +48,17 @@ import { Spinner } from "react-bootstrap";
     }
     
     render() {
-        
         return(
             <div className='productsContainer'>
             {this.props.isLoading && <Spinner animation="grow" variant="warning" /> }
             {
-                this.props.products.map(product => (
-                    // this.state.productId === product.id
-                //  ? 
-                //  <ProductDetailsModal 
-                //     key={product.id}
-                //     show={this.state.showDetails}
-                //     onHide={() => this.closeModalDetails()}
-                //     isProductInCart={this.isProductInCart}
-
-                //     product={product}
-
-                //     productProduct={product.product}
-                //     productName={product.name}
-                //     productPrice={product.price}
-                //     productFullDescription={product.fullDescription}
-                //     productDetails={product.details}
-                //     productUsage={product.usage}
-                //     productStructure={product.structure}
-                //     productPreservation={product.preservation}
-                //     productDate={product.date}
-                //     productVolume={product.volume}
-                //     productAmount={product.amount}
-                //     productId={product.id}
-                //     available={product.amount}
-                //     productType={product.type}
-                 
-                //  />
-                //  : 
+                this.props.products
+                .filter(product => 
+                    product.product.replaceAll('[^A-Za-z0-9]', '').toLowerCase().includes(this.props.inputValue.toLowerCase())
+                    || product.description.replaceAll('[^A-Za-z0-9]', '').toLowerCase().includes(this.props.inputValue.toLowerCase())
+                    // || product.price.replaceAll('[^A-Za-z0-9]', '').toLowerCase().includes(this.props.inputValue)
+                )
+                .map(product => (
                  <ProductCard
                     key={product.id}
                     product={product}
@@ -111,13 +82,9 @@ import { Spinner } from "react-bootstrap";
                     productComplex={product.complex}
                     productDiscount={product.discount}
                     productSize={product.size}
-                    
 
-                    // openModalDetails={() => this.openModalDetails(product.id)}
                     isProductInCart={this.isProductInCart}
-
-
-                 />
+                />
             ))
             }
             </div>
@@ -129,6 +96,7 @@ const mapStateToProps = (state) => ({
     products: state.products.data,
     isLoading: state.products.isLoading,
     productsInCart: state.shoppingCard,
+    inputValue: state.products.searchInput,
 })
 
 

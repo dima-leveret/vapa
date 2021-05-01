@@ -1,9 +1,9 @@
 import React from "react";
 import '../home/Home.css';
 
-import Partners from "../partners/Partners";
+// import Partners from "../partners/Partners";
 import NavProducts from '../navigation/NavProducts'
-import AddProduct from '../products/AddProduct';
+// import AddProduct from '../products/AddProduct';
 import Products from '../products/Products';
 import Slider from '../slider/Slider'
 

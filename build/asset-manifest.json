@@ -1,25 +1,27 @@
 {
   "files": {
-    "main.css": "/vapa/static/css/main.ac1b5107.chunk.css",
-    "main.js": "/vapa/static/js/main.f57182d0.chunk.js",
-    "main.js.map": "/vapa/static/js/main.f57182d0.chunk.js.map",
-    "runtime-main.js": "/vapa/static/js/runtime-main.adc6ddf1.js",
-    "runtime-main.js.map": "/vapa/static/js/runtime-main.adc6ddf1.js.map",
-    "static/js/2.3e3be6ef.chunk.js": "/vapa/static/js/2.3e3be6ef.chunk.js",
-    "static/js/2.3e3be6ef.chunk.js.map": "/vapa/static/js/2.3e3be6ef.chunk.js.map",
-    "static/js/3.fd58ad0a.chunk.js": "/vapa/static/js/3.fd58ad0a.chunk.js",
-    "static/js/3.fd58ad0a.chunk.js.map": "/vapa/static/js/3.fd58ad0a.chunk.js.map",
+    "main.css": "/vapa/static/css/main.24d75aae.chunk.css",
+    "main.js": "/vapa/static/js/main.a8f690fc.chunk.js",
+    "main.js.map": "/vapa/static/js/main.a8f690fc.chunk.js.map",
+    "runtime-main.js": "/vapa/static/js/runtime-main.a7d0e056.js",
+    "runtime-main.js.map": "/vapa/static/js/runtime-main.a7d0e056.js.map",
+    "static/js/2.0d61d3e7.chunk.js": "/vapa/static/js/2.0d61d3e7.chunk.js",
+    "static/js/2.0d61d3e7.chunk.js.map": "/vapa/static/js/2.0d61d3e7.chunk.js.map",
+    "static/js/3.c170d933.chunk.js": "/vapa/static/js/3.c170d933.chunk.js",
+    "static/js/3.c170d933.chunk.js.map": "/vapa/static/js/3.c170d933.chunk.js.map",
     "index.html": "/vapa/index.html",
-    "static/css/main.ac1b5107.chunk.css.map": "/vapa/static/css/main.ac1b5107.chunk.css.map",
-    "static/js/2.3e3be6ef.chunk.js.LICENSE.txt": "/vapa/static/js/2.3e3be6ef.chunk.js.LICENSE.txt",
+    "static/css/main.24d75aae.chunk.css.map": "/vapa/static/css/main.24d75aae.chunk.css.map",
+    "static/js/2.0d61d3e7.chunk.js.LICENSE.txt": "/vapa/static/js/2.0d61d3e7.chunk.js.LICENSE.txt",
     "static/media/052.c63184ee.jpeg": "/vapa/static/media/052.c63184ee.jpeg",
     "static/media/Desctop 1-min.b3480ea8.jpg": "/vapa/static/media/Desctop 1-min.b3480ea8.jpg",
     "static/media/Desctop 2-min.10c586f8.jpg": "/vapa/static/media/Desctop 2-min.10c586f8.jpg",
     "static/media/Desctop 3-min.3c1863ab.jpg": "/vapa/static/media/Desctop 3-min.3c1863ab.jpg",
     "static/media/index.css": "/vapa/static/media/TypeMates-Cera-Round-Pro-Regular.6eda5276.otf",
     "static/media/accessories.820ed510.svg": "/vapa/static/media/accessories.820ed510.svg",
+    "static/media/all.8d2bc1bf.svg": "/vapa/static/media/all.8d2bc1bf.svg",
     "static/media/body.73d12f0a.svg": "/vapa/static/media/body.73d12f0a.svg",
     "static/media/closeBurger.70f517ea.svg": "/vapa/static/media/closeBurger.70f517ea.svg",
+    "static/media/closeInput.70f517ea.svg": "/vapa/static/media/closeInput.70f517ea.svg",
     "static/media/complex.b4d3c577.svg": "/vapa/static/media/complex.b4d3c577.svg",
     "static/media/dark_vapa_logo.bf35dbe4.svg": "/vapa/static/media/dark_vapa_logo.bf35dbe4.svg",
     "static/media/face.9342dbad.svg": "/vapa/static/media/face.9342dbad.svg",
@@ -36,9 +38,9 @@
     "static/media/white_vapa_logo.db381333.svg": "/vapa/static/media/white_vapa_logo.db381333.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.adc6ddf1.js",
-    "static/js/2.3e3be6ef.chunk.js",
-    "static/css/main.ac1b5107.chunk.css",
-    "static/js/main.f57182d0.chunk.js"
+    "static/js/runtime-main.a7d0e056.js",
+    "static/js/2.0d61d3e7.chunk.js",
+    "static/css/main.24d75aae.chunk.css",
+    "static/js/main.a8f690fc.chunk.js"
   ]
 }
