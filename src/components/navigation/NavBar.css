@@ -44,20 +44,25 @@
     max-width: 790px;
     width: 100%;
     justify-content: space-around;
+    transition: 0.4s;
+    left: 0;
 }
 
-.navbar-nav-closed{
+.navbar-nav-input{
     display: flex;
     max-width: 950px;
     width: 100%;
     justify-content: space-around;
-    padding-left: 10px;
+    transition: 0.4s;
+    right: 0;
 }
 
 .navLink {
+    display: flex;
     font-family: CeraRegular;
     font-size: 16px;
     line-height: 16px;
+    align-items: center;
     text-decoration: none;
     color: #eaeaea;
     transition: 0.4s;
@@ -70,12 +75,12 @@
 
 .navLink-closed{
     display: none;
+    width: 0;
     font-family: CeraRegular;
     font-size: 16px;
     line-height: 16px;
     text-decoration: none;
     color: #eaeaea;
-    transition: 0.4s;
 }
 
 .profileIcon {
@@ -108,16 +113,15 @@
 }
 
 .closedSearchInput {
-    display: none;
-    /* width: 100%;
+    display: flex;
+    width: 0;
     height: 30px;
     background: #292929;
     border: none;
     border-radius: 25px;
     color: #ffffff;
     font-family: CeraRegular;
-    padding-left: 15px; */
-    transition: 0.4s;
+    transition: margin-right 0.4s;
 }
 
 
@@ -130,7 +134,7 @@
     border-radius: 25px;
     color: #fff;
     font-family: CeraRegular;
-    transition: 0.4s;
+    transition: margin-left 0.4s;
     padding-left: 15px;
 }
 
@@ -141,7 +145,6 @@
 .openedSearchInput:focus {
     outline: none;
 }
-
 
 .icons {
     display: flex;
@@ -187,12 +190,20 @@
         height: 80px;
         justify-content: space-between;
         position: fixed;
-        z-index: 1000;
         background-color: #292929;
+        transition: 0.4s;
+        right: 0;
     }
 
     .burgerBarNav-closed {
-        display: none;
+        display: flex;
+        width: 0%;
+        height: 80px;
+        justify-content: space-between;
+        position: fixed;
+        background-color: #292929;
+        transition: 0.4s;
+        z-index: -1;
     }
 
     .navBrandImage {
@@ -215,7 +226,7 @@
         background-color: #292929;
         margin-top: 70px;
         transform: translateX(0);
-        transition: ease-in-out 0.3s;
+        transition: ease-in-out 0.4s;
     }
 
     .closedNav {
@@ -231,18 +242,22 @@
         background-color: #292929;
         margin-top: 70px;
         transform: translateX(100%);
-        transition: ease-in-out 0.3s;
+        transition: ease-in-out 0.4s;
+    }
+    .nav {
+        padding-top: 40px;
     }
 
 
     .navLink {
-        width: 98%;
+        width: 100%;
         height: auto;
         text-decoration: none;
         color: #ffffff;
         padding: 16px;
-        margin-top: 20px;
-        text-align: center;
+        margin: 20px 0;
+        justify-content: center;
+        align-self: center;
     }
 
     .burger {
@@ -258,50 +273,22 @@
         display: flex;
         width: 100%;
         height: 80px;
-        justify-content: space-between;
         align-items: center;
         position: fixed;
-        z-index: 1000;
         background-color: #292929;
         padding: 0 16px;
+        transition: 0.4s;
     }
 
     .searchInputMobile-closed {
-        display: none;
-        /* width: 100%;
+        display: flex;
+        width: 0%;
         height: 80px;
-        justify-content: space-between;
         align-items: center;
         position: fixed;
-        z-index: 1000;
         background-color: #292929;
-        padding: 0 16px; */
-    }
-
-    /* .closedSearchInput {
-        display: none;
-        width: 100%;
-        height: 30px;
-        background: #292929;
-        border: none;
-        border-radius: 25px;
-        color: #ffffff;
-        font-family: CeraRegular;
-        padding-left: 15px;
+        padding: 0 16px;
         transition: 0.4s;
-    } */
-    
-    .openedSearchInput {
-        display: flex;
-        width: 100%;
-        height: 30px;
-        background: #505050;
-        border: none;
-        border-radius: 25px;
-        color: #fff;
-        font-family: CeraRegular;
-        transition: 0.4s;
-        padding-left: 15px;
     }
 
     .closeInputMobile {
@@ -310,5 +297,4 @@
         cursor: pointer;
         margin-left: 10px;
     }
-    
 }

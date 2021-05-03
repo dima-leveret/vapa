@@ -40,7 +40,8 @@ import Auth from "../sign/Auth";
         navbarNav: 'navbar-nav',
         imageNavInput: 'imageNav',
         burgerBarNavClass: 'burgerBarNav',
-        searchInputMobileClass: 'searchInputMobile-closed'
+        searchInputMobileClass: 'searchInputMobile-closed',
+        inputAutoFocus: false
         // authSubscription: null, 'static nav is not requared unmounting'
     }
 
@@ -68,15 +69,17 @@ import Auth from "../sign/Auth";
 
     changeInputClass = (event) => {
 
-        const elStopScroll = document.querySelector('.table-responsive')
+        const elStopScroll = document.querySelector('.table-responsive');
+        // const input = document.querySelector('.openedSearchInput')
 
         if (this.state.searchInputClass === "closedSearchInput") {
             this.setState({
                 searchInputClass: 'openedSearchInput',
                 navbarNavLink: 'navLink-closed',
-                navbarNav: 'navbar-nav-closed',
+                navbarNav: 'navbar-nav-input',
                 imageNavInput: 'imageInput',
                 searchIcon: closeInput,
+                inputAutoFocus: true
             })
             console.log(event);
             console.log(elStopScroll.offsetTop);
@@ -184,13 +187,7 @@ import Auth from "../sign/Auth";
                         </Link>
 
                         <Nav  className={this.state.navbarNav} >
-                        <input 
-                            type="text" 
-                            placeholder="Search" 
-                            className={this.state.searchInputClass}
-                            value={this.props.searchInput}
-                            onChange={this.onInputChange} 
-                        />
+                
                             <Link  to='/vapa' className={this.state.navbarNavLink} >
                                 Main
                             </Link>
@@ -218,6 +215,15 @@ import Auth from "../sign/Auth";
                             {/* <Link to='/paymentAndDelivery' className='navLink' >
                                 Payment and delivery
                             </Link> */}
+
+                            <input
+                                autoFocus={this.state.inputAutoFocus}
+                                type="text" 
+                                placeholder="Search" 
+                                className={this.state.searchInputClass}
+                                value={this.props.searchInput}
+                                onChange={this.onInputChange} 
+                            />
                         </Nav>
                     </div>
 
