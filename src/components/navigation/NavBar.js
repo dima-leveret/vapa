@@ -67,6 +67,9 @@ import Auth from "../sign/Auth";
     }
 
     changeInputClass = (event) => {
+
+        const elStopScroll = document.querySelector('.table-responsive')
+
         if (this.state.searchInputClass === "closedSearchInput") {
             this.setState({
                 searchInputClass: 'openedSearchInput',
@@ -76,8 +79,9 @@ import Auth from "../sign/Auth";
                 searchIcon: closeInput,
             })
             console.log(event);
+            console.log(elStopScroll.offsetTop);
             event.view.scrollTo({
-                top: 650,
+                top: elStopScroll.offsetTop-80,
                 behavior: 'smooth'
             })
         } 
@@ -94,11 +98,19 @@ import Auth from "../sign/Auth";
         } 
     }
 
-    changeInputClassMobile = () => {
+    changeInputClassMobile = (event) => {
+
+        const elStopScrollMobile = document.querySelector('.table-responsive')
+
         if (this.state.searchInputMobileClass === 'searchInputMobile-closed') {
             this.setState({
                 burgerBarNavClass: 'burgerBarNav-closed',
                 searchInputMobileClass: 'searchInputMobile'
+            })
+
+            event.view.scrollTo({
+                top: elStopScrollMobile.offsetTop-80,
+                behavior: 'smooth'
             })
         }
 
@@ -144,10 +156,6 @@ import Auth from "../sign/Auth";
             if (!event.path.includes(searchIcon) && this.state.searchInputClass === "openedSearchInput") {
                 this.changeInputClass();
             }
-
-            // if (!event.path.includes(searchIcon) && this.state.searchInputMobileClass === 'searchInputMobile') {
-            //     this.changeInputClassMobile()
-            // }
         }
     }
 
