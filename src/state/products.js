@@ -47,6 +47,7 @@ export const products = (state = initialSate, action) => {
 
 //ACTION CREATORS
 export const setProducts = (products) => ({ type: SET_PRODUCTS, payload: products });
+
 export const setLoading = () => ({ type: SET_LOADING });
 
 export const setInputValue = (str) => ({

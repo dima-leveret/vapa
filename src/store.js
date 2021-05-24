@@ -3,6 +3,7 @@ import thunk from 'redux-thunk';
 
 import { products } from './state/products';
 import { shoppingCard } from './state/shoppingCard';
+import { categories } from './state/categories';
 // import { searchInpyt } from './state/searchInput';
 
 
@@ -23,6 +24,7 @@ const enhancer = composeEnhancers(middlewareEnhancer)
 const resducer = combineReducers({
     products,
     shoppingCard,
+    categories,
     // searchInpyt,
 })
 

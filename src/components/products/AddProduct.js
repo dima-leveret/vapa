@@ -32,6 +32,16 @@ class AddProduct extends React.Component {
         usage: '',
         volume: 0,
         product: '',
+        productTitle: '',
+        productPrices: {
+            regularPrice: '',
+            minPrice: '',
+            discountPrice: '',
+            discountMinPrice: '',
+        },
+        productCategories: {
+
+        },
     }
 
     openModal = () => {
@@ -52,7 +62,7 @@ class AddProduct extends React.Component {
         })
     }
 
-    handleOnSubmit = (event) => {
+    addNewProduct = (event) => {
         event.preventDefault();
 
         const newProduct = {
@@ -72,7 +82,17 @@ class AddProduct extends React.Component {
             type: this.state.type,
             usage: this.state.usage,
             volume: this.state.volume,
-            product: this.state.product
+            product: this.state.product,
+            productTitle: this.state.productTitle,
+            productPrices: {
+                regularPrice: this.state.regularPrice,
+                minPrice: this.state.minPrice,
+                discountPrice: this.state.discountPrice,
+                discountMinPrice: this.state.discountMinPrice,
+            },
+            productCategory: {
+
+            },
         }
 
         fetch(`${DATABASE_URL}/products.json`, {
@@ -95,6 +115,27 @@ class AddProduct extends React.Component {
             complex: !complex
         })
     }
+
+    addCategory = () => {
+        let newCategory = document.createElement('input');
+        let removeCategory = document.createElement('button');
+        removeCategory.innerHTML = 'x';
+        removeCategory.addEventListener('click', (event) => {
+            event.preventDefault();
+            newCategory.remove();
+            removeCategory.remove();
+            console.log('remove category')
+        })
+        let category = document.getElementById('category');
+        category.append(newCategory, removeCategory)
+
+        console.log('create');
+    }
+
+    // removeCategory = (event) => {
+    //     event.preventDefault();
+    //     console.log('remove category');
+    // }
 
     render (){
         return(
@@ -121,8 +162,17 @@ class AddProduct extends React.Component {
                         
                     <Modal.Body>
 
-                        <Form onSubmit={this.handleOnSubmit} >
+                        <Form >
                             <Form.Group controlId="exampleForm.ControlInput1">
+
+                                <Form.Label>Product title</Form.Label>
+                                <Form.Control 
+                                type="text" 
+                                name="productTitle" 
+                                onChange={this.handleOnChange} 
+                                value={this.state.productTitle}
+                                />
+
                                 <Form.Label>Product name</Form.Label>
                                 <Form.Control 
                                 type="text" 
@@ -245,8 +295,20 @@ class AddProduct extends React.Component {
                                 <option>accessories</option>
                                 </Form.Control>
                             </Form.Group>
+
+                            <Form.Group id='category' controlId="exampleForm.ControlSelect1">
+                                <Form.Label>Select product category or create a new one</Form.Label>
+                                <Button onClick={this.addCategory} >Add</Button>
+                                {/* <Form.Control 
+                                name="productCategoryOption"  
+                                type='text' 
+                                onChange={this.handleOnChange}
+                                value={this.state.productCategoryOption}
+                                /> */}
+                            </Form.Group>
+
                             <Form.Group>
-                                <Form.Label>Discount or Complex</Form.Label>
+                                <Form.Label>Discount/Complex</Form.Label>
                             <Form.Check 
                                 type='checkbox'
                                 label='discount'
@@ -280,15 +342,49 @@ class AddProduct extends React.Component {
                                 />
                             </Form.Group>
 
-                            <Button 
+                            <Form.Group>
+                                <Form.Label>Regular price</Form.Label>
+                                <Form.Control 
+                                type="number" 
+                                name="regularPrice" 
+                                onChange={this.handleOnChange}
+                                value={this.state.regularPrice}
+                                />
+
+                                <Form.Label>Min price</Form.Label>
+                                <Form.Control 
+                                type="number" 
+                                name="minPrice" 
+                                onChange={this.handleOnChange}
+                                value={this.state.minPrice} 
+                                />
+
+                                <Form.Label>Discount price</Form.Label>
+                                <Form.Control 
+                                type="number" 
+                                name="discountPrice" 
+                                onChange={this.handleOnChange}
+                                value={this.state.discountPrice} 
+                                />
+
+                                <Form.Label>Discount min price</Form.Label>
+                                <Form.Control 
+                                type="number" 
+                                name="discountMinPrice" 
+                                onChange={this.handleOnChange}
+                                value={this.state.discountMinPrice} 
+                                />
+                            </Form.Group>
+                            
+                        </Form>
+
+                        <Button 
                             variant="outline-success" 
                             className="addButton" 
-                            type='submit'
+                            onClick={this.addNewProduct}
                             > 
                                 Add  
                             </Button>
-                            
-                        </Form>
                     </Modal.Body>
                 </Modal>
             </>

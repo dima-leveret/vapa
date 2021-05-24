@@ -2,7 +2,7 @@
     display: grid;
     width: 100%;
     max-width: 1200px;
-    padding: 16px 0;
+    padding-bottom: 16px;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;

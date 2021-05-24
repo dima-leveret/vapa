@@ -83,7 +83,7 @@ class ProductCard extends React.Component {
                     className="cardButton" > Details 
                     </Button> */}
                     {
-                        this.props.productAmount == '0' 
+                        this.props.productAmount === '0' 
                         ? 
                         <Button disabled className="cardButtonNa" > Немае в наявности</Button>
                         : 
@@ -99,6 +99,7 @@ class ProductCard extends React.Component {
                         </>      
                     }
                 {/* </div> */}
+
                 {/* <div className='buttons' >
                     <Button
                     className="cardButtonED"
@@ -111,6 +112,7 @@ class ProductCard extends React.Component {
                     >Delete</Button>
     
                 </div> */}
+
             </Card>
 
             <ProductDetailsModal

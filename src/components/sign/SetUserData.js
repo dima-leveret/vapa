@@ -30,7 +30,7 @@ class SetUserData extends React.Component {
     handleOnSubmit = (event) => {
         event.preventDefault()
 
-        const userUid  = firebase.auth().currentUser.uid
+        const userUid  = firebase.auth().currentUser.uid;
         firebase.database().ref('users/' + userUid).set({
             userName: this.state.userName,
             userSurname: this.state.userSurname,

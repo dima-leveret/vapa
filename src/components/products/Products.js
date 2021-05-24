@@ -12,7 +12,7 @@ import { Spinner } from "react-bootstrap";
  class Products extends React.Component {
 
     componentDidMount(){
-         this.props.fetchProducts();
+        this.props.fetchProducts();
      }
 
     // openModalDetails = (oneProductId) => {
