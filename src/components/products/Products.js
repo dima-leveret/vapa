@@ -54,9 +54,9 @@ import { Spinner } from "react-bootstrap";
             {
                 this.props.products
                 .filter(product => 
-                    product.product.replaceAll('[^A-Za-z0-9]', '').toLowerCase().includes(this.props.inputValue.toLowerCase())
+                    product.productTitle.replaceAll('[^A-Za-z0-9]', '').toLowerCase().includes(this.props.inputValue.toLowerCase())
                     || product.description.replaceAll('[^A-Za-z0-9]', '').toLowerCase().includes(this.props.inputValue.toLowerCase())
-                    // || product.price.replaceAll('[^A-Za-z0-9]', '').toLowerCase().includes(this.props.inputValue)
+                    // || product.productPrices.regularPrice.replaceAll('[^A-Za-z0-9]', '').toLowerCase().includes(this.props.inputValue)
                 )
                 .map(product => (
                  <ProductCard
@@ -64,24 +64,32 @@ import { Spinner } from "react-bootstrap";
                     product={product}
 
                     productId={product.id}
-                    productProduct={product.product}
-                    productName={product.name}
-                    productDescription={product.description}
-                    productFullDescription={product.fullDescription}
-                    productPrice={product.price}
-                    productNewPrice={product.newPrice}
                     productAmount={product.amount}
-                    productDetails={product.details}
-                    productUsage={product.usage}
-                    productStructure={product.structure}
-                    productPreservation={product.preservation}
-                    productDate={product.date}
-                    productVolume={product.volume}
-                    available={product.amount}
-                    productType={product.type}
                     productComplex={product.complex}
+                    productComplexList={product.complexList}
+                    productDescription={product.description}
                     productDiscount={product.discount}
-                    productSize={product.size}
+                    productExpirationDate={product.expirationDate}
+                    productFullDescription={product.fullDescription}
+                    isProductInTheStore={product.isProductInTheStore}
+                    productKeyComponents={product.keyComponents}
+                    productMinPackage={product.minPackage}
+                    productPreservation={product.preservation}
+                    productCategories={product.productCategories}
+                    productDiscountMinPrice={product.productPrices.discountMinPrice}
+                    productDiscountPrice={product.productPrices.discountPrice}
+                    productMinPrice={product.productPrices.minPrice}
+                    productRegularPrice={product.productPrices.regularPrice}
+                    productTitle={product.productTitle}
+                    productRegularPackage={product.regularPackage}
+                    productRegularValue={product.regularValue}
+                    productRegularWeight={product.regularWeight}
+                    productStructure={product.structure}
+                    productType={product.type}
+                    productUsage={product.usage}
+                    productValueType={product.valueType}
+
+                    available={product.amount}
 
                     isProductInCart={this.isProductInCart}
                 />

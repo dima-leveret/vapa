@@ -91,7 +91,7 @@ class AddProduct extends React.Component {
                 discountMinPrice: this.state.discountMinPrice,
             },
             productCategory: {
-
+                
             },
         }
 

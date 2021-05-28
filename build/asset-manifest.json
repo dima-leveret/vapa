@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/vapa/static/css/main.c7e57eba.chunk.css",
-    "main.js": "/vapa/static/js/main.cbd20276.chunk.js",
-    "main.js.map": "/vapa/static/js/main.cbd20276.chunk.js.map",
+    "main.js": "/vapa/static/js/main.11fa469c.chunk.js",
+    "main.js.map": "/vapa/static/js/main.11fa469c.chunk.js.map",
     "runtime-main.js": "/vapa/static/js/runtime-main.adc6ddf1.js",
     "runtime-main.js.map": "/vapa/static/js/runtime-main.adc6ddf1.js.map",
     "static/js/2.05444455.chunk.js": "/vapa/static/js/2.05444455.chunk.js",
@@ -41,6 +41,6 @@
     "static/js/runtime-main.adc6ddf1.js",
     "static/js/2.05444455.chunk.js",
     "static/css/main.c7e57eba.chunk.css",
-    "static/js/main.cbd20276.chunk.js"
+    "static/js/main.11fa469c.chunk.js"
   ]
 }

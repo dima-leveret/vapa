@@ -63,19 +63,19 @@ class ProductCard extends React.Component {
                 alt='some-picture' 
                 className="card-img" />
                 <Card.Body onClick={() => this.openModalDetails(this.props.productId)} >
-                    <Card.Title > {this.props.productProduct} </Card.Title>
+                    <Card.Title > {this.props.productTitle} </Card.Title>
                     <Card.Text> { this.props.productDescription} </Card.Text>
                 </Card.Body>
                 {this.props.productDiscount === true 
                 ? 
                 <div style={{ display: 'flex' }} >
                     <Card.Text style={{ fontSize: '22px' }} >  
-                    <del  style={{ fontSize: '14px', marginRight: '10px' }} > {this.props.productPrice} UAH </del>
-                    {this.props.productNewPrice} UAH 
+                    <del  style={{ fontSize: '14px', marginRight: '10px' }} > {this.props.productRegularPrice} UAH </del>
+                    {this.props.productDiscountPrice} UAH 
                     </Card.Text> 
                 </div>
                 :
-                <Card.Text style={{ fontSize: '22px' }} > {this.props.productPrice} UAH </Card.Text>
+                <Card.Text style={{ fontSize: '22px' }} > {this.props.productRegularPrice} UAH </Card.Text>
                 }
                 {/* <div className="buttons" > */}
                     {/* <Button 
@@ -121,9 +121,9 @@ class ProductCard extends React.Component {
                 isProductInCart={this.props.isProductInCart}
                 product={this.props.product}
 
-                productName={this.props.productName}
+                productTitle={this.props.productTitle}
                 productProduct={this.props.productProduct}
-                productPrice={this.props.productPrice}
+                productRegularPrice={this.props.productRegularPrice}
                 productFullDescription={this.props.productFullDescription}
                 productDetails={this.props.productDetails}
                 productUsage={this.props.productUsage}

@@ -20,11 +20,11 @@ function ProductDetailsModal (props) {
        >
         <Modal.Header>
           <p style={{ cursor: 'pointer' }} onClick={props.onHide} >Back</p>
-          <Modal.Title> {props.productProduct} {props.productName} </Modal.Title>
+          <Modal.Title> {props.productTitle} </Modal.Title>
         </Modal.Header>
                     
         <Modal.Body>
-          <p> {props.productPrice} UAH </p>
+          <p> {props.productRegularPrice} UAH </p>
           {
             props.productAmount == '0' 
             ? 
